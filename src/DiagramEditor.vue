@@ -102,6 +102,7 @@
 	  
 	  <v-layout wrap>
 	<v-flex xs2 style="height: calc(100vh - 200px); overflow: auto">	
+		{{panel}}
 		<v-expansion-panels multiple v-model="panel">
 			<v-expansion-panel v-if="editable">
       <v-expansion-panel-header>Edit</v-expansion-panel-header>
