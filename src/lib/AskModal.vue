@@ -1,13 +1,13 @@
 <template>
-  <VModal :isActive="isActive" @clickModal="cancel">
+  <v-dialog v-model="isActive" @clickModal="cancel">
     <transition name="item">
       <div class="block">
         <div class="inner-block"><slot></slot></div>
-        <VButton @click="ok">OK</VButton>
-        <VButton class="danger" @click="cancel">Cancel</VButton>
+        <v-btn @click="ok">OK</v-btn>
+        <v-btn class="danger" @click="cancel">Cancel</v-btn>
       </div>
     </transition>
-  </VModal>
+  </v-dialog>
 </template>
 <script>
 export default {

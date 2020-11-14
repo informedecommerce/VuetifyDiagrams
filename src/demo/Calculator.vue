@@ -1,18 +1,18 @@
 <template>
   <section>
-    <VSelect v-model="tmp.operandType" placeholder="Operand type">
+    <v-select v-model="tmp.operandType" placeholder="Operand type">
       <option value="constant">Constant</option>
       <option value="variable">Variable</option>
-    </VSelect>
-    <VInput v-model="tmp.operandName" placeholder="name" />
-    <VInput v-model="tmp.operandValue" placeholder="value" />
-    <VButton @click="addOperand">Add operand</VButton><br />
+    </v-select>
+    <v-textfield v-model="tmp.operandName" placeholder="name" />
+    <v-textfield v-model="tmp.operandValue" placeholder="value" />
+    <v-btn @click="addOperand">Add operand</v-btn><br />
 
-    <VSelect v-model="tmp.operatorType" placeholder="Operand type">
+    <v-select v-model="tmp.operatorType" placeholder="Operand type">
       <option value="add">Add</option> <option value="sub">Sub</option>
       <option value="mul">Mul</option> <option value="div">Div</option>
-    </VSelect>
-    <VButton @click="addOperator">Add operator</VButton>
+    </v-select>
+    <v-btn @click="addOperator">Add operator</v-btn>
     <Diagram
       :width="500"
       :height="500"

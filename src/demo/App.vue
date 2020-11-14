@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <h2>diagram-vue</h2>
+    <h2>vuetify-diagrams</h2>
     <section>
       <span>Demo:</span>
-      <VSelect v-model="demo">
+      <v-select v-model="demo">
         <option value="default">Default Editor</option>
-      </VSelect>
+      </v-select>
     </section>
     <br />
     <section v-if="demo === 'default'">

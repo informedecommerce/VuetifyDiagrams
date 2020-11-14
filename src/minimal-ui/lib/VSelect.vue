@@ -8,7 +8,7 @@
 </template>
 <script>
 export default {
-  name: "VSelect",
+  name: "v-select",
   props: {
     value: {
       type: [String, Number, Boolean, Object],

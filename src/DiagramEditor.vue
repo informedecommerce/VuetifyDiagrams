@@ -1,47 +1,47 @@
 <template>
   <div id="editor">
-    <VButton v-if="!editable" @click="editable = true">Edit</VButton>
+    <v-btn v-if="!editable" @click="editable = true">Edit</v-btn>
     <span v-else>
-      <VButton @click="openModal">New Node</VButton>
-      <VButton @click="endEdit">End</VButton>
+      <v-btn @click="openModal">New Node</v-btn>
+      <v-btn @click="endEdit">End</v-btn>
     </span>
-    <VButton @click="openInputModal">Import/Export</VButton>
-    <VButton @click="downloadSVG">Download SVG</VButton>
-    <VButton @click="isAskClearDiagram = true">Clear Diagram</VButton>
-    <VButton @click="openSettingsModal">Settings</VButton>
-    <AskModal :isActive="isAskClearDiagram" @ok="clearDiagram" @cancel="cancel">
+    <v-btn @click="openInputModal">Import/Export</v-btn>
+    <v-btn @click="downloadSVG">Download SVG</v-btn>
+    <v-btn @click="isAskClearDiagram = true">Clear Diagram</v-btn>
+    <v-btn @click="openSettingsModal">Settings</v-btn>
+    <AskModal v-model="isAskClearDiagram" @ok="clearDiagram" @cancel="cancel">
       Do you wanna clear the Diagram?
     </AskModal>
     <EditNodeModal
       :node="{ content: {} }"
-      :isActive="isModalActive"
+      v-model="isModalActive"
       @ok="addNode"
       @cancel="cancel"
     />
     <EditNodeModal
       :node="tmpNode"
-      :isActive="isEditModalActive"
+      v-model="isEditModalActive"
       @ok="editNode"
       @cancel="cancel"
     />
     <EditLinkModal
       :link="tmpLink"
-      :isActive="isEditLinkModalActive"
+      v-model="isEditLinkModalActive"
       @ok="editLink"
       @cancel="cancel"
     />
     <InputModal
       :text="json"
-      :isActive="isInputModalActive"
+      v-model="isInputModalActive"
       @ok="importData"
       @cancel="cancel"
     />
-    <SettingsModal
-      :isActive="isSettingsModalActive"
+    <v-dialog
+      v-model="isSettingsModalActive"
       :settings="settings"
       @ok="updateSettings"
       @cancel="cancel"
-    />
+    >
     <Diagram
       :width="graphData.width || 2000"
       :height="graphData.height || 1000"

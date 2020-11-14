@@ -1,8 +1,8 @@
 import VButton from "./VButton";
 import VCkbox from "./VCkbox";
-import VInput from "./VInput";
+import v-textfield from "./v-textfield";
 import VMessage from "./VMessage";
 import VModal from "./VModal";
-import VSelect from "./VSelect";
+import v-select from "./v-select";
 
-export { VButton, VCkbox, VInput, VMessage, VModal, VSelect };
+export { VButton, VCkbox, v-textfield, VMessage, VModal, v-select };

@@ -3,7 +3,7 @@
 </template>
 <script>
 export default {
-  name: "VInput",
+  name: "v-textfield",
   props: {
     type: String,
     value: [String, Number]

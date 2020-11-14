@@ -1,12 +1,12 @@
 {
-  "name": "diagram-vue",
+  "name": "vuetify-diagrams",
   "version": "0.3.2",
   "main": "dist/diagram.umd.js",
-  "author": "pb10005",
+  "author": "Jason Ulwelling",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pb10005/diagram-vue.git"
+    "url": "git+https://github.com/informedecommerce/VuetifyDiagrams.git"
   },
   "unpkg": "dist/diagram.umd.min.js",
   "browser": {

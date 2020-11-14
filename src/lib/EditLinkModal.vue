@@ -1,33 +1,33 @@
 <template>
-  <VModal :isActive="isActive" @clickModal="cancel">
+  <v-dialog v-model="isActive" @clickModal="cancel">
     <transition name="item">
       <div class="form" v-if="isActive">
         <h2>Edit link</h2>
         <label>Color:</label>
-        <VInput v-model="newLink.color" placeholder="color" /><br />
+        <v-textfield v-model="newLink.color" placeholder="color" /><br />
         <label>Shape:</label>
-        <VSelect v-model="newLink.shape" placeholder="Select line shape">
+        <v-select v-model="newLink.shape" placeholder="Select line shape">
           <option value="straight">Straight line</option>
-          <option value="bezier">Bezier curve</option> </VSelect
+          <option value="bezier">Bezier curve</option> </v-select
         ><br />
         <label>Pattern:</label>
-        <VSelect v-model="newLink.pattern" placeholder="Select line pattern">
+        <v-select v-model="newLink.pattern" placeholder="Select line pattern">
           <option value="solid" selected>Solid</option>
           <option value="dash">Dash</option>
-          <option value="dot">Dot</option> </VSelect
+          <option value="dot">Dot</option> </v-select
         ><br />
         <label>Arrow type:</label>
-        <VSelect v-model="newLink.arrow" placeholder="Select arrow type">
+        <v-select v-model="newLink.arrow" placeholder="Select arrow type">
           <option value="none">none</option>
           <option value="src">One side(source)</option>
           <option value="dest">One side(destination)</option>
-          <option value="both">Both side</option> </VSelect
+          <option value="both">Both side</option> </v-select
         ><br />
-        <VButton @click="ok">OK</VButton>
-        <VButton class="danger" @click="cancel">Cancel</VButton>
+        <v-btn @click="ok">OK</v-btn>
+        <v-btn class="danger" @click="cancel">Cancel</v-btn>
       </div>
     </transition>
-  </VModal>
+  </v-dialog>
 </template>
 <script>
 export default {

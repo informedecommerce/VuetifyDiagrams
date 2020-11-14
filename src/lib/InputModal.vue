@@ -1,5 +1,5 @@
 <template>
-  <VModal :isActive="isActive" @clickModal="cancel">
+  <v-dialog v-model="isActive" @clickModal="cancel">
     <div>
       <textarea
         class="input"
@@ -8,10 +8,10 @@
         placeholder="JSON"
       ></textarea
       ><br />
-      <VButton @click="ok">OK</VButton>
-      <VButton class="danger" @click="cancel">Cancel</VButton>
+      <v-btn @click="ok">OK</v-btn>
+      <v-btn class="danger" @click="cancel">Cancel</v-btn>
     </div>
-  </VModal>
+  </v-dialog>
 </template>
 <script>
 export default {
