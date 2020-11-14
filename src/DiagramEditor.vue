@@ -173,7 +173,7 @@
       </v-list>
     </v-navigation-drawer>
 	</v-flex>
-		 <v-flex xs10>
+		 <v-flex xs10 style="max-height: calc(100vh - 350px);max-width: calc(100vw - 500);overflow: auto">
     <Diagram
       :width="graphData.width || 2000"
       :height="graphData.height || 1000"
