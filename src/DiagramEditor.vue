@@ -578,7 +578,11 @@ export default {
     },
     editNode(item) {
       let tmp = this.graphData.nodes.find(x => x.id === item.id);
-      tmp.content = item.content;
+      tmp.content.text = item.content.text;
+      tmp.content.url = item.content.url;
+      tmp.content.color = item.content.color;
+		tmp.content.font_color = item.content.font_color;
+		tmp.content.font_size = item.content.font_size;
       tmp.shape = item.shape;
       tmp.stroke = item.stroke;
       tmp.strokeWeight = item.strokeWeight;
