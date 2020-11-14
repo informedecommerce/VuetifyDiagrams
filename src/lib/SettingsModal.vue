@@ -3,9 +3,9 @@
     <h2>Settings</h2>
     <h3>Field Size</h3>
     <label>Width</label>
-    <v-textfield type="number" v-model="newSettings.width" />
+    <v-text-field type="number" v-model="newSettings.width" />
     <label>Height</label>
-    <v-textfield type="number" v-model="newSettings.height" /><br />
+    <v-text-field type="number" v-model="newSettings.height" /><br />
     <h3>Scale</h3>
     <v-select lebel="Scale" v-model="newSettings.scale" :items="size_options" item-text="text" item-value="value">
     </v-select>

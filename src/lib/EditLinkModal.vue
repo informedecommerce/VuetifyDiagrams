@@ -4,7 +4,7 @@
       <div class="form" v-if="isActive">
         <h2>Edit link</h2>
         <label>Color:</label>
-        <v-textfield v-model="newLink.color" placeholder="color" /><br />
+        <v-text-field v-model="newLink.color" placeholder="color" /><br />
         <label>Shape:</label>
         <v-select v-model="newLink.shape" placeholder="Select line shape">
           <option value="straight">Straight line</option>

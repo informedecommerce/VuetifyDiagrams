@@ -2,25 +2,25 @@
   
     <transition name="item">
       <div class="form" v-if="isActive">
-        <v-textfield v-model="newNode.content.text" placeholder="name" /><br />
-        <v-textfield v-model="newNode.content.url" placeholder="url" /><br />
-        <v-textfield v-model="newNode.content.color" placeholder="color" /><br />
-        <v-textfield
+        <v-text-field v-model="newNode.content.text" placeholder="name" /><br />
+        <v-text-field v-model="newNode.content.url" placeholder="url" /><br />
+        <v-text-field v-model="newNode.content.color" placeholder="color" /><br />
+        <v-text-field
           type="number"
           v-model="newNode.width"
           placeholder="width"
         /><br />
-        <v-textfield
+        <v-text-field
           type="number"
           v-model="newNode.height"
           placeholder="height"
         /><br />
-        <v-textfield
+        <v-text-field
           type="text"
           v-model="newNode.stroke"
           placeholder="stroke"
         /><br />
-        <v-textfield
+        <v-text-field
           type="number"
           v-model="newNode.strokeWeight"
           placeholder="stroke weight"
