@@ -123,8 +123,9 @@
       </v-list-item>
 
       <v-divider></v-divider>
-
-      <v-list
+<v-btn icon v-for="(item,index) in diagram_items" @click="diagramAdd(item.key)" :key="'shape-'+index"><v-icon>{{item.icon}}</v-icon></v-btn>
+     <!--
+			<v-list
         dense
         nav
       >
@@ -143,7 +144,7 @@
           </v-list-item-content>
         </v-list-item>
       </v-list>
-			
+			-->
 			<v-divider />
 			<v-list-item >
         <v-list-item-content>
