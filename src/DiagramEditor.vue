@@ -32,7 +32,7 @@
           </v-list-item-title>
         </v-list-item-content>
       </v-list-item>
-    </AskModal>
+    </v-navigation-drawer>
     <EditNodeModal
       :node="{ content: {} }"
       v-model="isModalActive"
