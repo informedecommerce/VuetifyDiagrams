@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="isActive" @clickModal="cancel">
+  <div>
     <h2>Settings</h2>
     <h3>Field Size</h3>
     <label>Width</label>
@@ -18,7 +18,7 @@
     <VCkbox v-model="newSettings.showGrid"> Show grid </VCkbox><br /><br />
     <v-btn @click="ok">OK</v-btn>
     <v-btn class="danger" @click="cancel">Cancel</v-btn>
-  </v-dialog>
+</div>
 </template>
 <script>
 export default {

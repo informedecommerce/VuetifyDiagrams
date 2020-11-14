@@ -38,11 +38,10 @@
     />
     <v-dialog
       v-model="isSettingsModalActive"
-      :settings="settings"
       @ok="updateSettings"
       @cancel="cancel"
     >
-		isSettingsModalActive
+		<SettingsModal :settings="SettingsModal" />
 		</v-dialog>
     <Diagram
       :width="graphData.width || 2000"
@@ -81,7 +80,7 @@ import EditNodeModal from "@/lib/EditNodeModal";
 import EditLinkModal from "@/lib/EditLinkModal";
 import InputModal from "@/lib/InputModal";
 import AskModal from "@/lib/AskModal";
-import SettingsModal from "@/lib/SettingsModal";
+import SettingsModal from "./lib/SettingsModal";
 export default {
   name: "DiagramEditor",
   components: {
