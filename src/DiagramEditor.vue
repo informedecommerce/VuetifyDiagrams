@@ -333,7 +333,7 @@ export default {
   },
   data() {
     return {
-		panel: [0,0,1],
+		panel: [2],
 		diagram_items: [
 				{title: 'Square',icon: 'mdi-shape-square-plus',key: 'square'},
 				{title: 'Rectangle',icon: 'mdi-shape-rectangle-plus',key: 'rectangle'},
@@ -481,8 +481,8 @@ export default {
       this.tmpNode.width = item.width;
       this.tmpNode.height = item.height;
       this.isModalActive = false;
-      this.isEditModalActive = true;
-		this.panel[1] = 1
+      //this.isEditModalActive = true;
+		this.panel.push(1)
     },
     editNode(item) {
       let tmp = this.graphData.nodes.find(x => x.id === item.id);
@@ -514,14 +514,18 @@ export default {
     },
     nodeClicked(id) {
       this.$emit("nodeClicked", id);
+		console.log("nodeClicked", id)
     },
     linkClicked(id) {
       this.$emit("linkClicked", id);
+		console.log("linkClicked", id)
     },
     nodeChanged(obj) {
+		console.log('nodeChanged',obj)
       this.graphData.nodes = obj.nodes;
     },
     linkChanged(obj) {
+		console.log('linkChanged',obj)
       this.graphData.links = obj.links;
     },
     openInputModal() {
