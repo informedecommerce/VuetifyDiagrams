@@ -101,8 +101,8 @@
 		</v-navigation-drawer>
 	  
 	  <v-layout wrap>
-	<v-flex xs2 style="max-height: calc(100vh - 200px); overflow: auto">	
-		<v-expansion-panels multiple>
+	<v-flex xs2 style="height: calc(100vh - 200px); overflow: auto">	
+		<v-expansion-panels multiple v-model="panel">
 			<v-expansion-panel v-if="editable">
       <v-expansion-panel-header>Edit</v-expansion-panel-header>
       <v-expansion-panel-content>
@@ -332,6 +332,7 @@ export default {
   },
   data() {
     return {
+		panel: [0,0,1],
 		diagram_items: [
 				{title: 'Square',icon: 'mdi-shape-square-plus',key: 'square'},
 				{title: 'Rectangle',icon: 'mdi-shape-rectangle-plus',key: 'rectangle'},
@@ -480,6 +481,7 @@ export default {
       this.tmpNode.height = item.height;
       this.isModalActive = false;
       this.isEditModalActive = true;
+		this.panel[1] = 1
     },
     editNode(item) {
       let tmp = this.graphData.nodes.find(x => x.id === item.id);
