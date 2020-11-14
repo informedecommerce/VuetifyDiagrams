@@ -175,8 +175,8 @@
 	</v-flex>
 		 <v-flex xs10 style="max-height: calc(100vh - 350px);max-width: calc(100vw - 500);overflow: auto">
     <Diagram
-      :width="graphData.width || 2000"
-      :height="graphData.height || 1000"
+      :width="graphData.width ? graphData.width : 800"
+      :height="graphData.height ? graphData.height : 600"
       :fluid="settings.isFluid"
       :scale="settings.scale"
       :background="graphData.background || '#fafafa'"
@@ -248,8 +248,16 @@ export default {
           links: []
         };
       }
-    }
+    },
+	  height: null,
+	  width: null,
+	  
   },
+	watch: {
+		value(val){
+			this.init()
+		}
+	},
   computed: {
     graphData: {
       get() {
@@ -308,6 +316,20 @@ export default {
     };
   },
   methods: {
+	  init(){
+			let diagram_width = window.innerWidth - 325
+			let diagram_height = window.innerHeight - 255
+			if(this.height){
+				this.graphData.height = this.height
+			}else{
+				this.graphData.height = diagram_height
+			}
+		  if(this.width){
+				this.graphData.width = this.width
+			}else{
+				this.graphData.width = diagram_width
+			}
+		},
 	   diagramAdd(item){
 		  switch(item){
 			  case 'square':
