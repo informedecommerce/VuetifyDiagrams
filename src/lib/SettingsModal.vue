@@ -7,7 +7,7 @@
     <label>Height</label>
     <v-text-field type="number" v-model="newSettings.height" /><br />
     <h3>Scale</h3>
-    <v-select lebel="Scale" v-model="newSettings.scale" :items="size_options" item-text="text" item-value="value">
+    <v-select lebel="Scale" :return-object="false" v-model="newSettings.scale" :items="size_options" item-text="text" item-value="value">
     </v-select>
     <h3>Fluid</h3>
 	  <v-switch

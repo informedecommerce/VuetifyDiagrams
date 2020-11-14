@@ -169,7 +169,16 @@
           <v-list-item-content>
             <v-list-item-title>Clear Diagram</v-list-item-title>
           </v-list-item-content>
-        </v-list-item>		 
+        </v-list-item>	
+				 <v-list-item @click="save()">
+          <v-list-item-icon>
+            <v-icon>mdi-nuke</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>Save</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>	
       </v-list>
     </v-navigation-drawer>
 	</v-flex>
@@ -321,15 +330,22 @@ export default {
 			let diagram_height = window.innerHeight - 255
 			if(this.height){
 				this.graphData.height = this.height
+				this.settings.height = this.height
 			}else{
 				this.graphData.height = diagram_height
+				this.settings.height = diagram_height
 			}
 		  if(this.width){
 				this.graphData.width = this.width
+			  this.settings.width = this.width
 			}else{
 				this.graphData.width = diagram_width
+				this.settings.width = diagram_width
 			}
 		},
+	  save(){
+		this.emit('update',this.graphData)  
+	  },
 	   diagramAdd(item){
 		  switch(item){
 			  case 'square':
