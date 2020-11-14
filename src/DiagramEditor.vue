@@ -9,8 +9,29 @@
     <v-btn @click="downloadSVG">Download SVG</v-btn>
     <v-btn @click="isAskClearDiagram = true">Clear Diagram</v-btn>
     <v-btn @click="openSettingsModal">Settings</v-btn>
-    <AskModal v-model="isAskClearDiagram" @ok="clearDiagram" @cancel="cancel">
-      Do you wanna clear the Diagram?
+    <v-navigation-drawer
+      v-model="isAskClearDiagram"
+      absolute
+      temporary
+							  right
+    > 
+      <v-card-text>
+		Do you wanna clear the Diagram?
+		  </v-card-text>
+		<v-list-item color="red" @click="clearDiagram()">
+        <v-list-item-content>
+          <v-list-item-title class="title">
+            Yes
+          </v-list-item-title>
+        </v-list-item-content>
+      </v-list-item >
+		<v-list-item color="green" @click="isAskClearDiagram = false">
+        <v-list-item-content>
+          <v-list-item-title class="title">
+            No
+          </v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
     </AskModal>
     <EditNodeModal
       :node="{ content: {} }"
@@ -102,7 +123,7 @@
         dense
         nav
       >
-        <v-list-item @click="diagram.showGrid = !diagram.showGrid">
+        <v-list-item @click="changeGrid()">
           <v-list-item-icon>
             <v-icon>mdi-grid</v-icon>
           </v-list-item-icon>
@@ -111,6 +132,15 @@
             <v-list-item-title>Toggle Grid</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+		<v-list-item @click="isAskClearDiagram = true">
+          <v-list-item-icon>
+            <v-icon>mdi-nuke</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>Clear Diagram</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>		 
       </v-list>
     </v-navigation-drawer>
 	</v-flex>
@@ -403,11 +433,12 @@ export default {
       this.settings.width = this.graphData.width;
       this.settings.height = this.graphData.height;
       this.settings.showGrid = this.graphData.showGrid;
+		this.updateSettings(this.settings)
     },
     updateSettings(val) {
       this.settings = Object.assign({}, val);
       this.changeGrid();
-      this.isSettingsModalActive = false;
+     // this.isSettingsModalActive = false;
     }
   }
 };
