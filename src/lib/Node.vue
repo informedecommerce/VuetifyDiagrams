@@ -64,7 +64,7 @@
       :height="node.height"
       :rx="node.width / 2"
       :ry="node.height / 2"
-      :fill="color && color.hexa ? color.hexa : '#ecf0f1'"
+      :fill="node.color && node.color.hexa ? node.color.hexa : '#ecf0f1'"
       :stroke-width="node.strokeWeight"
       :stroke="node.stroke"
       @touchstart="mousedown"
@@ -83,7 +83,7 @@
       :height="node.height"
       rx="5"
       ry="3"
-      :fill="color && color.hexa ? color.hexa : '#ecf0f1'"
+      :fill="node.color && node.color.hexa ? node.color.hexa : '#ecf0f1'"
       :stroke-width="node.strokeWeight"
       :stroke="node.stroke"
       @touchstart="mousedown"
@@ -117,12 +117,12 @@
       <text
         :x="x + node.width / 2"
         :y="y + node.height / 2"
-        :fill="font_color && font_color.hexa ? font_color.hexa : '#34495e'"
+        :fill="node.font_color && node.font_color.hexa ? node.font_color.hexa : '#34495e'"
         font-family="Meiryo UI, sans-serif"
-        :font-size="font_size ? font_size : 20"
+        :font-size="node.font_size ? node.font_size : 20"
         text-anchor="middle"
       >
-        {{ text }}
+        {{ node.text }}
       </text>
     </a>
   </g>

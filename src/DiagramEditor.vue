@@ -105,7 +105,13 @@
 		{{panel}}
 		<v-expansion-panels multiple v-model="panel">
 			<v-expansion-panel v-if="editable">
-      <v-expansion-panel-header>Edit</v-expansion-panel-header>
+				
+      <v-expansion-panel-header disable-icon-rotate>
+		  Edit Item
+				<template v-slot:actions>
+            <v-icon color="info">mdi-pencil</v-icon>
+          </template>
+				</v-expansion-panel-header>
       <v-expansion-panel-content>
 		  <!--
  this.tmpNode.id = item.id;
@@ -190,14 +196,24 @@
       </v-expansion-panel-content>
     </v-expansion-panel>
     <v-expansion-panel v-if="editable">
-      <v-expansion-panel-header>Add</v-expansion-panel-header>
+      <v-expansion-panel-header disable-icon-rotate>
+		  Add
+		  <template v-slot:actions>
+            <v-icon color="info">mdi-plus</v-icon>
+          </template>
+		</v-expansion-panel-header>
       <v-expansion-panel-content>
         <v-btn icon v-for="(item,index) in diagram_items" @click="diagramAdd(item.key)" :key="'shape-'+index"><v-icon>{{item.icon}}</v-icon></v-btn>
       </v-expansion-panel-content>
     </v-expansion-panel>
 			
 		<v-expansion-panel>
-      <v-expansion-panel-header>Settings</v-expansion-panel-header>
+      <v-expansion-panel-header disable-icon-rotate>
+		  Settings
+			<template v-slot:actions>
+            <v-icon color="info">mdi-cog</v-icon>
+          </template>
+			</v-expansion-panel-header>
       <v-expansion-panel-content>
          <v-list
         dense
