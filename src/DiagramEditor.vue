@@ -129,6 +129,7 @@
 		  <v-text-field
             label="Text Size"
 					  hide-details
+						type="number"
 					  v-model="tmpNode.content.font_size"
 					  @change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"
@@ -140,7 +141,8 @@
 						@change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"
           ></v-text-field>
-		  <v-color-picker :dark="$vuetify.theme.dark" mode="hexa" v-model="tmpNode.content.color" value="hexa" hide-mode-switch ></v-color-picker>
+		  <v-color-picker :dark="$vuetify.theme.dark" mode="hexa" v-model="tmpNode.content.color"  @change="editNode(tmpNode)"
+						v-on:keyup="editNode(tmpNode)" hide-mode-switch ></v-color-picker>
 		  <v-text-field
             label="Stroke"
 						type="number"
