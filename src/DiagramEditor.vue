@@ -541,7 +541,9 @@ export default {
         content: {
           text: item.content.text,
           url: item.content.url,
-          color: item.content.color
+          color: item.content.color,
+			font_color: item.content.font_color,
+			font_size: item.content.font_size
         },
         width: parseInt(item.width) || 150,
         height: parseInt(item.height) || 60,
@@ -560,6 +562,8 @@ export default {
       this.tmpNode.content.text = item.content.text;
       this.tmpNode.content.url = item.content.url;
       this.tmpNode.content.color = item.content.color;
+		this.tmpNode.content.font_color = item.content.font_color;
+		this.tmpNode.content.font_size = item.content.font_size;
       this.tmpNode.shape = item.shape;
       this.tmpNode.stroke = item.stroke;
       this.tmpNode.strokeWeight = item.strokeWeight;
@@ -574,9 +578,7 @@ export default {
     },
     editNode(item) {
       let tmp = this.graphData.nodes.find(x => x.id === item.id);
-      tmp.content.text = item.content.text;
-      tmp.content.url = item.content.url;
-      tmp.content.color = item.content.color;
+      tmp.content = item.content;
       tmp.shape = item.shape;
       tmp.stroke = item.stroke;
       tmp.strokeWeight = item.strokeWeight;
