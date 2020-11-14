@@ -48,7 +48,10 @@ export default {
       if (val) {
         this.newSettings = JSON.parse(JSON.stringify(this.settings));
       }
-    }
+    },
+	  settings(val){
+		   this.newSettings = JSON.parse(JSON.stringify(val));
+	  }
   },
   data() {
     return {

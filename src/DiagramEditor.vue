@@ -104,7 +104,14 @@
 	<v-flex xs2>	
 		
 		<v-navigation-drawer permanent>
-      <v-list-item >
+      <v-list-item v-if="can_edit" @click="editable = !editable">
+        <v-list-item-content>
+          <v-list-item-subtitle>
+            Edit
+          </v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+			<v-list-item >
         <v-list-item-content>
           <v-list-item-title class="title">
             Add
@@ -152,7 +159,7 @@
         dense
         nav
       >
-        <v-list-item @click="changeGrid()">
+        <v-list-item @click="toggleGrid()">
           <v-list-item-icon>
             <v-icon>mdi-grid</v-icon>
           </v-list-item-icon>
@@ -182,7 +189,7 @@
       </v-list>
     </v-navigation-drawer>
 	</v-flex>
-		 <v-flex xs10 style="max-height: calc(100vh - 350px);max-width: calc(100vw - 500);overflow: auto">
+		 <v-flex xs10 style="max-height: calc(100vh - 200px);max-width: calc(100vw - 500);overflow: auto">
     <Diagram
       :width="graphData.width ? graphData.width : 800"
       :height="graphData.height ? graphData.height : 600"
@@ -260,7 +267,8 @@ export default {
     },
 	  height: null,
 	  width: null,
-	  
+	  edit_mode: false,
+	  can_edit: true
   },
 	watch: {
 		value(val){
@@ -297,7 +305,7 @@ export default {
       editable: false,
       settings: {
         width: 1500,
-        height: 1000,
+        height: 2500,
         isFluid: false,
         scale: "1",
         showGrid: false
@@ -326,6 +334,7 @@ export default {
   },
   methods: {
 	  init(){
+		  /*
 			let diagram_width = window.innerWidth - 325
 			let diagram_height = window.innerHeight - 255
 			if(this.height){
@@ -342,9 +351,10 @@ export default {
 				this.graphData.width = diagram_width
 				this.settings.width = diagram_width
 			}
+			*/
 		},
 	  save(){
-		this.emit('update',this.graphData)  
+		this.$emit('update',this.graphData)  
 	  },
 	   diagramAdd(item){
 		  switch(item){
@@ -495,6 +505,9 @@ export default {
       this.graphData.height = parseInt(this.settings.height);
       this.graphData.showGrid = this.settings.showGrid;
     },
+	  toggleGrid(){
+		  this.graphData.showGrid = !this.graphData.showGrid
+	  },
     openSettingsModal() {
       this.isSettingsModalActive = true;
       this.settings.width = this.graphData.width;
