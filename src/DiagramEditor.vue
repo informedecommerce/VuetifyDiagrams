@@ -109,9 +109,9 @@
       <v-expansion-panel-content>
 		  <!--
  this.tmpNode.id = item.id;
-      this.tmpNode.content.text = item.content.text;
+      this.tmpNode.text = item.text;
       this.tmpNode.content.url = item.content.url;
-      this.tmpNode.content.color = item.content.color;
+      this.tmpNode.color = item.color;
       this.tmpNode.shape = item.shape;
       this.tmpNode.stroke = item.stroke;
       this.tmpNode.strokeWeight = item.strokeWeight;
@@ -122,7 +122,7 @@
         <v-text-field
             label="Text"
 					  hide-details
-					  v-model="tmpNode.content.text"
+					  v-model="tmpNode.text"
 					  @change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"
           ></v-text-field>
@@ -136,10 +136,10 @@
           ></v-text-field>
 		  <v-menu :close-on-content-click="false">
                       <template v-slot:activator="{ on }">
-                        <v-text-field  v-model="tmpNode.content.font_color.hexa" v-on="on" label="Color" @change="editNode(tmpNode)"
+                        <v-text-field  v-model="tmpNode.font_color.hexa" v-on="on" label="Color" @change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"></v-text-field>
                       </template>
-                      <v-color-picker  mode="hexa" v-model="tmpNode.content.font_color" value="hex" hide-mode-switch ></v-color-picker>
+                      <v-color-picker  mode="hexa" v-model="tmpNode.font_color" value="hex" hide-mode-switch ></v-color-picker>
                     </v-menu>
 		  <v-text-field
             label="URL"
@@ -150,10 +150,10 @@
           ></v-text-field>
 		  <v-menu :close-on-content-click="false">
                       <template v-slot:activator="{ on }">
-                        <v-text-field v-model="tmpNode.content.color.hexa" v-on="on" label="Color" @change="editNode(tmpNode)"
+                        <v-text-field v-model="tmpNode.color.hexa" v-on="on" label="Color" @change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"></v-text-field>
                       </template>
-                      <v-color-picker  mode="hexa" v-model="tmpNode.content.color" value="hex" hide-mode-switch ></v-color-picker>
+                      <v-color-picker  mode="hexa" v-model="tmpNode.color" value="hex" hide-mode-switch ></v-color-picker>
                     </v-menu>
 		  <v-text-field
             label="Stroke"
@@ -487,27 +487,27 @@ export default {
 		  switch(item){
 			  case 'square':
 				  this.addNode(
-					 { "content": { "text": "New Square", font_color: {hexa: '#34495e'}, color: {hexa: '#ecf0f1'} }, "width": 60, "height": 60, "shape": "rectangle", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
+					 { "text": "New Square", "width": 60, "height": 60, "shape": "rectangle", "point": { "x": 9.999999999999993, "y": 34.31059443007615 }, font_color: {hexa: '#34495e'}, color: {hexa: '#ecf0f1'} } 
 					) 
 					  break;
 					  case 'rectangle':
 					  this.addNode(
-					 {  "content": { "text": "New Rectangle", font_color: {hexa: '#34495e'}, color: {hexa: '#ecf0f1'} }, "width": 100, "height": 60, "shape": "rectangle", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
+					 {  "text": "New Rectangle" , "width": 100, "height": 60, "shape": "rectangle", "point": { "x": 9.999999999999993, "y": 34.31059443007615 }, font_color: {hexa: '#34495e'}, color: {hexa: '#ecf0f1'} } 
 					) 
 				  break;
 				  case 'circle':
 					  this.addNode(
-					 { "content": { "text": "New Circle", font_color: {hexa: '#34495e'}, color: {hexa: '#ecf0f1'} }, "width": 60, "height": 60, "shape": "ellipse", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
+					 {  "text": "New Circle" , "width": 60, "height": 60, "shape": "ellipse", "point": { "x": 9.999999999999993, "y": 34.31059443007615 }, font_color: {hexa: '#34495e'}, color: {hexa: '#ecf0f1'} } 
 					) 
 				  break;
 				  case 'oval':
 					  this.addNode(
-					 {  "content": { "text": "New Elipse", font_color: {hexa: '#34495e'}, color: {hexa: '#ecf0f1'} }, "width": 100, "height": 60, "shape": "ellipse", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
+					 {   "text": "New Elipse" , "width": 100, "height": 60, "shape": "ellipse", "point": { "x": 9.999999999999993, "y": 34.31059443007615 }, font_color: {hexa: '#34495e'}, color: {hexa: '#ecf0f1'} } 
 					) 
 				  break;
 				  case 'text':
 					  this.addNode(
-					 {  "content": { "text": "New Text", font_color: {hexa: '#34495e'}, color: {hexa: '#ecf0f1'} }, "width": 100, "height": 35, "shape": "text", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
+					 { font_color: {hexa: '#34495e'}, color: {hexa: '#ecf0f1'},  "text": "New Text", "width": 100, "height": 35, "shape": "text", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
 					) 
 				  break;
 		  }
@@ -539,11 +539,11 @@ export default {
       this.graphData.nodes.push({
         id: this.generateID(),
         content: {
-          text: item.content.text,
+          text: item.text,
           url: item.content.url,
-          color: item.content.color,
-			font_color: item.content.font_color,
-			font_size: item.content.font_size
+          color: item.color,
+			font_color: item.font_color,
+			font_size: item.font_size
         },
         width: parseInt(item.width) || 150,
         height: parseInt(item.height) || 60,
@@ -559,11 +559,11 @@ export default {
     },
     openNodeEdit(item) {
       this.tmpNode.id = item.id;
-      this.tmpNode.content.text = item.content.text;
+      this.tmpNode.text = item.text;
       this.tmpNode.content.url = item.content.url;
-      this.tmpNode.content.color = item.content.color;
-		this.tmpNode.content.font_color = item.content.font_color;
-		this.tmpNode.content.font_size = item.content.font_size;
+      this.tmpNode.color = item.color;
+		this.tmpNode.font_color = item.font_color;
+		this.tmpNode.font_size = item.font_size;
       this.tmpNode.shape = item.shape;
       this.tmpNode.stroke = item.stroke;
       this.tmpNode.strokeWeight = item.strokeWeight;
@@ -578,11 +578,11 @@ export default {
     },
     editNode(item) {
       let tmp = this.graphData.nodes.find(x => x.id === item.id);
-      tmp.content.text = item.content.text;
+      tmp.text = item.text;
       tmp.content.url = item.content.url;
-      tmp.content.color = item.content.color;
-		tmp.content.font_color = item.content.font_color;
-		tmp.content.font_size = item.content.font_size;
+      tmp.color = item.color;
+		tmp.font_color = item.font_color;
+		tmp.font_size = item.font_size;
       tmp.shape = item.shape;
       tmp.stroke = item.stroke;
       tmp.strokeWeight = item.strokeWeight;
@@ -597,7 +597,7 @@ export default {
     },
     editLink(item) {
       let tmp = this.graphData.links.find(x => x.id === item.id);
-      tmp.color = item.content.color;
+      tmp.color = item.color;
       tmp.shape = item.content.shape;
       tmp.pattern = item.content.pattern;
       tmp.arrow = item.content.arrow;
