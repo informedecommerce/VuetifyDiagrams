@@ -128,21 +128,26 @@
           ></v-text-field>
 		  <v-text-field
             label="Text Size"
-					  hide-details
 						type="number"
-					  v-model="tmpNode.content.font_size"
-					  @change="editNode(tmpNode)"
+					  hide-details
+					  v-model="tmpNode.font_size"
+						@change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"
           ></v-text-field>
 		  <v-text-field
-            label="URl"
+            label="URL"
 					  hide-details
 					  v-model="tmpNode.content.url"
 						@change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"
           ></v-text-field>
-		  <v-color-picker :dark="$vuetify.theme.dark" mode="hexa" v-model="tmpNode.content.color"  @change="editNode(tmpNode)"
-						v-on:keyup="editNode(tmpNode)" hide-mode-switch ></v-color-picker>
+		  <v-menu :close-on-content-click="false">
+                      <template v-slot:activator="{ on }">
+                        <v-text-field  v-model="tmpNode.content.color" v-on="on" label="Color" @change="editNode(tmpNode)"
+						v-on:keyup="editNode(tmpNode)"></v-text-field>
+                      </template>
+                      <v-color-picker  mode="hexa" v-model="tmpNode.content.color" value="hex" hide-mode-switch ></v-color-picker>
+                    </v-menu>
 		  <v-text-field
             label="Stroke"
 						type="number"
@@ -406,6 +411,7 @@ export default {
 				{title: 'Rectangle',icon: 'mdi-shape-rectangle-plus',key: 'rectangle'},
 				{title: 'Circle',icon: 'mdi-shape-circle-plus',key: 'circle'},
 				{title: 'Elipse',icon: 'mdi-shape-oval-plus',key: 'elipse'},
+				{title: 'Text',icon: 'mdi-text',key: 'text'},
 			],
       name: "",
       url: "",
@@ -487,9 +493,14 @@ export default {
 					 { "content": { "text": "New Circle" }, "width": 60, "height": 60, "shape": "ellipse", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
 					) 
 				  break;
-				  case 'elipse':
+				  case 'oval':
 					  this.addNode(
 					 {  "content": { "text": "New Elipse" }, "width": 100, "height": 60, "shape": "ellipse", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
+					) 
+				  break;
+				  case 'text':
+					  this.addNode(
+					 { font_size: 20, "content": { "text": "New Text" }, "width": 100, "height": 60, "shape": "text", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
 					) 
 				  break;
 		  }

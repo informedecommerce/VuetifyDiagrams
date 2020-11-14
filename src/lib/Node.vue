@@ -75,7 +75,7 @@
       @touchend="mouseup"
     />
     <rect
-      v-else
+      v-else-if="node.shape === 'rectangle'"
       class="grab"
       :x="x"
       :y="y"
@@ -93,6 +93,18 @@
       @mouseup="mouseup"
       @touchend="mouseup"
     />
+	  <text
+		v-else-if="node.shape === 'text'"	
+			class="grab"
+        :x="x + node.width / 2"
+        :y="y + node.height / 2"
+        :fill="content.color && content.color.hexa ? content.color.hexa : '#34495e'"
+        font-family="Meiryo UI, sans-serif"
+        :font-size="font_size ? font_size : 20"
+        text-anchor="middle"
+      >
+        {{ content.text }}
+      </text>
     <a target="_blank" :href="content.url">
       <text
         :x="x + node.width / 2"
@@ -133,7 +145,8 @@ export default {
         default: "rectangle"
       },
       stroke: String,
-      strokeWeight: Number
+      strokeWeight: Number,
+		font_size: Number
     },
     editable: Boolean,
     createLinkMode: Boolean,

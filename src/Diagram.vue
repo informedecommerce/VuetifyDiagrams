@@ -55,6 +55,7 @@
           :rWidth="rect().rWidth"
           :rHeight="rect().rHeight"
           :scale="scale"
+			:font_size="item.font_size"
           @editNode="editNode"
           @click="clickNode"
           @select="selectNode"
