@@ -123,41 +123,54 @@
             label="Text"
 					  hide-details
 					  v-model="tmpNode.content.text"
+					  @change="editNode(tmpNode)"
+						v-on:keyup="editNode(tmpNode)"
           ></v-text-field>
 		  <v-text-field
             label="URl"
 					  hide-details
 					  v-model="tmpNode.content.url"
+						@change="editNode(tmpNode)"
+						v-on:keyup="editNode(tmpNode)"
           ></v-text-field>
 		  <v-menu :close-on-content-click="false">
                       <template v-slot:activator="{ on }">
                         <v-text-field :dark="$vuetify.theme.dark" v-model="tmpNode.content.color" v-on="on" label="Color"></v-text-field>
                       </template>
-                      <v-color-picker :dark="$vuetify.theme.dark" mode="hexa" v-model="tmpNode.content.color" hide-mode-switch></v-color-picker>
+                      <v-color-picker :dark="$vuetify.theme.dark" mode="hexa" v-model="tmpNode.content.color" hide-mode-switch @change="editNode(tmpNode)"
+						v-on:keyup="editNode(tmpNode)"></v-color-picker>
                     </v-menu>
 		  <v-text-field
             label="Stroke"
 						type="number"
 					  hide-details
 					  v-model="tmpNode.stroke"
+						@change="editNode(tmpNode)"
+						v-on:keyup="editNode(tmpNode)"
           ></v-text-field>
 		  <v-text-field
             label="Stroke Weight"
 						type="number"
 					  hide-details
 					  v-model="tmpNode.strokeWeight"
+						@change="editNode(tmpNode)"
+						v-on:keyup="editNode(tmpNode)"
           ></v-text-field>
 		  <v-text-field
             label="Width"
 						type="number"
 					  hide-details
 					  v-model="tmpNode.width"
+						@change="editNode(tmpNode)"
+						v-on:keyup="editNode(tmpNode)"
           ></v-text-field>
 		  <v-text-field
             label="Height"
 						type="number"
 					  hide-details
 					  v-model="tmpNode.height"
+						@change="editNode(tmpNode)"
+						v-on:keyup="editNode(tmpNode)"
           ></v-text-field>
       </v-expansion-panel-content>
     </v-expansion-panel>
