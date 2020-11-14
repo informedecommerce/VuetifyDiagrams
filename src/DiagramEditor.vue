@@ -142,8 +142,11 @@
           ></v-text-field>
 		  <v-menu :close-on-content-click="false">
                       <template v-slot:activator="{ on }">
+						  <!--
                         <v-text-field  v-model="tmpNode.font_color.hexa" v-on="on" label="Text Color" @change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"></v-text-field>
+-->
+						   <v-btn x-small v-on="on">Text Color</v-btn>
                       </template>
                       <v-color-picker  mode="hexa" v-model="tmpNode.font_color" value="hex" hide-mode-switch ></v-color-picker>
                     </v-menu>
@@ -156,10 +159,14 @@
           ></v-text-field>
 		  <v-menu :close-on-content-click="false">
                       <template v-slot:activator="{ on }">
+						  <!--
                         <v-text-field v-model="tmpNode.color.hexa" v-on="on" label="Color" @change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"></v-text-field>
+-->
+						  <v-btn x-small v-on="on">Item Color</v-btn>
                       </template>
-                      <v-color-picker  mode="hexa" v-model="tmpNode.color" value="hex" hide-mode-switch ></v-color-picker>
+                      <v-color-picker  mode="hexa" v-model="tmpNode.color" value="hex" hide-mode-switch @change="editNode(tmpNode)"
+						v-on:keyup="editNode(tmpNode)"></v-color-picker>
                     </v-menu>
 		  <v-text-field
             label="Stroke"
