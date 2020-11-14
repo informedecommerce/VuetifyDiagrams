@@ -41,7 +41,20 @@
       @ok="updateSettings"
       @cancel="cancel"
     >
-		<SettingsModal :settings="SettingsModal" />
+		<v-card>
+		<v-system-bar dark color="primary">
+      <v-spacer></v-spacer>
+      <v-icon>mdi-wifi-strength-4</v-icon>
+      <v-icon>mdi-signal-cellular-outline</v-icon>
+      <v-icon>mdi-battery</v-icon>
+      <span>12:30</span>
+    </v-system-bar>
+			<v-card-text>
+			should be here
+				<SettingsModal :settings="SettingsModal" />
+			</v-card-text>
+		</v-card>
+		
 		</v-dialog>
     <Diagram
       :width="graphData.width || 2000"
@@ -80,7 +93,7 @@ import EditNodeModal from "@/lib/EditNodeModal";
 import EditLinkModal from "@/lib/EditLinkModal";
 import InputModal from "@/lib/InputModal";
 import AskModal from "@/lib/AskModal";
-import SettingsModal from "./lib/SettingsModal";
+import SettingsModal from "@/lib/SettingsModal";
 export default {
   name: "DiagramEditor",
   components: {
