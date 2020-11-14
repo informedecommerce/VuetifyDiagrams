@@ -97,9 +97,9 @@
       <text
         :x="x + node.width / 2"
         :y="y + node.height / 2"
-        fill="#34495e"
+        :fill="content.color && content.color.hexa ? content.color.hexa : '#34495e'"
         font-family="Meiryo UI, sans-serif"
-        font-size="20"
+        :font-size="font_size ? font_size : 20"
         text-anchor="middle"
       >
         {{ content.text }}

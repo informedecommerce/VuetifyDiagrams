@@ -127,19 +127,20 @@
 						v-on:keyup="editNode(tmpNode)"
           ></v-text-field>
 		  <v-text-field
+            label="Text Size"
+					  hide-details
+					  v-model="tmpNode.content.font_size"
+					  @change="editNode(tmpNode)"
+						v-on:keyup="editNode(tmpNode)"
+          ></v-text-field>
+		  <v-text-field
             label="URl"
 					  hide-details
 					  v-model="tmpNode.content.url"
 						@change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"
           ></v-text-field>
-		  <v-menu :close-on-content-click="false">
-                      <template v-slot:activator="{ on }">
-                        <v-text-field :dark="$vuetify.theme.dark" v-model="tmpNode.content.color" v-on="on" label="Color" @change="editNode(tmpNode)"
-						v-on:keyup="editNode(tmpNode)"></v-text-field>
-                      </template>
-                      <v-color-picker :dark="$vuetify.theme.dark" mode="hexa" v-model="tmpNode.content.color" value="hex" hide-mode-switch ></v-color-picker>
-                    </v-menu>
+		  <v-color-picker :dark="$vuetify.theme.dark" mode="hexa" v-model="tmpNode.content.color" value="hexa" hide-mode-switch ></v-color-picker>
 		  <v-text-field
             label="Stroke"
 						type="number"
@@ -484,7 +485,7 @@ export default {
 					 { "content": { "text": "New Circle" }, "width": 60, "height": 60, "shape": "ellipse", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
 					) 
 				  break;
-				  case 'oval':
+				  case 'elipse':
 					  this.addNode(
 					 {  "content": { "text": "New Elipse" }, "width": 100, "height": 60, "shape": "ellipse", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
 					) 
