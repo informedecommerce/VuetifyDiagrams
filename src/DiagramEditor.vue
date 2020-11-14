@@ -112,7 +112,7 @@
             <v-icon color="info">mdi-pencil</v-icon>
           </template>
 				</v-expansion-panel-header>
-      <v-expansion-panel-content>
+      <v-expansion-panel-content v-if="tmpNode">
 		  <!--
  this.tmpNode.id = item.id;
       this.tmpNode.text = item.text;
