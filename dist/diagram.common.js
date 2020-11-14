@@ -2941,15 +2941,14 @@ var AskModal_component = normalizeComponent(
 )
 
 /* harmony default export */ var AskModal = (AskModal_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"933817ec-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib/SettingsModal.vue?vue&type=template&id=167ec289&
-var SettingsModalvue_type_template_id_167ec289_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('h2',[_vm._v("Settings")]),_c('h3',[_vm._v("Field Size")]),_c('label',[_vm._v("Width")]),_c('v-text-field',{attrs:{"type":"number"},model:{value:(_vm.newSettings.width),callback:function ($$v) {_vm.$set(_vm.newSettings, "width", $$v)},expression:"newSettings.width"}}),_c('label',[_vm._v("Height")]),_c('v-text-field',{attrs:{"type":"number"},model:{value:(_vm.newSettings.height),callback:function ($$v) {_vm.$set(_vm.newSettings, "height", $$v)},expression:"newSettings.height"}}),_c('br'),_c('h3',[_vm._v("Scale")]),_c('v-select',{attrs:{"lebel":"Scale","return-object":false,"items":_vm.size_options,"item-text":"text","item-value":"value"},model:{value:(_vm.newSettings.scale),callback:function ($$v) {_vm.$set(_vm.newSettings, "scale", $$v)},expression:"newSettings.scale"}}),_c('h3',[_vm._v("Fluid")]),_c('v-switch',{attrs:{"label":"Toggle fluid"},model:{value:(_vm.newSettings.isFluid),callback:function ($$v) {_vm.$set(_vm.newSettings, "isFluid", $$v)},expression:"newSettings.isFluid"}}),_c('h3',[_vm._v("Background")]),_c('v-switch',{attrs:{"label":"Show grid"},model:{value:(_vm.newSettings.showGrid),callback:function ($$v) {_vm.$set(_vm.newSettings, "showGrid", $$v)},expression:"newSettings.showGrid"}}),_c('v-btn',{on:{"click":_vm.ok}},[_vm._v("OK")]),_c('v-btn',{staticClass:"danger",on:{"click":_vm.cancel}},[_vm._v("Cancel")])],1)}
-var SettingsModalvue_type_template_id_167ec289_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"933817ec-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib/SettingsModal.vue?vue&type=template&id=6f75bc98&
+var SettingsModalvue_type_template_id_6f75bc98_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('h2',[_vm._v("Settings")]),_c('h3',[_vm._v("Field Size")]),_c('label',[_vm._v("Width")]),_c('v-text-field',{attrs:{"type":"number"},model:{value:(_vm.newSettings.width),callback:function ($$v) {_vm.$set(_vm.newSettings, "width", $$v)},expression:"newSettings.width"}}),_c('label',[_vm._v("Height")]),_c('v-text-field',{attrs:{"type":"number"},model:{value:(_vm.newSettings.height),callback:function ($$v) {_vm.$set(_vm.newSettings, "height", $$v)},expression:"newSettings.height"}}),_c('br'),_c('h3',[_vm._v("Scale")]),_c('v-select',{attrs:{"lebel":"Scale","return-object":false,"items":_vm.size_options,"item-text":"text","item-value":"value"},model:{value:(_vm.newSettings.scale),callback:function ($$v) {_vm.$set(_vm.newSettings, "scale", $$v)},expression:"newSettings.scale"}}),_c('h3',[_vm._v("Fluid")]),_c('v-switch',{attrs:{"label":"Toggle fluid"},model:{value:(_vm.newSettings.isFluid),callback:function ($$v) {_vm.$set(_vm.newSettings, "isFluid", $$v)},expression:"newSettings.isFluid"}}),_c('h3',[_vm._v("Background")]),_c('v-switch',{attrs:{"label":"Show grid"},model:{value:(_vm.newSettings.showGrid),callback:function ($$v) {_vm.$set(_vm.newSettings, "showGrid", $$v)},expression:"newSettings.showGrid"}}),_c('v-btn',{on:{"click":_vm.ok}},[_vm._v("OK")]),_c('v-btn',{staticClass:"danger",on:{"click":_vm.cancel}},[_vm._v("Cancel")])],1)}
+var SettingsModalvue_type_template_id_6f75bc98_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/lib/SettingsModal.vue?vue&type=template&id=167ec289&
+// CONCATENATED MODULE: ./src/lib/SettingsModal.vue?vue&type=template&id=6f75bc98&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib/SettingsModal.vue?vue&type=script&lang=js&
-
 //
 //
 //
@@ -2997,7 +2996,7 @@ var SettingsModalvue_type_template_id_167ec289_staticRenderFns = []
   watch: {
     isActive: function isActive(val) {
       if (val) {
-        this.newSettings = Object.assign({}, this.settings);
+        this.newSettings = JSON.parse(JSON.stringify(this.settings));
       }
     }
   },
@@ -3044,8 +3043,8 @@ var SettingsModalvue_type_template_id_167ec289_staticRenderFns = []
 
 var SettingsModal_component = normalizeComponent(
   lib_SettingsModalvue_type_script_lang_js_,
-  SettingsModalvue_type_template_id_167ec289_render,
-  SettingsModalvue_type_template_id_167ec289_staticRenderFns,
+  SettingsModalvue_type_template_id_6f75bc98_render,
+  SettingsModalvue_type_template_id_6f75bc98_staticRenderFns,
   false,
   null,
   null,

@@ -46,7 +46,7 @@ export default {
   watch: {
     isActive(val) {
       if (val) {
-        this.newSettings = Object.assign({}, this.settings);
+        this.newSettings = JSON.parse(JSON.stringify(this.settings));
       }
     }
   },
