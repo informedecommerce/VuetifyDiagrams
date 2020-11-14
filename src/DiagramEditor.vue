@@ -101,69 +101,25 @@
 		</v-navigation-drawer>
 	  
 	  <v-layout wrap>
-	<v-flex xs2>	
-		
-		
+	<v-flex xs2 style="max-height: calc(100vh - 200px); overflow: auto">	
+		<v-expansion-panels multiple>
+			<v-expansion-panel v-if="editable">
+      <v-expansion-panel-header>Edit</v-expansion-panel-header>
+      <v-expansion-panel-content>
+        Editor for selected item here
+      </v-expansion-panel-content>
+    </v-expansion-panel>
+    <v-expansion-panel v-if="editable">
+      <v-expansion-panel-header>Add</v-expansion-panel-header>
+      <v-expansion-panel-content>
+        <v-btn icon v-for="(item,index) in diagram_items" @click="diagramAdd(item.key)" :key="'shape-'+index"><v-icon>{{item.icon}}</v-icon></v-btn>
+      </v-expansion-panel-content>
+    </v-expansion-panel>
 			
-      <v-list-item v-if="can_edit" @click="editable = !editable">
-		  <v-list-item-icon>
-            <v-icon>mdi-pencil</v-icon>
-          </v-list-item-icon>
-        <v-list-item-content>
-          <v-list-item-subtitle>
-            {{editable ? 'End Edit' : 'Edit'}}
-          </v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
-				<v-divider />
-			<div v-if="editable">
-			<v-list-item >
-        <v-list-item-content>
-          <v-list-item-title class="title">
-            Add
-          </v-list-item-title>
-          <v-list-item-subtitle>
-            Quick add Items
-          </v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
-
-      <v-divider></v-divider>
-<v-btn icon v-for="(item,index) in diagram_items" @click="diagramAdd(item.key)" :key="'shape-'+index"><v-icon>{{item.icon}}</v-icon></v-btn>
-     <!--
-			<v-list
-        dense
-        nav
-      >
-        <v-list-item
-          v-for="item in diagram_items"
-          :key="item.title"
-          link
-					 @click="diagramAdd(item.key)"
-        >
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
-
-          <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-			-->
-			<v-divider />
-			</div>
-			<v-list-item >
-        <v-list-item-content>
-          <v-list-item-title class="title">
-            Settings
-          </v-list-item-title>
-          <v-list-item-subtitle>
-            Quick Settings
-          </v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
-			 <v-list
+		<v-expansion-panel>
+      <v-expansion-panel-header>Settings</v-expansion-panel-header>
+      <v-expansion-panel-content>
+         <v-list
         dense
         nav
       >
@@ -213,6 +169,70 @@
           </v-list-item-content>
         </v-list-item>	
       </v-list>
+      </v-expansion-panel-content>
+    </v-expansion-panel>
+  </v-expansion-panels>
+		
+			
+      <v-list-item v-if="can_edit" @click="editable = !editable">
+		  <v-list-item-icon>
+            <v-icon>mdi-pencil</v-icon>
+          </v-list-item-icon>
+        <v-list-item-content>
+          <v-list-item-subtitle>
+            {{editable ? 'End Edit' : 'Edit'}}
+          </v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+				<v-divider />
+			<div >
+			<v-list-item >
+        <v-list-item-content>
+          <v-list-item-title class="title">
+            Add
+          </v-list-item-title>
+          <v-list-item-subtitle>
+            Quick add Items
+          </v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+
+      <v-divider></v-divider>
+<v-btn icon v-for="(item,index) in diagram_items" @click="diagramAdd(item.key)" :key="'shape-'+index"><v-icon>{{item.icon}}</v-icon></v-btn>
+     <!--
+			<v-list
+        dense
+        nav
+      >
+        <v-list-item
+          v-for="item in diagram_items"
+          :key="item.title"
+          link
+					 @click="diagramAdd(item.key)"
+        >
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+			-->
+			<v-divider />
+			</div>
+			<v-list-item >
+        <v-list-item-content>
+          <v-list-item-title class="title">
+            Settings
+          </v-list-item-title>
+          <v-list-item-subtitle>
+            Quick Settings
+          </v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+			
 	</v-flex>
 		 <v-flex xs10 style="max-height: calc(100vh - 200px);max-width: calc(100vw - 500);overflow: auto">
     <Diagram
