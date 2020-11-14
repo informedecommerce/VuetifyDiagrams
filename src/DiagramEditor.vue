@@ -253,22 +253,22 @@ export default {
 		  switch(item){
 			  case 'square':
 				  this.addNode(
-					 { "id": Random.id(), "content": { "text": "New Square" }, "width": 60, "height": 60, "shape": "rectangle", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
+					 { "content": { "text": "New Square" }, "width": 60, "height": 60, "shape": "rectangle", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
 					) 
 					  break;
 					  case 'rectangle':
 					  this.addNode(
-					 { "id": Random.id(), "content": { "text": "New Rectangle" }, "width": 100, "height": 60, "shape": "rectangle", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
+					 {  "content": { "text": "New Rectangle" }, "width": 100, "height": 60, "shape": "rectangle", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
 					) 
 				  break;
 				  case 'circle':
 					  this.addNode(
-					 { "id": Random.id(), "content": { "text": "New Circle" }, "width": 60, "height": 60, "shape": "ellipse", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
+					 { "content": { "text": "New Circle" }, "width": 60, "height": 60, "shape": "ellipse", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
 					) 
 				  break;
 				  case 'oval':
 					  this.addNode(
-					 { "id": Random.id(), "content": { "text": "New Elipse" }, "width": 100, "height": 60, "shape": "ellipse", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
+					 {  "content": { "text": "New Elipse" }, "width": 100, "height": 60, "shape": "ellipse", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
 					) 
 				  break;
 		  }
