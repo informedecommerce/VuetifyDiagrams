@@ -1,5 +1,5 @@
 <template>
-  <div id="editor">
+  <div id="editor" class="diagram">
     <v-btn v-if="!editable" @click="editable = true">Edit</v-btn>
     <span v-else>
       <v-btn @click="openModal">New Node</v-btn>
@@ -103,7 +103,7 @@
 	  <v-layout wrap>
 	<v-flex xs2>	
 		
-		<v-navigation-drawer permanent>
+		
 			
       <v-list-item v-if="can_edit" @click="editable = !editable">
 		  <v-list-item-icon>
@@ -213,7 +213,6 @@
           </v-list-item-content>
         </v-list-item>	
       </v-list>
-    </v-navigation-drawer>
 	</v-flex>
 		 <v-flex xs10 style="max-height: calc(100vh - 200px);max-width: calc(100vw - 500);overflow: auto">
     <Diagram
