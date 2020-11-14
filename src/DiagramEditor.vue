@@ -49,6 +49,72 @@
 		</v-card>
 		
 		</v-navigation-drawer>
+	  
+	  <v-layout wrap>
+	<v-flex xs2>	
+		
+		<v-navigation-drawer permanent>
+      <v-list-item >
+        <v-list-item-content>
+          <v-list-item-title class="title">
+            Add
+          </v-list-item-title>
+          <v-list-item-subtitle>
+            Quick add Items
+          </v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+
+      <v-divider></v-divider>
+
+      <v-list
+        dense
+        nav
+      >
+        <v-list-item
+          v-for="item in diagram_items"
+          :key="item.title"
+          link
+					 @click="diagramAdd(item.key)"
+        >
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+			
+			<v-divider />
+			<v-list-item >
+        <v-list-item-content>
+          <v-list-item-title class="title">
+            Settings
+          </v-list-item-title>
+          <v-list-item-subtitle>
+            Quick Settings
+          </v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+			 <v-list
+        dense
+        nav
+      >
+        <v-list-item @click="diagram.showGrid = !diagram.showGrid">
+          <v-list-item-icon>
+            <v-icon>mdi-grid</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>Toggle Grid</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+	</v-flex>
+		 <v-flex xs10>
     <Diagram
       :width="graphData.width || 2000"
       :height="graphData.height || 1000"
@@ -77,6 +143,10 @@
       @linkChanged="linkChanged"
     >
     </Diagram>
+			 			 
+	</v-flex>
+	
+		 </v-layout>
   </div>
 </template>
 
@@ -133,6 +203,12 @@ export default {
   },
   data() {
     return {
+		diagram_items: [
+				{title: 'Square',icon: 'mdi-shape-square-plus',key: 'square'},
+				{title: 'Rectangle',icon: 'mdi-shape-rectangle-plus',key: 'rectangle'},
+				{title: 'Circle',icon: 'mdi-shape-circle-plus',key: 'circle'},
+				{title: 'Elipse',icon: 'mdi-shape-oval-plus',key: 'elipse'},
+			],
       name: "",
       url: "",
       color: "",
@@ -173,6 +249,31 @@ export default {
     };
   },
   methods: {
+	   diagramAdd(item){
+		  switch(item){
+			  case 'square':
+				  this.addNode(
+					 { "id": Random.id(), "content": { "text": "New Square" }, "width": 60, "height": 60, "shape": "rectangle", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
+					) 
+					  break;
+					  case 'rectangle':
+					  this.addNode(
+					 { "id": Random.id(), "content": { "text": "New Rectangle" }, "width": 100, "height": 60, "shape": "rectangle", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
+					) 
+				  break;
+				  case 'circle':
+					  this.addNode(
+					 { "id": Random.id(), "content": { "text": "New Circle" }, "width": 60, "height": 60, "shape": "ellipse", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
+					) 
+				  break;
+				  case 'oval':
+					  this.addNode(
+					 { "id": Random.id(), "content": { "text": "New Elipse" }, "width": 100, "height": 60, "shape": "ellipse", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
+					) 
+				  break;
+		  }
+		 
+	  },
     clearDiagram() {
       this.graphData.nodes = [];
       this.graphData.links = [];
