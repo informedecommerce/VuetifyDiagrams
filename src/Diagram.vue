@@ -276,7 +276,7 @@ export default {
           text: node.content.text,
           color: node.content.color,
 			font_color: node.content.font_color,
-			font_size: node.content.font_size
+			font_size: node.content.font_size,
           url: node.content.url
         },
         width: node.width,
