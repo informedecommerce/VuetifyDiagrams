@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="isActive" @clickModal="cancel">
+  
     <transition name="item">
       <div class="form" v-if="isActive">
         <v-textfield v-model="newNode.content.text" placeholder="name" /><br />
@@ -33,7 +33,7 @@
         <v-btn class="danger" @click="cancel">Cancel</v-btn>
       </div>
     </transition>
-  </v-dialog>
+
 </template>
 <script>
 export default {

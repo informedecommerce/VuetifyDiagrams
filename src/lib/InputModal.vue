@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="isActive" @clickModal="cancel">
+ 
     <div>
       <textarea
         class="input"
@@ -11,7 +11,7 @@
       <v-btn @click="ok">OK</v-btn>
       <v-btn class="danger" @click="cancel">Cancel</v-btn>
     </div>
-  </v-dialog>
+  
 </template>
 <script>
 export default {

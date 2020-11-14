@@ -33,30 +33,59 @@
         </v-list-item-content>
       </v-list-item>
     </v-navigation-drawer>
+	  
+	  <v-navigation-drawer
+      v-model="isModalActive"
+      absolute
+      temporary
+							  right
+    > 
     <EditNodeModal
       :node="{ content: {} }"
-      v-model="isModalActive"
       @ok="addNode"
       @cancel="cancel"
     />
+		  </v-navigation-drawer>
+	  
+	  <v-navigation-drawer
+      v-model="isEditModalActive"
+      absolute
+      temporary
+							  right
+    > 
     <EditNodeModal
       :node="tmpNode"
-      v-model="isEditModalActive"
       @ok="editNode"
       @cancel="cancel"
     />
+		  </v-navigation-drawer>
+	  
+	  <v-navigation-drawer
+      v-model="isEditLinkModalActive"
+      absolute
+      temporary
+							  right
+    > 
     <EditLinkModal
       :link="tmpLink"
-      v-model="isEditLinkModalActive"
       @ok="editLink"
       @cancel="cancel"
     />
+		  </v-navigation-drawer>
+	  
+	  <v-navigation-drawer
+      v-model="isInputModalActive"
+      absolute
+      temporary
+							  right
+    > 
     <InputModal
       :text="json"
-      v-model="isInputModalActive"
       @ok="importData"
       @cancel="cancel"
     />
+		  </v-navigation-drawer>
+	  
     <v-navigation-drawer
       v-model="isSettingsModalActive"
       absolute
