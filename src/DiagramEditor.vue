@@ -177,9 +177,18 @@
             <v-list-item-title>Clear Diagram</v-list-item-title>
           </v-list-item-content>
         </v-list-item>	
+				 <v-list-item @click="openInputModal">
+          <v-list-item-icon>
+            <v-icon>mdi-swap-vertical</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>Import/Export</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>	
 				 <v-list-item @click="save()">
           <v-list-item-icon>
-            <v-icon>mdi-nuke</v-icon>
+            <v-icon>mdi-content-save</v-icon>
           </v-list-item-icon>
 
           <v-list-item-content>
