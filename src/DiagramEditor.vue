@@ -107,7 +107,58 @@
 			<v-expansion-panel v-if="editable">
       <v-expansion-panel-header>Edit</v-expansion-panel-header>
       <v-expansion-panel-content>
-        Editor for selected item here
+		  <!--
+ this.tmpNode.id = item.id;
+      this.tmpNode.content.text = item.content.text;
+      this.tmpNode.content.url = item.content.url;
+      this.tmpNode.content.color = item.content.color;
+      this.tmpNode.shape = item.shape;
+      this.tmpNode.stroke = item.stroke;
+      this.tmpNode.strokeWeight = item.strokeWeight;
+      this.tmpNode.width = item.width;
+      this.tmpNode.height = item.height;
+      this.isModalActive = false;
+-->
+        <v-text-field
+            label="Text"
+					  hide-details
+					  v-model="tmpNode.content.text"
+          ></v-text-field>
+		  <v-text-field
+            label="URl"
+					  hide-details
+					  v-model="tmpNode.content.url"
+          ></v-text-field>
+		  <v-menu :close-on-content-click="false">
+                      <template v-slot:activator="{ on }">
+                        <v-text-field :dark="$vuetify.theme.dark" v-model="tmpNode.content.color" v-on="on" label="Color"></v-text-field>
+                      </template>
+                      <v-color-picker :dark="$vuetify.theme.dark" mode="hexa" v-model="tmpNode.content.color" hide-mode-switch></v-color-picker>
+                    </v-menu>
+		  <v-text-field
+            label="Stroke"
+						type="number"
+					  hide-details
+					  v-model="tmpNode.stroke"
+          ></v-text-field>
+		  <v-text-field
+            label="Stroke Weight"
+						type="number"
+					  hide-details
+					  v-model="tmpNode.strokeWeight"
+          ></v-text-field>
+		  <v-text-field
+            label="Width"
+						type="number"
+					  hide-details
+					  v-model="tmpNode.width"
+          ></v-text-field>
+		  <v-text-field
+            label="Height"
+						type="number"
+					  hide-details
+					  v-model="tmpNode.height"
+          ></v-text-field>
       </v-expansion-panel-content>
     </v-expansion-panel>
     <v-expansion-panel v-if="editable">
@@ -482,7 +533,10 @@ export default {
       this.tmpNode.height = item.height;
       this.isModalActive = false;
       //this.isEditModalActive = true;
-		this.panel.push(1)
+		if(!this.panel.includes(1)){
+			this.panel.push(1)
+		}
+		
     },
     editNode(item) {
       let tmp = this.graphData.nodes.find(x => x.id === item.id);
