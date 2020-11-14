@@ -134,6 +134,13 @@
 						@change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"
           ></v-text-field>
+		  <v-menu :close-on-content-click="false">
+                      <template v-slot:activator="{ on }">
+                        <v-text-field  v-model="tmpNode.content.font_color.hexa" v-on="on" label="Color" @change="editNode(tmpNode)"
+						v-on:keyup="editNode(tmpNode)"></v-text-field>
+                      </template>
+                      <v-color-picker  mode="hexa" v-model="tmpNode.content.font_color" value="hex" hide-mode-switch ></v-color-picker>
+                    </v-menu>
 		  <v-text-field
             label="URL"
 					  hide-details
@@ -143,7 +150,7 @@
           ></v-text-field>
 		  <v-menu :close-on-content-click="false">
                       <template v-slot:activator="{ on }">
-                        <v-text-field  v-model="tmpNode.content.color" v-on="on" label="Color" @change="editNode(tmpNode)"
+                        <v-text-field v-model="tmpNode.content.color.hexa" v-on="on" label="Color" @change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"></v-text-field>
                       </template>
                       <v-color-picker  mode="hexa" v-model="tmpNode.content.color" value="hex" hide-mode-switch ></v-color-picker>
@@ -500,7 +507,7 @@ export default {
 				  break;
 				  case 'text':
 					  this.addNode(
-					 { font_size: 20, "content": { "text": "New Text" }, "width": 100, "height": 60, "shape": "text", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
+					 {  "content": { "text": "New Text" }, "width": 100, "height": 35, "shape": "text", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
 					) 
 				  break;
 		  }

@@ -93,25 +93,33 @@
       @mouseup="mouseup"
       @touchend="mouseup"
     />
-	  <text
-		v-else-if="node.shape === 'text'"	
-			class="grab"
-        :x="x + node.width / 2"
-        :y="y + node.height / 2"
-        :fill="content.color && content.color.hexa ? content.color.hexa : '#34495e'"
-        font-family="Meiryo UI, sans-serif"
-        :font-size="font_size ? font_size : 20"
-        text-anchor="middle"
-      >
-        {{ content.text }}
-      </text>
-    <a target="_blank" :href="content.url">
+	  <rect
+      v-else-if="node.shape === 'text'"
+      class="grab"
+      :x="x"
+      :y="y"
+      :width="node.width"
+      :height="node.height"
+			:font-size="node.font_size"
+      rx="5"
+      ry="3"
+      fill="#FF000000"
+      :stroke-width="node.strokeWeight"
+      :stroke="node.stroke"
+      @touchstart="mousedown"
+      @mousedown="mousedown"
+      @mousemove="mousemove"
+      @touchmove="mousemove"
+      @mouseup="mouseup"
+      @touchend="mouseup"
+    />
+	  <a target="_blank" :href="content.url">
       <text
         :x="x + node.width / 2"
         :y="y + node.height / 2"
-        :fill="content.color && content.color.hexa ? content.color.hexa : '#34495e'"
+        :fill="content.font_color && content.font_color.hexa ? content.font_color.hexa : '#34495e'"
         font-family="Meiryo UI, sans-serif"
-        :font-size="font_size ? font_size : 20"
+        :font-size="content.font_size ? content.font_size : 20"
         text-anchor="middle"
       >
         {{ content.text }}
