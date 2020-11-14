@@ -110,7 +110,7 @@
 		  <!--
  this.tmpNode.id = item.id;
       this.tmpNode.text = item.text;
-      this.tmpNode.content.url = item.content.url;
+      this.tmpNode.url = item.url;
       this.tmpNode.color = item.color;
       this.tmpNode.shape = item.shape;
       this.tmpNode.stroke = item.stroke;
@@ -144,7 +144,7 @@
 		  <v-text-field
             label="URL"
 					  hide-details
-					  v-model="tmpNode.content.url"
+					  v-model="tmpNode.url"
 						@change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"
           ></v-text-field>
@@ -540,7 +540,7 @@ export default {
         id: this.generateID(),
         content: {
           text: item.text,
-          url: item.content.url,
+          url: item.url,
           color: item.color,
 			font_color: item.font_color,
 			font_size: item.font_size
@@ -560,7 +560,7 @@ export default {
     openNodeEdit(item) {
       this.tmpNode.id = item.id;
       this.tmpNode.text = item.text;
-      this.tmpNode.content.url = item.content.url;
+      this.tmpNode.url = item.url;
       this.tmpNode.color = item.color;
 		this.tmpNode.font_color = item.font_color;
 		this.tmpNode.font_size = item.font_size;
@@ -579,7 +579,7 @@ export default {
     editNode(item) {
       let tmp = this.graphData.nodes.find(x => x.id === item.id);
       tmp.text = item.text;
-      tmp.content.url = item.content.url;
+      tmp.url = item.url;
       tmp.color = item.color;
 		tmp.font_color = item.font_color;
 		tmp.font_size = item.font_size;

@@ -113,7 +113,7 @@
       @mouseup="mouseup"
       @touchend="mouseup"
     />
-	  <a target="_blank" :href="content.url">
+	  <a target="_blank" :href="url">
       <text
         :x="x + node.width / 2"
         :y="y + node.height / 2"
