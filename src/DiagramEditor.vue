@@ -104,7 +104,7 @@
 	<v-flex xs2>	
 		
 		<v-navigation-drawer permanent>
-			<div v-if="editable">
+			
       <v-list-item v-if="can_edit" @click="editable = !editable">
 		  <v-list-item-icon>
             <v-icon>mdi-pencil</v-icon>
@@ -116,6 +116,7 @@
         </v-list-item-content>
       </v-list-item>
 				<v-divider />
+			<div v-if="editable">
 			<v-list-item >
         <v-list-item-content>
           <v-list-item-title class="title">
