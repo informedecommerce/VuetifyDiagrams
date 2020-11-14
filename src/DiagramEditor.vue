@@ -44,7 +44,7 @@
     >
 		<v-card>
 			<v-card-text>
-				<SettingsModal :settings="SettingsModal" v-on:ok="updateSettings" v-on:cancel="isSettingsModalActive = !isSettingsModalActive"/>
+				<SettingsModal :settings="SettingsModal" v-on:ok="" v-on:cancel=""/>
 			</v-card-text>
 		</v-card>
 		
