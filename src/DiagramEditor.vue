@@ -421,7 +421,13 @@ export default {
 	watch: {
 		value(val){
 			this.init()
-		}
+		},
+		'tmpNode.color'(val){
+			this.editNode(this.tmpNode)
+		},
+		'tmpNode.font_color'(val){
+			this.editNode(this.tmpNode)
+		},
 	},
   computed: {
     graphData: {
