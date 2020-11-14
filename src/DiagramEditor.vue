@@ -142,7 +142,7 @@
           ></v-text-field>
 		  <v-menu :close-on-content-click="false">
                       <template v-slot:activator="{ on }">
-                        <v-text-field  v-model="tmpNode.font_color.hexa" v-on="on" label="Color" @change="editNode(tmpNode)"
+                        <v-text-field  v-model="tmpNode.font_color.hexa" v-on="on" label="Text Color" @change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"></v-text-field>
                       </template>
                       <v-color-picker  mode="hexa" v-model="tmpNode.font_color" value="hex" hide-mode-switch ></v-color-picker>
@@ -554,13 +554,11 @@ export default {
     addNode(item) {
       this.graphData.nodes.push({
         id: this.generateID(),
-        content: {
-          text: item.text,
+		  text: item.text,
           url: item.url,
           color: item.color,
 			font_color: item.font_color,
-			font_size: item.font_size
-        },
+			font_size: item.font_size,
         width: parseInt(item.width) || 150,
         height: parseInt(item.height) || 60,
         stroke: item.stroke,
