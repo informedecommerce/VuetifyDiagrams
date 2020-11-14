@@ -2681,8 +2681,8 @@ var Diagram_component = normalizeComponent(
 )
 
 /* harmony default export */ var Diagram = (Diagram_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"933817ec-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/DiagramEditor.vue?vue&type=template&id=a8d545b6&
-var DiagramEditorvue_type_template_id_a8d545b6_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"diagram",attrs:{"id":"editor"}},[(!_vm.editable)?_c('v-btn',{on:{"click":function($event){_vm.editable = true}}},[_vm._v("Edit")]):_c('span',[_c('v-btn',{on:{"click":_vm.openModal}},[_vm._v("New Node")]),_c('v-btn',{on:{"click":_vm.endEdit}},[_vm._v("End")])],1),_c('v-btn',{on:{"click":_vm.openInputModal}},[_vm._v("Import/Export")]),_c('v-btn',{on:{"click":_vm.downloadSVG}},[_vm._v("Download SVG")]),_c('v-btn',{on:{"click":function($event){_vm.isAskClearDiagram = true}}},[_vm._v("Clear Diagram")]),_c('v-btn',{on:{"click":_vm.openSettingsModal}},[_vm._v("Settings")]),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isAskClearDiagram),callback:function ($$v) {_vm.isAskClearDiagram=$$v},expression:"isAskClearDiagram"}},[_c('v-card-text',[_vm._v("\n\t\tDo you wanna clear the Diagram?\n\t\t  ")]),_c('v-list-item',{attrs:{"color":"red"},on:{"click":function($event){return _vm.clearDiagram()}}},[_c('v-list-item-content',[_c('v-list-item-title',{staticClass:"title"},[_vm._v("\n            Yes\n          ")])],1)],1),_c('v-list-item',{attrs:{"color":"green"},on:{"click":function($event){_vm.isAskClearDiagram = false}}},[_c('v-list-item-content',[_c('v-list-item-title',{staticClass:"title"},[_vm._v("\n            No\n          ")])],1)],1)],1),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isModalActive),callback:function ($$v) {_vm.isModalActive=$$v},expression:"isModalActive"}},[_c('EditNodeModal',{attrs:{"node":{ content: {} }},on:{"ok":_vm.addNode,"cancel":_vm.cancel}})],1),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isEditModalActive),callback:function ($$v) {_vm.isEditModalActive=$$v},expression:"isEditModalActive"}},[_c('EditNodeModal',{attrs:{"node":_vm.tmpNode},on:{"ok":_vm.editNode,"cancel":_vm.cancel}})],1),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isEditLinkModalActive),callback:function ($$v) {_vm.isEditLinkModalActive=$$v},expression:"isEditLinkModalActive"}},[_c('EditLinkModal',{attrs:{"link":_vm.tmpLink},on:{"ok":_vm.editLink,"cancel":_vm.cancel}})],1),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isInputModalActive),callback:function ($$v) {_vm.isInputModalActive=$$v},expression:"isInputModalActive"}},[_c('InputModal',{attrs:{"text":_vm.json},on:{"ok":_vm.importData,"cancel":_vm.cancel}})],1),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isSettingsModalActive),callback:function ($$v) {_vm.isSettingsModalActive=$$v},expression:"isSettingsModalActive"}},[_c('v-card',[_c('v-card-text',[_c('SettingsModal',{attrs:{"settings":_vm.settings},on:{"ok":_vm.updateSettings,"cancel":function($event){_vm.isSettingsModalActive = false}}})],1)],1)],1),_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{staticStyle:{"height":"calc(100vh - 200px)","overflow":"auto"},attrs:{"xs2":""}},[_vm._v("\t\n\t\t"+_vm._s(_vm.panel)+"\n\t\t"),_c('v-expansion-panels',{attrs:{"multiple":""},model:{value:(_vm.panel),callback:function ($$v) {_vm.panel=$$v},expression:"panel"}},[(_vm.editable)?_c('v-expansion-panel',[_c('v-expansion-panel-header',[_vm._v("Edit")]),_c('v-expansion-panel-content',[_c('v-text-field',{attrs:{"label":"Text","hide-details":""},on:{"change":function($event){return _vm.editNode(_vm.tmpNode)},"keyup":function($event){return _vm.editNode(_vm.tmpNode)}},model:{value:(_vm.tmpNode.content.text),callback:function ($$v) {_vm.$set(_vm.tmpNode.content, "text", $$v)},expression:"tmpNode.content.text"}}),_c('v-text-field',{attrs:{"label":"Text Size","type":"number","hide-details":""},on:{"change":function($event){return _vm.editNode(_vm.tmpNode)},"keyup":function($event){return _vm.editNode(_vm.tmpNode)}},model:{value:(_vm.tmpNode.font_size),callback:function ($$v) {_vm.$set(_vm.tmpNode, "font_size", $$v)},expression:"tmpNode.font_size"}}),_c('v-menu',{attrs:{"close-on-content-click":false},scopedSlots:_vm._u([{key:"activator",fn:function(ref){
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"933817ec-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/DiagramEditor.vue?vue&type=template&id=5a664648&
+var DiagramEditorvue_type_template_id_5a664648_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"diagram",attrs:{"id":"editor"}},[(!_vm.editable)?_c('v-btn',{on:{"click":function($event){_vm.editable = true}}},[_vm._v("Edit")]):_c('span',[_c('v-btn',{on:{"click":_vm.openModal}},[_vm._v("New Node")]),_c('v-btn',{on:{"click":_vm.endEdit}},[_vm._v("End")])],1),_c('v-btn',{on:{"click":_vm.openInputModal}},[_vm._v("Import/Export")]),_c('v-btn',{on:{"click":_vm.downloadSVG}},[_vm._v("Download SVG")]),_c('v-btn',{on:{"click":function($event){_vm.isAskClearDiagram = true}}},[_vm._v("Clear Diagram")]),_c('v-btn',{on:{"click":_vm.openSettingsModal}},[_vm._v("Settings")]),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isAskClearDiagram),callback:function ($$v) {_vm.isAskClearDiagram=$$v},expression:"isAskClearDiagram"}},[_c('v-card-text',[_vm._v("\n\t\tDo you wanna clear the Diagram?\n\t\t  ")]),_c('v-list-item',{attrs:{"color":"red"},on:{"click":function($event){return _vm.clearDiagram()}}},[_c('v-list-item-content',[_c('v-list-item-title',{staticClass:"title"},[_vm._v("\n            Yes\n          ")])],1)],1),_c('v-list-item',{attrs:{"color":"green"},on:{"click":function($event){_vm.isAskClearDiagram = false}}},[_c('v-list-item-content',[_c('v-list-item-title',{staticClass:"title"},[_vm._v("\n            No\n          ")])],1)],1)],1),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isModalActive),callback:function ($$v) {_vm.isModalActive=$$v},expression:"isModalActive"}},[_c('EditNodeModal',{attrs:{"node":{ content: {} }},on:{"ok":_vm.addNode,"cancel":_vm.cancel}})],1),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isEditModalActive),callback:function ($$v) {_vm.isEditModalActive=$$v},expression:"isEditModalActive"}},[_c('EditNodeModal',{attrs:{"node":_vm.tmpNode},on:{"ok":_vm.editNode,"cancel":_vm.cancel}})],1),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isEditLinkModalActive),callback:function ($$v) {_vm.isEditLinkModalActive=$$v},expression:"isEditLinkModalActive"}},[_c('EditLinkModal',{attrs:{"link":_vm.tmpLink},on:{"ok":_vm.editLink,"cancel":_vm.cancel}})],1),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isInputModalActive),callback:function ($$v) {_vm.isInputModalActive=$$v},expression:"isInputModalActive"}},[_c('InputModal',{attrs:{"text":_vm.json},on:{"ok":_vm.importData,"cancel":_vm.cancel}})],1),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isSettingsModalActive),callback:function ($$v) {_vm.isSettingsModalActive=$$v},expression:"isSettingsModalActive"}},[_c('v-card',[_c('v-card-text',[_c('SettingsModal',{attrs:{"settings":_vm.settings},on:{"ok":_vm.updateSettings,"cancel":function($event){_vm.isSettingsModalActive = false}}})],1)],1)],1),_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{staticStyle:{"height":"calc(100vh - 200px)","overflow":"auto"},attrs:{"xs2":""}},[_vm._v("\t\n\t\t"+_vm._s(_vm.panel)+"\n\t\t"),_c('v-expansion-panels',{attrs:{"multiple":""},model:{value:(_vm.panel),callback:function ($$v) {_vm.panel=$$v},expression:"panel"}},[(_vm.editable)?_c('v-expansion-panel',[_c('v-expansion-panel-header',[_vm._v("Edit")]),_c('v-expansion-panel-content',[_c('v-text-field',{attrs:{"label":"Text","hide-details":""},on:{"change":function($event){return _vm.editNode(_vm.tmpNode)},"keyup":function($event){return _vm.editNode(_vm.tmpNode)}},model:{value:(_vm.tmpNode.content.text),callback:function ($$v) {_vm.$set(_vm.tmpNode.content, "text", $$v)},expression:"tmpNode.content.text"}}),_c('v-text-field',{attrs:{"label":"Text Size","type":"number","hide-details":""},on:{"change":function($event){return _vm.editNode(_vm.tmpNode)},"keyup":function($event){return _vm.editNode(_vm.tmpNode)}},model:{value:(_vm.tmpNode.font_size),callback:function ($$v) {_vm.$set(_vm.tmpNode, "font_size", $$v)},expression:"tmpNode.font_size"}}),_c('v-menu',{attrs:{"close-on-content-click":false},scopedSlots:_vm._u([{key:"activator",fn:function(ref){
 var on = ref.on;
 return [_c('v-text-field',_vm._g({attrs:{"label":"Color"},on:{"change":function($event){return _vm.editNode(_vm.tmpNode)},"keyup":function($event){return _vm.editNode(_vm.tmpNode)}},model:{value:(_vm.tmpNode.content.font_color.hexa),callback:function ($$v) {_vm.$set(_vm.tmpNode.content.font_color, "hexa", $$v)},expression:"tmpNode.content.font_color.hexa"}},on))]}}],null,false,674322930)},[_c('v-color-picker',{attrs:{"mode":"hexa","value":"hex","hide-mode-switch":""},model:{value:(_vm.tmpNode.content.font_color),callback:function ($$v) {_vm.$set(_vm.tmpNode.content, "font_color", $$v)},expression:"tmpNode.content.font_color"}})],1),_c('v-text-field',{attrs:{"label":"URL","hide-details":""},on:{"change":function($event){return _vm.editNode(_vm.tmpNode)},"keyup":function($event){return _vm.editNode(_vm.tmpNode)}},model:{value:(_vm.tmpNode.content.url),callback:function ($$v) {_vm.$set(_vm.tmpNode.content, "url", $$v)},expression:"tmpNode.content.url"}}),_c('v-menu',{attrs:{"close-on-content-click":false},scopedSlots:_vm._u([{key:"activator",fn:function(ref){
 var on = ref.on;
@@ -2694,10 +2694,10 @@ return [_c('v-text-field',_vm._g({attrs:{"label":"Color"},on:{"change":function(
           cancel: 'Cancel',
           copy: 'Copy'
         }},on:{"editNode":_vm.openNodeEdit,"editLink":_vm.openLinkEdit,"nodeClicked":_vm.nodeClicked,"linkClicked":_vm.linkClicked,"nodeChanged":_vm.nodeChanged,"linkChanged":_vm.linkChanged}})],1)],1)],1)}
-var DiagramEditorvue_type_template_id_a8d545b6_staticRenderFns = []
+var DiagramEditorvue_type_template_id_5a664648_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/DiagramEditor.vue?vue&type=template&id=a8d545b6&
+// CONCATENATED MODULE: ./src/DiagramEditor.vue?vue&type=template&id=5a664648&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.object.assign.js
 var es6_object_assign = __webpack_require__("f751");
@@ -3684,7 +3684,13 @@ var SettingsModal_component = normalizeComponent(
         case 'square':
           this.addNode({
             "content": {
-              "text": "New Square"
+              "text": "New Square",
+              font_color: {
+                hexa: '#34495e'
+              },
+              color: {
+                hexa: '#ecf0f1'
+              }
             },
             "width": 60,
             "height": 60,
@@ -3699,7 +3705,13 @@ var SettingsModal_component = normalizeComponent(
         case 'rectangle':
           this.addNode({
             "content": {
-              "text": "New Rectangle"
+              "text": "New Rectangle",
+              font_color: {
+                hexa: '#34495e'
+              },
+              color: {
+                hexa: '#ecf0f1'
+              }
             },
             "width": 100,
             "height": 60,
@@ -3714,7 +3726,13 @@ var SettingsModal_component = normalizeComponent(
         case 'circle':
           this.addNode({
             "content": {
-              "text": "New Circle"
+              "text": "New Circle",
+              font_color: {
+                hexa: '#34495e'
+              },
+              color: {
+                hexa: '#ecf0f1'
+              }
             },
             "width": 60,
             "height": 60,
@@ -3729,7 +3747,13 @@ var SettingsModal_component = normalizeComponent(
         case 'oval':
           this.addNode({
             "content": {
-              "text": "New Elipse"
+              "text": "New Elipse",
+              font_color: {
+                hexa: '#34495e'
+              },
+              color: {
+                hexa: '#ecf0f1'
+              }
             },
             "width": 100,
             "height": 60,
@@ -3744,7 +3768,13 @@ var SettingsModal_component = normalizeComponent(
         case 'text':
           this.addNode({
             "content": {
-              "text": "New Text"
+              "text": "New Text",
+              font_color: {
+                hexa: '#34495e'
+              },
+              color: {
+                hexa: '#ecf0f1'
+              }
             },
             "width": 100,
             "height": 35,
@@ -3915,8 +3945,8 @@ var SettingsModal_component = normalizeComponent(
 
 var DiagramEditor_component = normalizeComponent(
   src_DiagramEditorvue_type_script_lang_js_,
-  DiagramEditorvue_type_template_id_a8d545b6_render,
-  DiagramEditorvue_type_template_id_a8d545b6_staticRenderFns,
+  DiagramEditorvue_type_template_id_5a664648_render,
+  DiagramEditorvue_type_template_id_5a664648_staticRenderFns,
   false,
   null,
   null,

@@ -487,27 +487,27 @@ export default {
 		  switch(item){
 			  case 'square':
 				  this.addNode(
-					 { "content": { "text": "New Square" }, "width": 60, "height": 60, "shape": "rectangle", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
+					 { "content": { "text": "New Square", font_color: {hexa: '#34495e'}, color: {hexa: '#ecf0f1'} }, "width": 60, "height": 60, "shape": "rectangle", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
 					) 
 					  break;
 					  case 'rectangle':
 					  this.addNode(
-					 {  "content": { "text": "New Rectangle" }, "width": 100, "height": 60, "shape": "rectangle", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
+					 {  "content": { "text": "New Rectangle", font_color: {hexa: '#34495e'}, color: {hexa: '#ecf0f1'} }, "width": 100, "height": 60, "shape": "rectangle", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
 					) 
 				  break;
 				  case 'circle':
 					  this.addNode(
-					 { "content": { "text": "New Circle" }, "width": 60, "height": 60, "shape": "ellipse", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
+					 { "content": { "text": "New Circle", font_color: {hexa: '#34495e'}, color: {hexa: '#ecf0f1'} }, "width": 60, "height": 60, "shape": "ellipse", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
 					) 
 				  break;
 				  case 'oval':
 					  this.addNode(
-					 {  "content": { "text": "New Elipse" }, "width": 100, "height": 60, "shape": "ellipse", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
+					 {  "content": { "text": "New Elipse", font_color: {hexa: '#34495e'}, color: {hexa: '#ecf0f1'} }, "width": 100, "height": 60, "shape": "ellipse", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
 					) 
 				  break;
 				  case 'text':
 					  this.addNode(
-					 {  "content": { "text": "New Text" }, "width": 100, "height": 35, "shape": "text", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
+					 {  "content": { "text": "New Text", font_color: {hexa: '#34495e'}, color: {hexa: '#ecf0f1'} }, "width": 100, "height": 35, "shape": "text", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
 					) 
 				  break;
 		  }
