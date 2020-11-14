@@ -138,7 +138,7 @@
                         <v-text-field :dark="$vuetify.theme.dark" v-model="tmpNode.content.color" v-on="on" label="Color" @change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"></v-text-field>
                       </template>
-                      <v-color-picker :dark="$vuetify.theme.dark" mode="hex" v-model="tmpNode.content.color" value="hex" hide-mode-switch ></v-color-picker>
+                      <v-color-picker :dark="$vuetify.theme.dark" mode="hexa" v-model="tmpNode.content.color" value="hex" hide-mode-switch ></v-color-picker>
                     </v-menu>
 		  <v-text-field
             label="Stroke"
