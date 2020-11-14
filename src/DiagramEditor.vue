@@ -36,10 +36,11 @@
       @ok="importData"
       @cancel="cancel"
     />
-    <v-dialog
+    <v-navigation-drawer
       v-model="isSettingsModalActive"
-      @ok="updateSettings"
-      @cancel="cancel"
+      absolute
+      temporary
+							  right
     >
 		<v-card>
 		<v-system-bar dark color="primary">
@@ -51,11 +52,11 @@
     </v-system-bar>
 			<v-card-text>
 			should be here
-				<SettingsModal :settings="SettingsModal" />
+				<SettingsModal :settings="SettingsModal" v-on:ok="" v-on:cancel=""/>
 			</v-card-text>
 		</v-card>
 		
-		</v-dialog>
+		</v-navigation-drawer>
     <Diagram
       :width="graphData.width || 2000"
       :height="graphData.height || 1000"
@@ -88,6 +89,8 @@
 </template>
 
 <script>
+
+	
 import Diagram from "./Diagram";
 import EditNodeModal from "@/lib/EditNodeModal";
 import EditLinkModal from "@/lib/EditLinkModal";
