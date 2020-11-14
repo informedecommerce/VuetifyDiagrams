@@ -94,7 +94,7 @@
     >
 		<v-card>
 			<v-card-text>
-				<SettingsModal :settings="SettingsModal" v-on:ok="" v-on:cancel=""/>
+				<SettingsModal :settings="settings" v-on:ok="updateSettings" v-on:cancel="isSettingsModalActive = false"/>
 			</v-card-text>
 		</v-card>
 		

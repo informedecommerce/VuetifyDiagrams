@@ -1,12 +1,12 @@
 <template>
  
     <div>
-      <textarea
+      <v-textarea
         class="input"
         v-model="tmp"
         required
         placeholder="JSON"
-      ></textarea
+      ></v-textarea
       ><br />
       <v-btn @click="ok">OK</v-btn>
       <v-btn class="danger" @click="cancel">Cancel</v-btn>
