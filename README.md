@@ -1,3 +1,18 @@
+Vuetify Diagrams
+============
+
+<div id="top">
+This package is built specifically for the Agile Consulting Application Boilerplate
+The package includes static variables and methods that are commonly used within applications.
+</div>
+
+Installation
+------------------
+
+```bash
+# Basic Node.JS installation
+meteor npm install vuetify-diagrams@https://github.com/informedecommerce/VuetifyDiagrams.git
+
 # diagram-vue
 A SVG-based diagram component for Vue
 
