@@ -186,6 +186,15 @@
           <v-list-item-content>
             <v-list-item-title>Import/Export</v-list-item-title>
           </v-list-item-content>
+        </v-list-item>
+				 <v-list-item @click="downloadSVG">
+          <v-list-item-icon>
+            <v-icon>mdi-download</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>Download SVG</v-list-item-title>
+          </v-list-item-content>
         </v-list-item>	
 				 <v-list-item @click="save()">
           <v-list-item-icon>
