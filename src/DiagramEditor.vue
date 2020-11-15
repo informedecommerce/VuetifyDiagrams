@@ -148,7 +148,7 @@
 -->
 						   <v-btn x-small v-on="on">Text Color</v-btn>
                       </template>
-                      <v-color-picker  mode="hexa" v-model="tmpNode.font_color" value="hex" hide-mode-switch ></v-color-picker>
+                      <v-color-picker  mode="hexa" v-model="tmpNode.font_color"  hide-mode-switch ></v-color-picker>
                     </v-menu>
 		  <v-text-field
             label="URL"
@@ -165,7 +165,7 @@
 -->
 						  <v-btn x-small v-on="on">Item Color</v-btn>
                       </template>
-                      <v-color-picker  mode="hexa" v-model="tmpNode.color" value="hex" hide-mode-switch @change="editNode(tmpNode)"
+                      <v-color-picker  mode="hexa" v-model="tmpNode.color"  hide-mode-switch @change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"></v-color-picker>
                     </v-menu>
 		  <v-text-field
@@ -288,53 +288,7 @@
         </v-list-item-content>
       </v-list-item>
 				<v-divider />
-			<div >
-			<v-list-item >
-        <v-list-item-content>
-          <v-list-item-title class="title">
-            Add
-          </v-list-item-title>
-          <v-list-item-subtitle>
-            Quick add Items
-          </v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
-
-      <v-divider></v-divider>
-<v-btn icon v-for="(item,index) in diagram_items" @click="diagramAdd(item.key)" :key="'shape-'+index"><v-icon>{{item.icon}}</v-icon></v-btn>
-     <!--
-			<v-list
-        dense
-        nav
-      >
-        <v-list-item
-          v-for="item in diagram_items"
-          :key="item.title"
-          link
-					 @click="diagramAdd(item.key)"
-        >
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
-
-          <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-			-->
-			<v-divider />
-			</div>
-			<v-list-item >
-        <v-list-item-content>
-          <v-list-item-title class="title">
-            Settings
-          </v-list-item-title>
-          <v-list-item-subtitle>
-            Quick Settings
-          </v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
+			{{tmpNode}}
 			
 	</v-flex>
 		 <v-flex xs10 style="max-height: calc(100vh - 200px);max-width: calc(100vw - 500);overflow: auto">
@@ -423,9 +377,11 @@ export default {
 			this.init()
 		},
 		'tmpNode.color'(val){
+			console.log('color changed')
 			this.editNode(this.tmpNode)
 		},
 		'tmpNode.font_color'(val){
+			console.log('font_color changed')
 			this.editNode(this.tmpNode)
 		},
 	},
@@ -471,11 +427,11 @@ export default {
         shape: "rectangle",
         width: 0,
         height: 0,
-        content: {
-          text: "",
+		  text: "",
           url: "",
-          color: ""
-        }
+          color: "",
+        font_color: '',
+		  font_size: ''
       },
       tmpLink: {
         id: "",

@@ -2692,12 +2692,12 @@ var Diagram_component = normalizeComponent(
 )
 
 /* harmony default export */ var Diagram = (Diagram_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"933817ec-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/DiagramEditor.vue?vue&type=template&id=aa7ce172&
-var DiagramEditorvue_type_template_id_aa7ce172_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"diagram",attrs:{"id":"editor"}},[(!_vm.editable)?_c('v-btn',{on:{"click":function($event){_vm.editable = true}}},[_vm._v("Edit")]):_c('span',[_c('v-btn',{on:{"click":_vm.openModal}},[_vm._v("New Node")]),_c('v-btn',{on:{"click":_vm.endEdit}},[_vm._v("End")])],1),_c('v-btn',{on:{"click":_vm.openInputModal}},[_vm._v("Import/Export")]),_c('v-btn',{on:{"click":_vm.downloadSVG}},[_vm._v("Download SVG")]),_c('v-btn',{on:{"click":function($event){_vm.isAskClearDiagram = true}}},[_vm._v("Clear Diagram")]),_c('v-btn',{on:{"click":_vm.openSettingsModal}},[_vm._v("Settings")]),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isAskClearDiagram),callback:function ($$v) {_vm.isAskClearDiagram=$$v},expression:"isAskClearDiagram"}},[_c('v-card-text',[_vm._v("\n\t\tDo you wanna clear the Diagram?\n\t\t  ")]),_c('v-list-item',{attrs:{"color":"red"},on:{"click":function($event){return _vm.clearDiagram()}}},[_c('v-list-item-content',[_c('v-list-item-title',{staticClass:"title"},[_vm._v("\n            Yes\n          ")])],1)],1),_c('v-list-item',{attrs:{"color":"green"},on:{"click":function($event){_vm.isAskClearDiagram = false}}},[_c('v-list-item-content',[_c('v-list-item-title',{staticClass:"title"},[_vm._v("\n            No\n          ")])],1)],1)],1),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isModalActive),callback:function ($$v) {_vm.isModalActive=$$v},expression:"isModalActive"}},[_c('EditNodeModal',{attrs:{"node":{ content: {} }},on:{"ok":_vm.addNode,"cancel":_vm.cancel}})],1),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isEditModalActive),callback:function ($$v) {_vm.isEditModalActive=$$v},expression:"isEditModalActive"}},[_c('EditNodeModal',{attrs:{"node":_vm.tmpNode},on:{"ok":_vm.editNode,"cancel":_vm.cancel}})],1),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isEditLinkModalActive),callback:function ($$v) {_vm.isEditLinkModalActive=$$v},expression:"isEditLinkModalActive"}},[_c('EditLinkModal',{attrs:{"link":_vm.tmpLink},on:{"ok":_vm.editLink,"cancel":_vm.cancel}})],1),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isInputModalActive),callback:function ($$v) {_vm.isInputModalActive=$$v},expression:"isInputModalActive"}},[_c('InputModal',{attrs:{"text":_vm.json},on:{"ok":_vm.importData,"cancel":_vm.cancel}})],1),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isSettingsModalActive),callback:function ($$v) {_vm.isSettingsModalActive=$$v},expression:"isSettingsModalActive"}},[_c('v-card',[_c('v-card-text',[_c('SettingsModal',{attrs:{"settings":_vm.settings},on:{"ok":_vm.updateSettings,"cancel":function($event){_vm.isSettingsModalActive = false}}})],1)],1)],1),_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{staticStyle:{"height":"calc(100vh - 200px)","overflow":"auto"},attrs:{"xs2":""}},[_vm._v("\t\n\t\t"+_vm._s(_vm.panel)+"\n\t\t"),_c('v-expansion-panels',{attrs:{"multiple":""},model:{value:(_vm.panel),callback:function ($$v) {_vm.panel=$$v},expression:"panel"}},[(_vm.editable)?_c('v-expansion-panel',[_c('v-expansion-panel-header',{attrs:{"disable-icon-rotate":""},scopedSlots:_vm._u([{key:"actions",fn:function(){return [_c('v-icon',{attrs:{"color":"info"}},[_vm._v("mdi-pencil")])]},proxy:true}],null,false,3820483992)},[_vm._v("\n\t\t  Edit Item\n\t\t\t\t")]),(_vm.tmpNode)?_c('v-expansion-panel-content',[_c('v-text-field',{attrs:{"label":"Text","hide-details":""},on:{"change":function($event){return _vm.editNode(_vm.tmpNode)},"keyup":function($event){return _vm.editNode(_vm.tmpNode)}},model:{value:(_vm.tmpNode.text),callback:function ($$v) {_vm.$set(_vm.tmpNode, "text", $$v)},expression:"tmpNode.text"}}),_c('v-text-field',{attrs:{"label":"Text Size","type":"number","hide-details":""},on:{"change":function($event){return _vm.editNode(_vm.tmpNode)},"keyup":function($event){return _vm.editNode(_vm.tmpNode)}},model:{value:(_vm.tmpNode.font_size),callback:function ($$v) {_vm.$set(_vm.tmpNode, "font_size", $$v)},expression:"tmpNode.font_size"}}),_c('v-menu',{attrs:{"close-on-content-click":false},scopedSlots:_vm._u([{key:"activator",fn:function(ref){
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"933817ec-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/DiagramEditor.vue?vue&type=template&id=64089065&
+var DiagramEditorvue_type_template_id_64089065_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"diagram",attrs:{"id":"editor"}},[(!_vm.editable)?_c('v-btn',{on:{"click":function($event){_vm.editable = true}}},[_vm._v("Edit")]):_c('span',[_c('v-btn',{on:{"click":_vm.openModal}},[_vm._v("New Node")]),_c('v-btn',{on:{"click":_vm.endEdit}},[_vm._v("End")])],1),_c('v-btn',{on:{"click":_vm.openInputModal}},[_vm._v("Import/Export")]),_c('v-btn',{on:{"click":_vm.downloadSVG}},[_vm._v("Download SVG")]),_c('v-btn',{on:{"click":function($event){_vm.isAskClearDiagram = true}}},[_vm._v("Clear Diagram")]),_c('v-btn',{on:{"click":_vm.openSettingsModal}},[_vm._v("Settings")]),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isAskClearDiagram),callback:function ($$v) {_vm.isAskClearDiagram=$$v},expression:"isAskClearDiagram"}},[_c('v-card-text',[_vm._v("\n\t\tDo you wanna clear the Diagram?\n\t\t  ")]),_c('v-list-item',{attrs:{"color":"red"},on:{"click":function($event){return _vm.clearDiagram()}}},[_c('v-list-item-content',[_c('v-list-item-title',{staticClass:"title"},[_vm._v("\n            Yes\n          ")])],1)],1),_c('v-list-item',{attrs:{"color":"green"},on:{"click":function($event){_vm.isAskClearDiagram = false}}},[_c('v-list-item-content',[_c('v-list-item-title',{staticClass:"title"},[_vm._v("\n            No\n          ")])],1)],1)],1),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isModalActive),callback:function ($$v) {_vm.isModalActive=$$v},expression:"isModalActive"}},[_c('EditNodeModal',{attrs:{"node":{ content: {} }},on:{"ok":_vm.addNode,"cancel":_vm.cancel}})],1),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isEditModalActive),callback:function ($$v) {_vm.isEditModalActive=$$v},expression:"isEditModalActive"}},[_c('EditNodeModal',{attrs:{"node":_vm.tmpNode},on:{"ok":_vm.editNode,"cancel":_vm.cancel}})],1),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isEditLinkModalActive),callback:function ($$v) {_vm.isEditLinkModalActive=$$v},expression:"isEditLinkModalActive"}},[_c('EditLinkModal',{attrs:{"link":_vm.tmpLink},on:{"ok":_vm.editLink,"cancel":_vm.cancel}})],1),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isInputModalActive),callback:function ($$v) {_vm.isInputModalActive=$$v},expression:"isInputModalActive"}},[_c('InputModal',{attrs:{"text":_vm.json},on:{"ok":_vm.importData,"cancel":_vm.cancel}})],1),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isSettingsModalActive),callback:function ($$v) {_vm.isSettingsModalActive=$$v},expression:"isSettingsModalActive"}},[_c('v-card',[_c('v-card-text',[_c('SettingsModal',{attrs:{"settings":_vm.settings},on:{"ok":_vm.updateSettings,"cancel":function($event){_vm.isSettingsModalActive = false}}})],1)],1)],1),_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{staticStyle:{"height":"calc(100vh - 200px)","overflow":"auto"},attrs:{"xs2":""}},[_vm._v("\t\n\t\t"+_vm._s(_vm.panel)+"\n\t\t"),_c('v-expansion-panels',{attrs:{"multiple":""},model:{value:(_vm.panel),callback:function ($$v) {_vm.panel=$$v},expression:"panel"}},[(_vm.editable)?_c('v-expansion-panel',[_c('v-expansion-panel-header',{attrs:{"disable-icon-rotate":""},scopedSlots:_vm._u([{key:"actions",fn:function(){return [_c('v-icon',{attrs:{"color":"info"}},[_vm._v("mdi-pencil")])]},proxy:true}],null,false,3820483992)},[_vm._v("\n\t\t  Edit Item\n\t\t\t\t")]),(_vm.tmpNode)?_c('v-expansion-panel-content',[_c('v-text-field',{attrs:{"label":"Text","hide-details":""},on:{"change":function($event){return _vm.editNode(_vm.tmpNode)},"keyup":function($event){return _vm.editNode(_vm.tmpNode)}},model:{value:(_vm.tmpNode.text),callback:function ($$v) {_vm.$set(_vm.tmpNode, "text", $$v)},expression:"tmpNode.text"}}),_c('v-text-field',{attrs:{"label":"Text Size","type":"number","hide-details":""},on:{"change":function($event){return _vm.editNode(_vm.tmpNode)},"keyup":function($event){return _vm.editNode(_vm.tmpNode)}},model:{value:(_vm.tmpNode.font_size),callback:function ($$v) {_vm.$set(_vm.tmpNode, "font_size", $$v)},expression:"tmpNode.font_size"}}),_c('v-menu',{attrs:{"close-on-content-click":false},scopedSlots:_vm._u([{key:"activator",fn:function(ref){
 var on = ref.on;
-return [_c('v-btn',_vm._g({attrs:{"x-small":""}},on),[_vm._v("Text Color")])]}}],null,false,283039153)},[_c('v-color-picker',{attrs:{"mode":"hexa","value":"hex","hide-mode-switch":""},model:{value:(_vm.tmpNode.font_color),callback:function ($$v) {_vm.$set(_vm.tmpNode, "font_color", $$v)},expression:"tmpNode.font_color"}})],1),_c('v-text-field',{attrs:{"label":"URL","hide-details":""},on:{"change":function($event){return _vm.editNode(_vm.tmpNode)},"keyup":function($event){return _vm.editNode(_vm.tmpNode)}},model:{value:(_vm.tmpNode.url),callback:function ($$v) {_vm.$set(_vm.tmpNode, "url", $$v)},expression:"tmpNode.url"}}),_c('v-menu',{attrs:{"close-on-content-click":false},scopedSlots:_vm._u([{key:"activator",fn:function(ref){
+return [_c('v-btn',_vm._g({attrs:{"x-small":""}},on),[_vm._v("Text Color")])]}}],null,false,283039153)},[_c('v-color-picker',{attrs:{"mode":"hexa","hide-mode-switch":""},model:{value:(_vm.tmpNode.font_color),callback:function ($$v) {_vm.$set(_vm.tmpNode, "font_color", $$v)},expression:"tmpNode.font_color"}})],1),_c('v-text-field',{attrs:{"label":"URL","hide-details":""},on:{"change":function($event){return _vm.editNode(_vm.tmpNode)},"keyup":function($event){return _vm.editNode(_vm.tmpNode)}},model:{value:(_vm.tmpNode.url),callback:function ($$v) {_vm.$set(_vm.tmpNode, "url", $$v)},expression:"tmpNode.url"}}),_c('v-menu',{attrs:{"close-on-content-click":false},scopedSlots:_vm._u([{key:"activator",fn:function(ref){
 var on = ref.on;
-return [_c('v-btn',_vm._g({attrs:{"x-small":""}},on),[_vm._v("Item Color")])]}}],null,false,1203982777)},[_c('v-color-picker',{attrs:{"mode":"hexa","value":"hex","hide-mode-switch":""},on:{"change":function($event){return _vm.editNode(_vm.tmpNode)},"keyup":function($event){return _vm.editNode(_vm.tmpNode)}},model:{value:(_vm.tmpNode.color),callback:function ($$v) {_vm.$set(_vm.tmpNode, "color", $$v)},expression:"tmpNode.color"}})],1),_c('v-text-field',{attrs:{"label":"Stroke","type":"number","hide-details":""},on:{"change":function($event){return _vm.editNode(_vm.tmpNode)},"keyup":function($event){return _vm.editNode(_vm.tmpNode)}},model:{value:(_vm.tmpNode.stroke),callback:function ($$v) {_vm.$set(_vm.tmpNode, "stroke", $$v)},expression:"tmpNode.stroke"}}),_c('v-text-field',{attrs:{"label":"Stroke Weight","type":"number","hide-details":""},on:{"change":function($event){return _vm.editNode(_vm.tmpNode)},"keyup":function($event){return _vm.editNode(_vm.tmpNode)}},model:{value:(_vm.tmpNode.strokeWeight),callback:function ($$v) {_vm.$set(_vm.tmpNode, "strokeWeight", $$v)},expression:"tmpNode.strokeWeight"}}),_c('v-text-field',{attrs:{"label":"Width","type":"number","hide-details":""},on:{"change":function($event){return _vm.editNode(_vm.tmpNode)},"keyup":function($event){return _vm.editNode(_vm.tmpNode)}},model:{value:(_vm.tmpNode.width),callback:function ($$v) {_vm.$set(_vm.tmpNode, "width", $$v)},expression:"tmpNode.width"}}),_c('v-text-field',{attrs:{"label":"Height","type":"number","hide-details":""},on:{"change":function($event){return _vm.editNode(_vm.tmpNode)},"keyup":function($event){return _vm.editNode(_vm.tmpNode)}},model:{value:(_vm.tmpNode.height),callback:function ($$v) {_vm.$set(_vm.tmpNode, "height", $$v)},expression:"tmpNode.height"}})],1):_vm._e()],1):_vm._e(),(_vm.editable)?_c('v-expansion-panel',[_c('v-expansion-panel-header',{attrs:{"disable-icon-rotate":""},scopedSlots:_vm._u([{key:"actions",fn:function(){return [_c('v-icon',{attrs:{"color":"info"}},[_vm._v("mdi-plus")])]},proxy:true}],null,false,3133338655)},[_vm._v("\n\t\t  Add\n\t\t  ")]),_c('v-expansion-panel-content',_vm._l((_vm.diagram_items),function(item,index){return _c('v-btn',{key:'shape-'+index,attrs:{"icon":""},on:{"click":function($event){return _vm.diagramAdd(item.key)}}},[_c('v-icon',[_vm._v(_vm._s(item.icon))])],1)}),1)],1):_vm._e(),_c('v-expansion-panel',[_c('v-expansion-panel-header',{attrs:{"disable-icon-rotate":""},scopedSlots:_vm._u([{key:"actions",fn:function(){return [_c('v-icon',{attrs:{"color":"info"}},[_vm._v("mdi-cog")])]},proxy:true}])},[_vm._v("\n\t\t  Settings\n\t\t\t")]),_c('v-expansion-panel-content',[_c('v-list',{attrs:{"dense":"","nav":""}},[_c('v-list-item',{on:{"click":function($event){return _vm.toggleGrid()}}},[_c('v-list-item-icon',[_c('v-icon',[_vm._v("mdi-grid")])],1),_c('v-list-item-content',[_c('v-list-item-title',[_vm._v("Toggle Grid")])],1)],1),_c('v-list-item',{on:{"click":function($event){_vm.isAskClearDiagram = true}}},[_c('v-list-item-icon',[_c('v-icon',[_vm._v("mdi-nuke")])],1),_c('v-list-item-content',[_c('v-list-item-title',[_vm._v("Clear Diagram")])],1)],1),_c('v-list-item',{on:{"click":_vm.openInputModal}},[_c('v-list-item-icon',[_c('v-icon',[_vm._v("mdi-swap-vertical")])],1),_c('v-list-item-content',[_c('v-list-item-title',[_vm._v("Import/Export")])],1)],1),_c('v-list-item',{on:{"click":_vm.downloadSVG}},[_c('v-list-item-icon',[_c('v-icon',[_vm._v("mdi-download")])],1),_c('v-list-item-content',[_c('v-list-item-title',[_vm._v("Download SVG")])],1)],1),_c('v-list-item',{on:{"click":function($event){return _vm.save()}}},[_c('v-list-item-icon',[_c('v-icon',[_vm._v("mdi-content-save")])],1),_c('v-list-item-content',[_c('v-list-item-title',[_vm._v("Save")])],1)],1)],1)],1)],1)],1),(_vm.can_edit)?_c('v-list-item',{on:{"click":function($event){_vm.editable = !_vm.editable}}},[_c('v-list-item-icon',[_c('v-icon',[_vm._v("mdi-pencil")])],1),_c('v-list-item-content',[_c('v-list-item-subtitle',[_vm._v("\n            "+_vm._s(_vm.editable ? 'End Edit' : 'Edit')+"\n          ")])],1)],1):_vm._e(),_c('v-divider'),_c('div',[_c('v-list-item',[_c('v-list-item-content',[_c('v-list-item-title',{staticClass:"title"},[_vm._v("\n            Add\n          ")]),_c('v-list-item-subtitle',[_vm._v("\n            Quick add Items\n          ")])],1)],1),_c('v-divider'),_vm._l((_vm.diagram_items),function(item,index){return _c('v-btn',{key:'shape-'+index,attrs:{"icon":""},on:{"click":function($event){return _vm.diagramAdd(item.key)}}},[_c('v-icon',[_vm._v(_vm._s(item.icon))])],1)}),_c('v-divider')],2),_c('v-list-item',[_c('v-list-item-content',[_c('v-list-item-title',{staticClass:"title"},[_vm._v("\n            Settings\n          ")]),_c('v-list-item-subtitle',[_vm._v("\n            Quick Settings\n          ")])],1)],1)],1),_c('v-flex',{staticStyle:{"max-height":"calc(100vh - 200px)","max-width":"calc(100vw - 500)","overflow":"auto"},attrs:{"xs10":""}},[_c('Diagram',{attrs:{"width":_vm.graphData.width ? _vm.graphData.width : 800,"height":_vm.graphData.height ? _vm.graphData.height : 600,"fluid":_vm.settings.isFluid,"scale":_vm.settings.scale,"background":_vm.graphData.background || '#fafafa',"showGrid":_vm.graphData.showGrid,"nodes":_vm.graphData.nodes,"links":_vm.graphData.links,"editable":_vm.editable,"labels":_vm.graphData.labels || {
+return [_c('v-btn',_vm._g({attrs:{"x-small":""}},on),[_vm._v("Item Color")])]}}],null,false,1203982777)},[_c('v-color-picker',{attrs:{"mode":"hexa","hide-mode-switch":""},on:{"change":function($event){return _vm.editNode(_vm.tmpNode)},"keyup":function($event){return _vm.editNode(_vm.tmpNode)}},model:{value:(_vm.tmpNode.color),callback:function ($$v) {_vm.$set(_vm.tmpNode, "color", $$v)},expression:"tmpNode.color"}})],1),_c('v-text-field',{attrs:{"label":"Stroke","type":"number","hide-details":""},on:{"change":function($event){return _vm.editNode(_vm.tmpNode)},"keyup":function($event){return _vm.editNode(_vm.tmpNode)}},model:{value:(_vm.tmpNode.stroke),callback:function ($$v) {_vm.$set(_vm.tmpNode, "stroke", $$v)},expression:"tmpNode.stroke"}}),_c('v-text-field',{attrs:{"label":"Stroke Weight","type":"number","hide-details":""},on:{"change":function($event){return _vm.editNode(_vm.tmpNode)},"keyup":function($event){return _vm.editNode(_vm.tmpNode)}},model:{value:(_vm.tmpNode.strokeWeight),callback:function ($$v) {_vm.$set(_vm.tmpNode, "strokeWeight", $$v)},expression:"tmpNode.strokeWeight"}}),_c('v-text-field',{attrs:{"label":"Width","type":"number","hide-details":""},on:{"change":function($event){return _vm.editNode(_vm.tmpNode)},"keyup":function($event){return _vm.editNode(_vm.tmpNode)}},model:{value:(_vm.tmpNode.width),callback:function ($$v) {_vm.$set(_vm.tmpNode, "width", $$v)},expression:"tmpNode.width"}}),_c('v-text-field',{attrs:{"label":"Height","type":"number","hide-details":""},on:{"change":function($event){return _vm.editNode(_vm.tmpNode)},"keyup":function($event){return _vm.editNode(_vm.tmpNode)}},model:{value:(_vm.tmpNode.height),callback:function ($$v) {_vm.$set(_vm.tmpNode, "height", $$v)},expression:"tmpNode.height"}})],1):_vm._e()],1):_vm._e(),(_vm.editable)?_c('v-expansion-panel',[_c('v-expansion-panel-header',{attrs:{"disable-icon-rotate":""},scopedSlots:_vm._u([{key:"actions",fn:function(){return [_c('v-icon',{attrs:{"color":"info"}},[_vm._v("mdi-plus")])]},proxy:true}],null,false,3133338655)},[_vm._v("\n\t\t  Add\n\t\t  ")]),_c('v-expansion-panel-content',_vm._l((_vm.diagram_items),function(item,index){return _c('v-btn',{key:'shape-'+index,attrs:{"icon":""},on:{"click":function($event){return _vm.diagramAdd(item.key)}}},[_c('v-icon',[_vm._v(_vm._s(item.icon))])],1)}),1)],1):_vm._e(),_c('v-expansion-panel',[_c('v-expansion-panel-header',{attrs:{"disable-icon-rotate":""},scopedSlots:_vm._u([{key:"actions",fn:function(){return [_c('v-icon',{attrs:{"color":"info"}},[_vm._v("mdi-cog")])]},proxy:true}])},[_vm._v("\n\t\t  Settings\n\t\t\t")]),_c('v-expansion-panel-content',[_c('v-list',{attrs:{"dense":"","nav":""}},[_c('v-list-item',{on:{"click":function($event){return _vm.toggleGrid()}}},[_c('v-list-item-icon',[_c('v-icon',[_vm._v("mdi-grid")])],1),_c('v-list-item-content',[_c('v-list-item-title',[_vm._v("Toggle Grid")])],1)],1),_c('v-list-item',{on:{"click":function($event){_vm.isAskClearDiagram = true}}},[_c('v-list-item-icon',[_c('v-icon',[_vm._v("mdi-nuke")])],1),_c('v-list-item-content',[_c('v-list-item-title',[_vm._v("Clear Diagram")])],1)],1),_c('v-list-item',{on:{"click":_vm.openInputModal}},[_c('v-list-item-icon',[_c('v-icon',[_vm._v("mdi-swap-vertical")])],1),_c('v-list-item-content',[_c('v-list-item-title',[_vm._v("Import/Export")])],1)],1),_c('v-list-item',{on:{"click":_vm.downloadSVG}},[_c('v-list-item-icon',[_c('v-icon',[_vm._v("mdi-download")])],1),_c('v-list-item-content',[_c('v-list-item-title',[_vm._v("Download SVG")])],1)],1),_c('v-list-item',{on:{"click":function($event){return _vm.save()}}},[_c('v-list-item-icon',[_c('v-icon',[_vm._v("mdi-content-save")])],1),_c('v-list-item-content',[_c('v-list-item-title',[_vm._v("Save")])],1)],1)],1)],1)],1)],1),(_vm.can_edit)?_c('v-list-item',{on:{"click":function($event){_vm.editable = !_vm.editable}}},[_c('v-list-item-icon',[_c('v-icon',[_vm._v("mdi-pencil")])],1),_c('v-list-item-content',[_c('v-list-item-subtitle',[_vm._v("\n            "+_vm._s(_vm.editable ? 'End Edit' : 'Edit')+"\n          ")])],1)],1):_vm._e(),_c('v-divider'),_vm._v("\n\t\t\t"+_vm._s(_vm.tmpNode)+"\n\t\t\t\n\t")],1),_c('v-flex',{staticStyle:{"max-height":"calc(100vh - 200px)","max-width":"calc(100vw - 500)","overflow":"auto"},attrs:{"xs10":""}},[_c('Diagram',{attrs:{"width":_vm.graphData.width ? _vm.graphData.width : 800,"height":_vm.graphData.height ? _vm.graphData.height : 600,"fluid":_vm.settings.isFluid,"scale":_vm.settings.scale,"background":_vm.graphData.background || '#fafafa',"showGrid":_vm.graphData.showGrid,"nodes":_vm.graphData.nodes,"links":_vm.graphData.links,"editable":_vm.editable,"labels":_vm.graphData.labels || {
           edit: 'Edit',
           remove: 'Remove',
           link: 'New Link',
@@ -2705,10 +2705,10 @@ return [_c('v-btn',_vm._g({attrs:{"x-small":""}},on),[_vm._v("Item Color")])]}}]
           cancel: 'Cancel',
           copy: 'Copy'
         }},on:{"editNode":_vm.openNodeEdit,"editLink":_vm.openLinkEdit,"nodeClicked":_vm.nodeClicked,"linkClicked":_vm.linkClicked,"nodeChanged":_vm.nodeChanged,"linkChanged":_vm.linkChanged}})],1)],1)],1)}
-var DiagramEditorvue_type_template_id_aa7ce172_staticRenderFns = []
+var DiagramEditorvue_type_template_id_64089065_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/DiagramEditor.vue?vue&type=template&id=aa7ce172&
+// CONCATENATED MODULE: ./src/DiagramEditor.vue?vue&type=template&id=64089065&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.object.assign.js
 var es6_object_assign = __webpack_require__("f751");
@@ -3523,52 +3523,6 @@ var SettingsModal_component = normalizeComponent(
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -3616,9 +3570,11 @@ var SettingsModal_component = normalizeComponent(
       this.init();
     },
     'tmpNode.color': function tmpNodeColor(val) {
+      console.log('color changed');
       this.editNode(this.tmpNode);
     },
     'tmpNode.font_color': function tmpNodeFont_color(val) {
+      console.log('font_color changed');
       this.editNode(this.tmpNode);
     }
   },
@@ -3678,11 +3634,11 @@ var SettingsModal_component = normalizeComponent(
         shape: "rectangle",
         width: 0,
         height: 0,
-        content: {
-          text: "",
-          url: "",
-          color: ""
-        }
+        text: "",
+        url: "",
+        color: "",
+        font_color: '',
+        font_size: ''
       },
       tmpLink: {
         id: "",
@@ -3979,8 +3935,8 @@ var SettingsModal_component = normalizeComponent(
 
 var DiagramEditor_component = normalizeComponent(
   src_DiagramEditorvue_type_script_lang_js_,
-  DiagramEditorvue_type_template_id_aa7ce172_render,
-  DiagramEditorvue_type_template_id_aa7ce172_staticRenderFns,
+  DiagramEditorvue_type_template_id_64089065_render,
+  DiagramEditorvue_type_template_id_64089065_staticRenderFns,
   false,
   null,
   null,
