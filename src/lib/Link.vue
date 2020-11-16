@@ -122,7 +122,10 @@ export default {
       y: Number
     },
     link: {
-      id: String,
+      id: {
+		  type: String,
+		  default: this. generateID()
+	  },
       color: {
         type: String,
         default: {"alpha":1,"hex":"#ECF0F1","hexa":"#ECF0F1FF","hsla":{"h":192,"s":0.151515151515151,"l":0.9352941176470588,"a":1},"hsva":{"h":192,"s":0.020746887966804906,"v":0.9450980392156862,"a":1},"hue":192,"rgba":{"r":236,"g":240,"b":241,"a":1}}
@@ -166,6 +169,12 @@ export default {
     };
   },
   methods: {
+	   generateID() {
+      return (
+        new Date().getTime().toString(16) +
+        Math.floor(Math.random() * 1000000).toString(16)
+      );
+    },
     mousedown(e) {
       this.$emit("click", this.link.id);
       const [x, y] = this.getLocation(e);

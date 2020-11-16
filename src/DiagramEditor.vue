@@ -390,13 +390,25 @@ export default {
 		},
 		'tmpNode.color'(val){
 			console.log('color changed')
-			this.editNode(this.tmpNode)
+			if(val){
+				if(!this.tmpNode.arrow){
+					this.editNode(this.tmpNode)
+				}else{
+					this.editLink(this.tmpNode)
+				}
+			}
+			
 		},
 		'tmpNode.font_color'(val){
 			console.log('font_color changed')
-			if(!this.tmpNode.arrow){
-				this.editNode(this.tmpNode)
+			if(val){
+				if(!this.tmpNode.arrow){
+					this.editNode(this.tmpNode)
+				}else{
+					//this.editLink(this.tmpNode)
+				}
 			}
+			
 			
 		},
 	},
