@@ -2,6 +2,7 @@
   <g>
     <path
       v-if="link.shape === 'bezier'"
+		  :class="log(link)"
       :d="
         `M${calcSource().x} ${calcSource().y}
         Q ${point.x} ${point.y}
@@ -20,6 +21,7 @@
     />
     <line
       v-else
+		  :class="log(link)"
       :x1="calcSource().x"
       :y1="calcSource().y"
       :x2="calcDestination().x"
@@ -180,7 +182,9 @@ export default {
     };
   },
   methods: {
-	   
+	   log(val){
+		 console.log('link',val)  
+	   },
     mousedown(e) {
       this.$emit("click", this.link.id);
       const [x, y] = this.getLocation(e);

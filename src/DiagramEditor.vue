@@ -166,6 +166,7 @@
 		  <v-text-field
             label="URL"
 					  hide-details
+						v-if="tmpNode.url"
 					  v-model="tmpNode.url"
 						@change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"
