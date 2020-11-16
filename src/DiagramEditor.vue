@@ -385,6 +385,9 @@ export default {
 	  can_edit: true
   },
 	watch: {
+		graphData(val){
+			this.$emit('updated', val)	
+		},
 		value(val){
 			this.init()
 		},
