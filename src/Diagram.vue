@@ -258,6 +258,8 @@ export default {
         id: this.generateID(),
         source: this.selectedNode,
         destination: id,
+		  color: {"alpha":1,"hex":"#ECF0F1","hexa":"#ECF0F1FF","hsla":{"h":192,"s":0.151515151515151,"l":0.9352941176470588,"a":1},"hsva":{"h":192,"s":0.020746887966804906,"v":0.9450980392156862,"a":1},"hue":192,"rgba":{"r":236,"g":240,"b":241,"a":1}},
+		  strokeWeight: 3,
         point: {
           x: (src.point.x + dest.point.x) * 0.5,
           y: (src.point.y + dest.point.y) * 0.5
