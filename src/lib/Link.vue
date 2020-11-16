@@ -124,7 +124,7 @@ export default {
     link: {
       id: {
 		  type: String,
-		  default: this. generateID()
+		  default: this.generateID()
 	  },
       color: {
         type: String,
