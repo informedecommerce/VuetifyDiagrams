@@ -106,6 +106,14 @@
 </template>
 <script>
 import mouseLocation from "../mouseLocation";
+	
+	const generateID = () => {
+      return (
+        new Date().getTime().toString(16) +
+        Math.floor(Math.random() * 1000000).toString(16)
+      );
+    }
+	
 export default {
   mixins: [mouseLocation],
   props: {
@@ -124,7 +132,7 @@ export default {
     link: {
       id: {
 		  type: String,
-		  default: this.generateID()
+		  default: generateID()
 	  },
       color: {
         type: String,
@@ -169,12 +177,7 @@ export default {
     };
   },
   methods: {
-	   generateID() {
-      return (
-        new Date().getTime().toString(16) +
-        Math.floor(Math.random() * 1000000).toString(16)
-      );
-    },
+	   
     mousedown(e) {
       this.$emit("click", this.link.id);
       const [x, y] = this.getLocation(e);
