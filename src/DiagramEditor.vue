@@ -296,8 +296,9 @@
    
 			
 	</v-flex>
-		 <v-flex xs10 style="max-height: calc(100vh - 200px);max-width: calc(100vw - 500);overflow: auto">
+		 <v-flex xs10 >
     <Diagram
+			 style="max-height: calc(100vh - 200px);max-width: calc(100vw - 500);overflow: auto"
       :width="graphData.width ? graphData.width : 1600"
       :height="graphData.height ? graphData.height : 1600"
       :fluid="settings.isFluid"
