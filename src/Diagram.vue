@@ -1,7 +1,7 @@
 <style>
 	.scrollXY{
 		max-height: calc(100vh - 200px);
-		max-width: calc(100vh - 500px);
+		max-width: 100%;
 		overflow: auto;
 	}
 </style>
