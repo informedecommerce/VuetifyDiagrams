@@ -139,7 +139,7 @@
         <v-text-field
             label="Text"
 					  hide-details
-					  v-if="tmpNode.text"
+					  v-if="tmpNode && tmpNode.text"
 					  v-model="tmpNode.text"
 					  @change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"
@@ -148,12 +148,12 @@
             label="Text Size"
 						type="number"
 					  hide-details
-						v-if="tmpNode.font_size"
+						v-if="tmpNode && tmpNode.font_size"
 					  v-model="tmpNode.font_size"
 						@change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"
           ></v-text-field>
-		  <v-menu :close-on-content-click="false" v-if="tmpNode.font_color">
+		  <v-menu :close-on-content-click="false" v-if="tmpNode && tmpNode.font_color">
                       <template v-slot:activator="{ on }">
 						  <!--
                         <v-text-field  v-model="tmpNode.font_color.hexa" v-on="on" label="Text Color" @change="editNode(tmpNode)"
@@ -171,12 +171,12 @@
 						v-on:keyup="editNode(tmpNode)"
           ></v-text-field>
 		  
-		  <v-select v-if="tmpNode.shape && tmpNode.arrow" label="Line Shape" :items="[{text: 'Bezier Curve', val: 'bezier'},{text: 'Straight Line', val: 'straight'}]" item-text="text" item-value="val"  v-model="tmpNode.shape" placeholder="Select line shape" @change="editLink(tmpNode)"></v-select>
-        <v-select label="Pattern" v-if="tmpNode.pattern" v-model="tmpNode.pattern" @change="editLink(tmpNode)" :items="[{text: 'Solid', val: 'solid'},{text: 'Dash', val: 'dash'},{text: 'Dot', val: 'dot'}]" item-text="text" item-value="val" placeholder="Select line pattern" ></v-select>
-        <v-select label="Arrow Type" v-if="tmpNode.arrow" v-model="tmpNode.arrow" placeholder="Select arrow type" :items="[{text: 'None', val: 'none'},{text: 'One Side (Source)', val: 'src'},{text: 'One Side (Destination)', val: 'dest'},{text: 'Both', val: 'both'}]" item-text="text" item-value="val" @change="editLink(tmpNode)">
+		  <v-select v-if="tmpNode && tmpNode.shape && tmpNode.arrow" label="Line Shape" :items="[{text: 'Bezier Curve', val: 'bezier'},{text: 'Straight Line', val: 'straight'}]" item-text="text" item-value="val"  v-model="tmpNode.shape" placeholder="Select line shape" @change="editLink(tmpNode)"></v-select>
+        <v-select label="Pattern" v-if="tmpNode && tmpNode.pattern" v-model="tmpNode.pattern" @change="editLink(tmpNode)" :items="[{text: 'Solid', val: 'solid'},{text: 'Dash', val: 'dash'},{text: 'Dot', val: 'dot'}]" item-text="text" item-value="val" placeholder="Select line pattern" ></v-select>
+        <v-select label="Arrow Type" v-if="tmpNode && tmpNode.arrow" v-model="tmpNode.arrow" placeholder="Select arrow type" :items="[{text: 'None', val: 'none'},{text: 'One Side (Source)', val: 'src'},{text: 'One Side (Destination)', val: 'dest'},{text: 'Both', val: 'both'}]" item-text="text" item-value="val" @change="editLink(tmpNode)">
           </v-select>
 		  
-		  <v-menu :close-on-content-click="false" v-if="tmpNode.color">
+		  <v-menu :close-on-content-click="false" v-if="tmpNode && tmpNode.color">
                       <template v-slot:activator="{ on }">
 						  <!--
                         <v-text-field v-model="tmpNode.color.hexa" v-on="on" label="Color" @change="editNode(tmpNode)"
@@ -189,7 +189,7 @@
                     </v-menu>
 		  <v-text-field
             label="Stroke"
-						v-if="tmpNode.stroke"
+						v-if="tmpNode && tmpNode.stroke"
 						type="number"
 					  hide-details
 					  v-model="tmpNode.stroke"
@@ -198,7 +198,7 @@
           ></v-text-field>
 		  <v-text-field
             label="Stroke Weight"
-						v-if="tmpNode.strokeWeight"
+						v-if="tmpNode && tmpNode.strokeWeight"
 						type="number"
 					  hide-details
 					  v-model="tmpNode.strokeWeight"
@@ -207,7 +207,7 @@
           ></v-text-field>
 		  <v-text-field
             label="Width"
-						v-if="tmpNode.width"
+						v-if="tmpNode && tmpNode.width"
 						type="number"
 					  hide-details
 					  v-model="tmpNode.width"
@@ -216,7 +216,7 @@
           ></v-text-field>
 		  <v-text-field
             label="Height"
-						v-if="tmpNode.height"
+						v-if="tmpNode && tmpNode.height"
 						type="number"
 					  hide-details
 					  v-model="tmpNode.height"
@@ -388,13 +388,16 @@ export default {
 		value(val){
 			this.init()
 		},
-		'tmpNode.color'(val){
+		'tmpNode'(val){
 			console.log('color changed')
 			this.editNode(this.tmpNode)
 		},
 		'tmpNode.font_color'(val){
 			console.log('font_color changed')
-			this.editNode(this.tmpNode)
+			if(!this.tmpNode.arrow){
+				this.editNode(this.tmpNode)
+			}
+			
 		},
 	},
   computed: {
