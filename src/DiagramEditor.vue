@@ -1,14 +1,6 @@
 <template>
   <div id="editor" class="diagram">
-    <v-btn v-if="!editable" @click="editable = true">Edit</v-btn>
-    <span v-else>
-      <v-btn @click="openModal">New Node</v-btn>
-      <v-btn @click="endEdit">End</v-btn>
-    </span>
-    <v-btn @click="openInputModal">Import/Export</v-btn>
-    <v-btn @click="downloadSVG">Download SVG</v-btn>
-    <v-btn @click="isAskClearDiagram = true">Clear Diagram</v-btn>
-    <v-btn @click="openSettingsModal">Settings</v-btn>
+    
     <v-navigation-drawer
       v-model="isAskClearDiagram"
       absolute
