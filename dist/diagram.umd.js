@@ -1566,12 +1566,12 @@ if (typeof window !== 'undefined') {
 // EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"933817ec-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/Diagram.vue?vue&type=template&id=604285b7&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"933817ec-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/Diagram.vue?vue&type=template&id=4e328b95&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"field",staticClass:"scrollXY",attrs:{"id":"svg-diagram-show-area"}},[_c('svg',{attrs:{"width":_vm.fluid ? '100%' : _vm.width,"height":_vm.fluid ? '100%' : _vm.height,"viewBox":_vm.viewBoxDiagram,"xmlns":"http://www.w3.org/2000/svg"}},[_c('defs',[_c('pattern',{attrs:{"id":"smallGrid","width":"10","height":"10","patternUnits":"userSpaceOnUse"}},[_c('path',{attrs:{"d":"M 10 0 L 0 0 0 10","fill":"none","stroke":"gray","stroke-width":"0.5"}})]),_c('pattern',{attrs:{"id":"grid","width":"100","height":"100","patternUnits":"userSpaceOnUse"}},[_c('rect',{attrs:{"width":"100","height":"100","fill":"url(#smallGrid)"}}),_c('path',{attrs:{"d":"M 100 0 L 0 0 0 100","fill":"none","stroke":"gray","stroke-width":"1"}})])]),_c('g',{attrs:{"transform":_vm.scaleStr}},[_c('rect',{attrs:{"x":"0","y":"0","width":_vm.width,"height":_vm.height,"fill":_vm.showGrid ? 'url(#grid)' : _vm.background},on:{"click":_vm.reset}}),_vm._l((_vm.nodeList),function(item){return _c('Node',{key:item.id,attrs:{"node":item,"selected":item.id === _vm.selectedNode,"createLinkMode":_vm.createLinkMode,"editable":_vm.editable,"labels":_vm.labels,"rWidth":_vm.rect().rWidth,"rHeight":_vm.rect().rHeight,"scale":_vm.scale,"font_size":item.font_size},on:{"editNode":_vm.editNode,"click":_vm.clickNode,"select":_vm.selectNode,"copy":_vm.copyNode,"updateLocation":_vm.updateNodeLocation,"toggleSelect":_vm.toggleSrcSelect,"commitDest":_vm.commitDest,"remove":_vm.removeNode}})}),_vm._l((_vm.linkList),function(item){return _c('Link',{key:item.id,attrs:{"link":item,"selected":item.id === _vm.selectedLink,"color":item.color,"source":_vm.findNode(item.source),"destination":_vm.findNode(item.destination),"editable":_vm.editable,"labels":_vm.labels,"rWidth":_vm.rect().rWidth,"rHeight":_vm.rect().rHeight,"scale":_vm.scale},on:{"editLink":_vm.editLink,"click":_vm.clickLink,"select":_vm.selectLink,"updateLocation":_vm.updateLinkLocation,"remove":_vm.removeLink}})})],2)])])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/Diagram.vue?vue&type=template&id=604285b7&
+// CONCATENATED MODULE: ./src/Diagram.vue?vue&type=template&id=4e328b95&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.find.js
 var es6_array_find = __webpack_require__("7514");
@@ -2711,30 +2711,7 @@ var Link_component = normalizeComponent(
         id: this.generateID(),
         source: this.selectedNode,
         destination: id,
-        color: {
-          "alpha": 1,
-          "hex": "#ECF0F1",
-          "hexa": "#ECF0F1FF",
-          "hsla": {
-            "h": 192,
-            "s": 0.151515151515151,
-            "l": 0.9352941176470588,
-            "a": 1
-          },
-          "hsva": {
-            "h": 192,
-            "s": 0.020746887966804906,
-            "v": 0.9450980392156862,
-            "a": 1
-          },
-          "hue": 192,
-          "rgba": {
-            "r": 236,
-            "g": 240,
-            "b": 241,
-            "a": 1
-          }
-        },
+        color: "#ECF0F1FF",
         strokeWeight: 3,
         point: {
           x: (src.point.x + dest.point.x) * 0.5,
