@@ -184,8 +184,8 @@
 -->
 						  <v-btn x-small v-on="on">Item Color</v-btn>
                       </template>
-                      <v-color-picker  mode="hexa" v-model="tmpNode.color"  hide-mode-switch @change="editNode(tmpNode)"
-						v-on:keyup="editNode(tmpNode)"></v-color-picker>
+                      <v-color-picker  mode="hexa" v-model="tmpNode.color"  hide-mode-switch @change="tmpNode.arrow ? editLink(tmpNode) : editNode(tmpNode)"
+						v-on:keyup="tmpNode.arrow ? editLink(tmpNode) : editNode(tmpNode)"></v-color-picker>
                     </v-menu>
 		  <v-text-field
             label="Stroke"
@@ -602,9 +602,10 @@ let default_font_color={"alpha":1,"hex":"#34495E","hexa":"#34495EFF","hsla":{"h"
       //this.tmpLink.id = item.id;
      // this.tmpLink.content = Object.assign({}, item.content);
      // this.isEditLinkModalActive = true;
+		this.tmpNode = item
 		this.tmpNode.id = item.id;
 		//this.tmpNode.content = Object.assign({}, item.content);
-		this.tmpNode = item
+		
 		item.color ? this.tmpNode.color = item.color : this.tmpNode.color = {"alpha":1,"hex":"#ECF0F1","hexa":"#ECF0F1FF","hsla":{"h":192,"s":0.151515151515151,"l":0.9352941176470588,"a":1},"hsva":{"h":192,"s":0.020746887966804906,"v":0.9450980392156862,"a":1},"hue":192,"rgba":{"r":236,"g":240,"b":241,"a":1}}
 		
 		item.arrow ? this.tmpNode.arrow = item.arrow : this.tmpNode.arrow = 'none'
@@ -617,7 +618,7 @@ let default_font_color={"alpha":1,"hex":"#34495E","hexa":"#34495EFF","hsla":{"h"
       tmp.shape = item.shape;
       tmp.pattern = item.pattern;
       tmp.arrow = item.arrow;
-      this.isEditLinkModalActive = false;
+      //this.isEditLinkModalActive = false;
     },
     endEdit() {
       this.editable = false;

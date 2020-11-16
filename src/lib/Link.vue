@@ -7,8 +7,8 @@
         Q ${point.x} ${point.y}
         ${calcDestination().x} ${calcDestination().y}`
       "
-      :stroke="link.color || '#ffeaa7'"
-      stroke-width="3"
+      :stroke="link.color && link.color.hexa ? link.color.hexa : '#ffeaa7'"
+      :stroke-width="link.strokeWeight ? link.strokeWeight : 3"
       fill="none"
       :stroke-dasharray="definePattern(link.pattern)"
       :marker-start="
@@ -25,7 +25,7 @@
       :x2="calcDestination().x"
       :y2="calcDestination().y"
       :stroke="link.color && link.color.hexa ? link.color.hexa : '#ffeaa7'"
-      stroke-width="3"
+      :stroke-width="link.strokeWeight ? link.strokeWeight : 3"
       fill="none"
       :stroke-dasharray="definePattern(link.pattern)"
       :marker-start="
@@ -125,7 +125,7 @@ export default {
       id: String,
       color: {
         type: String,
-        default: "#ffeaa7"
+        default: {"alpha":1,"hex":"#ECF0F1","hexa":"#ECF0F1FF","hsla":{"h":192,"s":0.151515151515151,"l":0.9352941176470588,"a":1},"hsva":{"h":192,"s":0.020746887966804906,"v":0.9450980392156862,"a":1},"hue":192,"rgba":{"r":236,"g":240,"b":241,"a":1}}
       },
       shape: {
         type: String,
@@ -142,7 +142,11 @@ export default {
       point: {
         x: Number,
         y: Number
-      }
+      },
+		stroke_weight: {
+			type: Number,
+			default: 3
+		  }
     },
     labels: Object,
     scale: String,
@@ -213,12 +217,10 @@ export default {
     edit() {
       this.$emit("editLink", {
         id: this.link.id,
-        content: {
           color: this.link.color || "#ffeaa7",
           shape: this.link.shape || "straight",
           pattern: this.link.pattern || "solid",
           arrow: this.link.arrow || "none"
-        }
       });
     },
     calcSource() {
