@@ -172,7 +172,7 @@
           ></v-text-field>
 		  
 		  <v-select v-if="tmpNode.shape && tmpNode.arrow" label="Line Shape" :items="[{text: 'Bezier Curve', val: 'bezier'},{text: 'Straight Line', val: 'straight'}]" item-text="text" item-value="val"  v-model="tmpNode.shape" placeholder="Select line shape" @change="editLink(tmpNode)"></v-select>
-        <v-select label="Pattern" v-if="tmpNode.pattern" v-model="tmpNode.pattern" @change="editLink(tmpNode)" :items="[{text: 'Solid', val: 'solid'},{text: 'Dash', val: 'dash'},{text: 'Dot', val: 'dot'}]" item-text="text" item-value="val" placeholder="Select line pattern" @change="editLink(tmpNode)"></v-select>
+        <v-select label="Pattern" v-if="tmpNode.pattern" v-model="tmpNode.pattern" @change="editLink(tmpNode)" :items="[{text: 'Solid', val: 'solid'},{text: 'Dash', val: 'dash'},{text: 'Dot', val: 'dot'}]" item-text="text" item-value="val" placeholder="Select line pattern" ></v-select>
         <v-select label="Arrow Type" v-if="tmpNode.arrow" v-model="tmpNode.arrow" placeholder="Select arrow type" :items="[{text: 'None', val: 'none'},{text: 'One Side (Source)', val: 'src'},{text: 'One Side (Destination)', val: 'dest'},{text: 'Both', val: 'both'}]" item-text="text" item-value="val" @change="editLink(tmpNode)">
           </v-select>
 		  
