@@ -171,9 +171,9 @@
 						v-on:keyup="editNode(tmpNode)"
           ></v-text-field>
 		  
-		  <v-select v-if="tmpNode.shape" label="Line Shape" :items="[{text: 'Bezier Curve', val: 'bezier'},{text: 'Straight Line', val: 'straight'}]" item-text="text" item-value="val"  v-model="tmpNode.shape" placeholder="Select line shape" @change="updateLink"></v-select>
-        <v-select label="Pattern" v-if="tmpNode.pattern" v-model="tmpNode.pattern" @change="updateLink" :items="[{text: 'Solid', val: 'solid'},{text: 'Dash', val: 'dash'},{text: 'Dot', val: 'dot'}]" item-text="text" item-value="val" placeholder="Select line pattern" @change="updateLink"></v-select>
-        <v-select label="Arrow Type" v-if="tmpNode.arrow" v-model="tmpNode.arrow" placeholder="Select arrow type" :items="[{text: 'None', val: 'none'},{text: 'One Side (Source)', val: 'src'},{text: 'One Side (Destination)', val: 'dest'},{text: 'Both', val: 'both'}]" item-text="text" item-value="val" @change="updateLink">
+		  <v-select v-if="tmpNode.shape && tmpNode.arrow" label="Line Shape" :items="[{text: 'Bezier Curve', val: 'bezier'},{text: 'Straight Line', val: 'straight'}]" item-text="text" item-value="val"  v-model="tmpNode.shape" placeholder="Select line shape" @change="editLink(tmpNode)"></v-select>
+        <v-select label="Pattern" v-if="tmpNode.pattern" v-model="tmpNode.pattern" @change="editLink(tmpNode)" :items="[{text: 'Solid', val: 'solid'},{text: 'Dash', val: 'dash'},{text: 'Dot', val: 'dot'}]" item-text="text" item-value="val" placeholder="Select line pattern" @change="editLink(tmpNode)"></v-select>
+        <v-select label="Arrow Type" v-if="tmpNode.arrow" v-model="tmpNode.arrow" placeholder="Select arrow type" :items="[{text: 'None', val: 'none'},{text: 'One Side (Source)', val: 'src'},{text: 'One Side (Destination)', val: 'dest'},{text: 'Both', val: 'both'}]" item-text="text" item-value="val" @change="editLink(tmpNode)">
           </v-select>
 		  
 		  <v-menu :close-on-content-click="false">
@@ -487,31 +487,31 @@ let default_font_color={"alpha":1,"hex":"#34495E","hexa":"#34495EFF","hsla":{"h"
 		  switch(item){
 			  case 'square':
 				  this.addNode(
-					 { "text": "New Square", "width": 60, "height": 60, "shape": "rectangle", "point": { "x": 50,
-			"y": 66.4611318108179 }, font_color: default_font_color, color: default_item_color } 
+					 { "text": "New Square", "width": 60, "height": 60, "shape": "rectangle", "stroke": 0, strokeWeight: 0, "point": { "x": 50,
+			"y": 66.4611318108179 }, font_color: default_font_color, color: default_item_color, font_size: 14 } 
 					) 
 					  break;
 					  case 'rectangle':
 					  this.addNode(
-					 {  "text": "New Rectangle" , "width": 100, "height": 60, "shape": "rectangle", "point": { "x": 50,
-			"y": 66.4611318108179 }, font_color: default_font_color, color: default_item_color } 
+					 {  "text": "New Rectangle" , "width": 100, "height": 60, "shape": "rectangle", "stroke": 0, strokeWeight: 0, "point": { "x": 50,
+			"y": 66.4611318108179 }, font_color: default_font_color, font_size: 14, color: default_item_color } 
 					) 
 				  break;
 				  case 'circle':
 					  this.addNode(
-					 {  "text": "New Circle" , "width": 60, "height": 60, "shape": "ellipse", "point": { "x": 50,
-			"y": 66.4611318108179 }, font_color: default_font_color, color: default_item_color } 
+					 {  "text": "New Circle" , "width": 60, "height": 60, "shape": "ellipse", "stroke": 0, strokeWeight: 0, "point": { "x": 50,
+			"y": 66.4611318108179 }, font_color: default_font_color, font_size: 14, color: default_item_color } 
 					) 
 				  break;
 				  case 'elipse':
 					  this.addNode(
-					 {   "text": "New Elipse" , "width": 100, "height": 60, "shape": "ellipse", "point": { "x": 50,
-			"y": 66.4611318108179 }, font_color: default_font_color, color: default_item_color } 
+					 {   "text": "New Elipse" , "width": 100, "height": 60, "shape": "ellipse", "stroke": 0, strokeWeight: 0, "point": { "x": 50,
+			"y": 66.4611318108179 }, font_color: default_font_color, font_size: 14, color: default_item_color } 
 					) 
 				  break;
 				  case 'text':
 					  this.addNode(
-					 { font_color: {hexa: '#34495e'}, color: {hexa: '#ecf0f1'},  "text": "New Text", "width": 100, "height": 35, "shape": "text", "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
+					 { font_color: {hexa: '#34495e'}, color: {hexa: '#ecf0f1'},  "text": "New Text", "width": 100, "height": 35, "shape": "text", "stroke": 0, strokeWeight: 0, "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
 					) 
 				  break;
 		  }
@@ -560,7 +560,8 @@ let default_font_color={"alpha":1,"hex":"#34495E","hexa":"#34495EFF","hsla":{"h"
       this.isModalActive = false;
     },
     openNodeEdit(item) {
-	
+		this.tmpNode = item
+	/*
       this.tmpNode.id = item.id;
       this.tmpNode.text = item.text;
       this.tmpNode.url = item.url;
@@ -572,6 +573,7 @@ let default_font_color={"alpha":1,"hex":"#34495E","hexa":"#34495EFF","hsla":{"h"
       this.tmpNode.strokeWeight = item.strokeWeight;
       this.tmpNode.width = item.width;
       this.tmpNode.height = item.height;
+	  */
       //this.isModalActive = false;
 
       //this.isEditModalActive = true;
@@ -603,6 +605,11 @@ let default_font_color={"alpha":1,"hex":"#34495E","hexa":"#34495EFF","hsla":{"h"
 		this.tmpNode.id = item.id;
 		//this.tmpNode.content = Object.assign({}, item.content);
 		this.tmpNode = item
+		item.color ? this.tmpNode.color = item.color : this.tmpNode.color = {"alpha":1,"hex":"#ECF0F1","hexa":"#ECF0F1FF","hsla":{"h":192,"s":0.151515151515151,"l":0.9352941176470588,"a":1},"hsva":{"h":192,"s":0.020746887966804906,"v":0.9450980392156862,"a":1},"hue":192,"rgba":{"r":236,"g":240,"b":241,"a":1}}
+		
+		item.arrow ? this.tmpNode.arrow = item.arrow : this.tmpNode.arrow = 'none'
+		item.pattern ? this.tmpNode.pattern = item.pattern : this.tmpNode.pattern = 'solid'
+		item.shape ? this.tmpNode.shape = item.shape : this.tmpNode.shape = 'straight'
     },
     editLink(item) {
       let tmp = this.graphData.links.find(x => x.id === item.id);
