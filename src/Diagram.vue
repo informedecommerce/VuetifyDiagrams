@@ -165,9 +165,15 @@ export default {
   },
   methods: {
     editNode(item) {
+		if(!item.id){
+			item.id = this.generateID()
+		}
       this.$emit("editNode", item);
     },
     editLink(item) {
+		if(!item.id){
+			item.id = this.generateID()
+		}
       this.$emit("editLink", item);
     },
     generateID() {

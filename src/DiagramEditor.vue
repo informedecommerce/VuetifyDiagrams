@@ -388,7 +388,7 @@ export default {
 		value(val){
 			this.init()
 		},
-		'tmpNode'(val){
+		'tmpNode.color'(val){
 			console.log('color changed')
 			this.editNode(this.tmpNode)
 		},
@@ -605,6 +605,9 @@ let default_font_color={"alpha":1,"hex":"#34495E","hexa":"#34495EFF","hsla":{"h"
       //this.tmpLink.id = item.id;
      // this.tmpLink.content = Object.assign({}, item.content);
      // this.isEditLinkModalActive = true;
+		if(!item.id){
+			item.id = this.generateID()
+		}
 		this.tmpNode = item
 		this.tmpNode.id = item.id;
 		//this.tmpNode.content = Object.assign({}, item.content);
@@ -621,6 +624,7 @@ let default_font_color={"alpha":1,"hex":"#34495E","hexa":"#34495EFF","hsla":{"h"
       tmp.shape = item.shape;
       tmp.pattern = item.pattern;
       tmp.arrow = item.arrow;
+		tmp.stroke_weight = item.stroke_weight ? item.stroke_weight : 3;
       //this.isEditLinkModalActive = false;
     },
     endEdit() {
