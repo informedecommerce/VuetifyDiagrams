@@ -469,25 +469,32 @@ export default {
 		this.$emit('update',this.graphData)  
 	  },
 	   diagramAdd(item){
+		   let default_item_color={"alpha":1,"hex":"#ECF0F1","hexa":"#ECF0F1FF","hsla":{"h":192,"s":0.151515151515151,"l":0.9352941176470588,"a":1},"hsva":{"h":192,"s":0.020746887966804906,"v":0.9450980392156862,"a":1},"hue":192,"rgba":{"r":236,"g":240,"b":241,"a":1}}
+let default_font_color={"alpha":1,"hex":"#34495E","hexa":"#34495EFF","hsla":{"h":210,"s":0.2876712328767125,"l":0.28627450980392155,"a":1},"hsva":{"h":210,"s":0.4468085106382979,"v":0.3686274509803922,"a":1},"hue":210,"rgba":{"r":52,"g":73,"b":94,"a":1}}
+		   
 		  switch(item){
 			  case 'square':
 				  this.addNode(
-					 { "text": "New Square", "width": 60, "height": 60, "shape": "rectangle", "point": { "x": 9.999999999999993, "y": 34.31059443007615 }, font_color: {hexa: '#34495e'}, color: {hexa: '#ecf0f1'} } 
+					 { "text": "New Square", "width": 60, "height": 60, "shape": "rectangle", "point": { "x": 50,
+			"y": 66.4611318108179 }, font_color: default_font_color, color: default_item_color } 
 					) 
 					  break;
 					  case 'rectangle':
 					  this.addNode(
-					 {  "text": "New Rectangle" , "width": 100, "height": 60, "shape": "rectangle", "point": { "x": 9.999999999999993, "y": 34.31059443007615 }, font_color: {hexa: '#34495e'}, color: {hexa: '#ecf0f1'} } 
+					 {  "text": "New Rectangle" , "width": 100, "height": 60, "shape": "rectangle", "point": { "x": 50,
+			"y": 66.4611318108179 }, font_color: default_font_color, color: default_item_color } 
 					) 
 				  break;
 				  case 'circle':
 					  this.addNode(
-					 {  "text": "New Circle" , "width": 60, "height": 60, "shape": "ellipse", "point": { "x": 9.999999999999993, "y": 34.31059443007615 }, font_color: {hexa: '#34495e'}, color: {hexa: '#ecf0f1'} } 
+					 {  "text": "New Circle" , "width": 60, "height": 60, "shape": "ellipse", "point": { "x": 50,
+			"y": 66.4611318108179 }, font_color: default_font_color, color: default_item_color } 
 					) 
 				  break;
 				  case 'elipse':
 					  this.addNode(
-					 {   "text": "New Elipse" , "width": 100, "height": 60, "shape": "ellipse", "point": { "x": 9.999999999999993, "y": 34.31059443007615 }, font_color: {hexa: '#34495e'}, color: {hexa: '#ecf0f1'} } 
+					 {   "text": "New Elipse" , "width": 100, "height": 60, "shape": "ellipse", "point": { "x": 50,
+			"y": 66.4611318108179 }, font_color: default_font_color, color: default_item_color } 
 					) 
 				  break;
 				  case 'text':
@@ -541,6 +548,8 @@ export default {
       this.isModalActive = false;
     },
     openNodeEdit(item) {
+		this.tmpNode = JSON.parse(JSON.stringify(item))
+		/*
       this.tmpNode.id = item.id;
       this.tmpNode.text = item.text;
       this.tmpNode.url = item.url;
@@ -553,6 +562,7 @@ export default {
       this.tmpNode.width = item.width;
       this.tmpNode.height = item.height;
       this.isModalActive = false;
+	  */
       //this.isEditModalActive = true;
 		if(!this.panel.includes(1)){
 			this.panel.push(1)
@@ -561,6 +571,8 @@ export default {
     },
     editNode(item) {
       let tmp = this.graphData.nodes.find(x => x.id === item.id);
+		tmp = JSON.parse(JSON.stringify(item))
+		/*
       tmp.text = item.text;
       tmp.url = item.url;
       tmp.color = item.color;
@@ -572,6 +584,7 @@ export default {
       tmp.width = parseInt(item.width);
       tmp.height = parseInt(item.height);
       this.isEditModalActive = false;
+	  */
     },
     openLinkEdit(item) {
       this.tmpLink.id = item.id;

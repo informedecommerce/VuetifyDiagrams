@@ -2692,8 +2692,8 @@ var Diagram_component = normalizeComponent(
 )
 
 /* harmony default export */ var Diagram = (Diagram_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"933817ec-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/DiagramEditor.vue?vue&type=template&id=1885c45c&
-var DiagramEditorvue_type_template_id_1885c45c_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"diagram",attrs:{"id":"editor"}},[(!_vm.editable)?_c('v-btn',{on:{"click":function($event){_vm.editable = true}}},[_vm._v("Edit")]):_c('span',[_c('v-btn',{on:{"click":_vm.openModal}},[_vm._v("New Node")]),_c('v-btn',{on:{"click":_vm.endEdit}},[_vm._v("End")])],1),_c('v-btn',{on:{"click":_vm.openInputModal}},[_vm._v("Import/Export")]),_c('v-btn',{on:{"click":_vm.downloadSVG}},[_vm._v("Download SVG")]),_c('v-btn',{on:{"click":function($event){_vm.isAskClearDiagram = true}}},[_vm._v("Clear Diagram")]),_c('v-btn',{on:{"click":_vm.openSettingsModal}},[_vm._v("Settings")]),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isAskClearDiagram),callback:function ($$v) {_vm.isAskClearDiagram=$$v},expression:"isAskClearDiagram"}},[_c('v-card-text',[_vm._v("\n\t\tDo you wanna clear the Diagram?\n\t\t  ")]),_c('v-list-item',{attrs:{"color":"red"},on:{"click":function($event){return _vm.clearDiagram()}}},[_c('v-list-item-content',[_c('v-list-item-title',{staticClass:"title"},[_vm._v("\n            Yes\n          ")])],1)],1),_c('v-list-item',{attrs:{"color":"green"},on:{"click":function($event){_vm.isAskClearDiagram = false}}},[_c('v-list-item-content',[_c('v-list-item-title',{staticClass:"title"},[_vm._v("\n            No\n          ")])],1)],1)],1),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isModalActive),callback:function ($$v) {_vm.isModalActive=$$v},expression:"isModalActive"}},[_c('EditNodeModal',{attrs:{"node":{ content: {} }},on:{"ok":_vm.addNode,"cancel":_vm.cancel}})],1),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isEditModalActive),callback:function ($$v) {_vm.isEditModalActive=$$v},expression:"isEditModalActive"}},[_c('EditNodeModal',{attrs:{"node":_vm.tmpNode},on:{"ok":_vm.editNode,"cancel":_vm.cancel}})],1),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isEditLinkModalActive),callback:function ($$v) {_vm.isEditLinkModalActive=$$v},expression:"isEditLinkModalActive"}},[_c('EditLinkModal',{attrs:{"link":_vm.tmpLink},on:{"ok":_vm.editLink,"cancel":_vm.cancel}})],1),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isInputModalActive),callback:function ($$v) {_vm.isInputModalActive=$$v},expression:"isInputModalActive"}},[_c('InputModal',{attrs:{"text":_vm.json},on:{"ok":_vm.importData,"cancel":_vm.cancel}})],1),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isSettingsModalActive),callback:function ($$v) {_vm.isSettingsModalActive=$$v},expression:"isSettingsModalActive"}},[_c('v-card',[_c('v-card-text',[_c('SettingsModal',{attrs:{"settings":_vm.settings},on:{"ok":_vm.updateSettings,"cancel":function($event){_vm.isSettingsModalActive = false}}})],1)],1)],1),_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{staticStyle:{"height":"calc(100vh - 200px)","overflow":"auto"},attrs:{"xs2":""}},[_vm._v("\t\n\t\t"+_vm._s(_vm.panel)+"\n\t\t"),_c('v-expansion-panels',{attrs:{"multiple":""},model:{value:(_vm.panel),callback:function ($$v) {_vm.panel=$$v},expression:"panel"}},[(_vm.editable)?_c('v-expansion-panel',[_c('v-expansion-panel-header',{attrs:{"disable-icon-rotate":""},scopedSlots:_vm._u([{key:"actions",fn:function(){return [_c('v-icon',{attrs:{"color":"info"}},[_vm._v("mdi-pencil")])]},proxy:true}],null,false,3820483992)},[_vm._v("\n\t\t  Edit Item\n\t\t\t\t")]),(_vm.tmpNode)?_c('v-expansion-panel-content',[_c('v-text-field',{attrs:{"label":"Text","hide-details":""},on:{"change":function($event){return _vm.editNode(_vm.tmpNode)},"keyup":function($event){return _vm.editNode(_vm.tmpNode)}},model:{value:(_vm.tmpNode.text),callback:function ($$v) {_vm.$set(_vm.tmpNode, "text", $$v)},expression:"tmpNode.text"}}),_c('v-text-field',{attrs:{"label":"Text Size","type":"number","hide-details":""},on:{"change":function($event){return _vm.editNode(_vm.tmpNode)},"keyup":function($event){return _vm.editNode(_vm.tmpNode)}},model:{value:(_vm.tmpNode.font_size),callback:function ($$v) {_vm.$set(_vm.tmpNode, "font_size", $$v)},expression:"tmpNode.font_size"}}),_c('v-menu',{attrs:{"close-on-content-click":false},scopedSlots:_vm._u([{key:"activator",fn:function(ref){
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"933817ec-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/DiagramEditor.vue?vue&type=template&id=5c511800&
+var DiagramEditorvue_type_template_id_5c511800_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"diagram",attrs:{"id":"editor"}},[(!_vm.editable)?_c('v-btn',{on:{"click":function($event){_vm.editable = true}}},[_vm._v("Edit")]):_c('span',[_c('v-btn',{on:{"click":_vm.openModal}},[_vm._v("New Node")]),_c('v-btn',{on:{"click":_vm.endEdit}},[_vm._v("End")])],1),_c('v-btn',{on:{"click":_vm.openInputModal}},[_vm._v("Import/Export")]),_c('v-btn',{on:{"click":_vm.downloadSVG}},[_vm._v("Download SVG")]),_c('v-btn',{on:{"click":function($event){_vm.isAskClearDiagram = true}}},[_vm._v("Clear Diagram")]),_c('v-btn',{on:{"click":_vm.openSettingsModal}},[_vm._v("Settings")]),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isAskClearDiagram),callback:function ($$v) {_vm.isAskClearDiagram=$$v},expression:"isAskClearDiagram"}},[_c('v-card-text',[_vm._v("\n\t\tDo you wanna clear the Diagram?\n\t\t  ")]),_c('v-list-item',{attrs:{"color":"red"},on:{"click":function($event){return _vm.clearDiagram()}}},[_c('v-list-item-content',[_c('v-list-item-title',{staticClass:"title"},[_vm._v("\n            Yes\n          ")])],1)],1),_c('v-list-item',{attrs:{"color":"green"},on:{"click":function($event){_vm.isAskClearDiagram = false}}},[_c('v-list-item-content',[_c('v-list-item-title',{staticClass:"title"},[_vm._v("\n            No\n          ")])],1)],1)],1),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isModalActive),callback:function ($$v) {_vm.isModalActive=$$v},expression:"isModalActive"}},[_c('EditNodeModal',{attrs:{"node":{ content: {} }},on:{"ok":_vm.addNode,"cancel":_vm.cancel}})],1),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isEditModalActive),callback:function ($$v) {_vm.isEditModalActive=$$v},expression:"isEditModalActive"}},[_c('EditNodeModal',{attrs:{"node":_vm.tmpNode},on:{"ok":_vm.editNode,"cancel":_vm.cancel}})],1),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isEditLinkModalActive),callback:function ($$v) {_vm.isEditLinkModalActive=$$v},expression:"isEditLinkModalActive"}},[_c('EditLinkModal',{attrs:{"link":_vm.tmpLink},on:{"ok":_vm.editLink,"cancel":_vm.cancel}})],1),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isInputModalActive),callback:function ($$v) {_vm.isInputModalActive=$$v},expression:"isInputModalActive"}},[_c('InputModal',{attrs:{"text":_vm.json},on:{"ok":_vm.importData,"cancel":_vm.cancel}})],1),_c('v-navigation-drawer',{attrs:{"absolute":"","temporary":"","right":""},model:{value:(_vm.isSettingsModalActive),callback:function ($$v) {_vm.isSettingsModalActive=$$v},expression:"isSettingsModalActive"}},[_c('v-card',[_c('v-card-text',[_c('SettingsModal',{attrs:{"settings":_vm.settings},on:{"ok":_vm.updateSettings,"cancel":function($event){_vm.isSettingsModalActive = false}}})],1)],1)],1),_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{staticStyle:{"height":"calc(100vh - 200px)","overflow":"auto"},attrs:{"xs2":""}},[_vm._v("\t\n\t\t"+_vm._s(_vm.panel)+"\n\t\t"),_c('v-expansion-panels',{attrs:{"multiple":""},model:{value:(_vm.panel),callback:function ($$v) {_vm.panel=$$v},expression:"panel"}},[(_vm.editable)?_c('v-expansion-panel',[_c('v-expansion-panel-header',{attrs:{"disable-icon-rotate":""},scopedSlots:_vm._u([{key:"actions",fn:function(){return [_c('v-icon',{attrs:{"color":"info"}},[_vm._v("mdi-pencil")])]},proxy:true}],null,false,3820483992)},[_vm._v("\n\t\t  Edit Item\n\t\t\t\t")]),(_vm.tmpNode)?_c('v-expansion-panel-content',[_c('v-text-field',{attrs:{"label":"Text","hide-details":""},on:{"change":function($event){return _vm.editNode(_vm.tmpNode)},"keyup":function($event){return _vm.editNode(_vm.tmpNode)}},model:{value:(_vm.tmpNode.text),callback:function ($$v) {_vm.$set(_vm.tmpNode, "text", $$v)},expression:"tmpNode.text"}}),_c('v-text-field',{attrs:{"label":"Text Size","type":"number","hide-details":""},on:{"change":function($event){return _vm.editNode(_vm.tmpNode)},"keyup":function($event){return _vm.editNode(_vm.tmpNode)}},model:{value:(_vm.tmpNode.font_size),callback:function ($$v) {_vm.$set(_vm.tmpNode, "font_size", $$v)},expression:"tmpNode.font_size"}}),_c('v-menu',{attrs:{"close-on-content-click":false},scopedSlots:_vm._u([{key:"activator",fn:function(ref){
 var on = ref.on;
 return [_c('v-btn',_vm._g({attrs:{"x-small":""}},on),[_vm._v("Text Color")])]}}],null,false,283039153)},[_c('v-color-picker',{attrs:{"mode":"hexa","hide-mode-switch":""},model:{value:(_vm.tmpNode.font_color),callback:function ($$v) {_vm.$set(_vm.tmpNode, "font_color", $$v)},expression:"tmpNode.font_color"}})],1),_c('v-text-field',{attrs:{"label":"URL","hide-details":""},on:{"change":function($event){return _vm.editNode(_vm.tmpNode)},"keyup":function($event){return _vm.editNode(_vm.tmpNode)}},model:{value:(_vm.tmpNode.url),callback:function ($$v) {_vm.$set(_vm.tmpNode, "url", $$v)},expression:"tmpNode.url"}}),_c('v-menu',{attrs:{"close-on-content-click":false},scopedSlots:_vm._u([{key:"activator",fn:function(ref){
 var on = ref.on;
@@ -2705,10 +2705,10 @@ return [_c('v-btn',_vm._g({attrs:{"x-small":""}},on),[_vm._v("Item Color")])]}}]
           cancel: 'Cancel',
           copy: 'Copy'
         }},on:{"editNode":_vm.openNodeEdit,"editLink":_vm.openLinkEdit,"nodeClicked":_vm.nodeClicked,"linkClicked":_vm.linkClicked,"nodeChanged":_vm.nodeChanged,"linkChanged":_vm.linkChanged}})],1)],1)],1)}
-var DiagramEditorvue_type_template_id_1885c45c_staticRenderFns = []
+var DiagramEditorvue_type_template_id_5c511800_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/DiagramEditor.vue?vue&type=template&id=1885c45c&
+// CONCATENATED MODULE: ./src/DiagramEditor.vue?vue&type=template&id=5c511800&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.object.assign.js
 var es6_object_assign = __webpack_require__("f751");
@@ -3676,6 +3676,55 @@ var SettingsModal_component = normalizeComponent(
       this.$emit('update', this.graphData);
     },
     diagramAdd: function diagramAdd(item) {
+      var default_item_color = {
+        "alpha": 1,
+        "hex": "#ECF0F1",
+        "hexa": "#ECF0F1FF",
+        "hsla": {
+          "h": 192,
+          "s": 0.151515151515151,
+          "l": 0.9352941176470588,
+          "a": 1
+        },
+        "hsva": {
+          "h": 192,
+          "s": 0.020746887966804906,
+          "v": 0.9450980392156862,
+          "a": 1
+        },
+        "hue": 192,
+        "rgba": {
+          "r": 236,
+          "g": 240,
+          "b": 241,
+          "a": 1
+        }
+      };
+      var default_font_color = {
+        "alpha": 1,
+        "hex": "#34495E",
+        "hexa": "#34495EFF",
+        "hsla": {
+          "h": 210,
+          "s": 0.2876712328767125,
+          "l": 0.28627450980392155,
+          "a": 1
+        },
+        "hsva": {
+          "h": 210,
+          "s": 0.4468085106382979,
+          "v": 0.3686274509803922,
+          "a": 1
+        },
+        "hue": 210,
+        "rgba": {
+          "r": 52,
+          "g": 73,
+          "b": 94,
+          "a": 1
+        }
+      };
+
       switch (item) {
         case 'square':
           this.addNode({
@@ -3684,15 +3733,11 @@ var SettingsModal_component = normalizeComponent(
             "height": 60,
             "shape": "rectangle",
             "point": {
-              "x": 9.999999999999993,
-              "y": 34.31059443007615
+              "x": 50,
+              "y": 66.4611318108179
             },
-            font_color: {
-              hexa: '#34495e'
-            },
-            color: {
-              hexa: '#ecf0f1'
-            }
+            font_color: default_font_color,
+            color: default_item_color
           });
           break;
 
@@ -3703,15 +3748,11 @@ var SettingsModal_component = normalizeComponent(
             "height": 60,
             "shape": "rectangle",
             "point": {
-              "x": 9.999999999999993,
-              "y": 34.31059443007615
+              "x": 50,
+              "y": 66.4611318108179
             },
-            font_color: {
-              hexa: '#34495e'
-            },
-            color: {
-              hexa: '#ecf0f1'
-            }
+            font_color: default_font_color,
+            color: default_item_color
           });
           break;
 
@@ -3722,15 +3763,11 @@ var SettingsModal_component = normalizeComponent(
             "height": 60,
             "shape": "ellipse",
             "point": {
-              "x": 9.999999999999993,
-              "y": 34.31059443007615
+              "x": 50,
+              "y": 66.4611318108179
             },
-            font_color: {
-              hexa: '#34495e'
-            },
-            color: {
-              hexa: '#ecf0f1'
-            }
+            font_color: default_font_color,
+            color: default_item_color
           });
           break;
 
@@ -3741,15 +3778,11 @@ var SettingsModal_component = normalizeComponent(
             "height": 60,
             "shape": "ellipse",
             "point": {
-              "x": 9.999999999999993,
-              "y": 34.31059443007615
+              "x": 50,
+              "y": 66.4611318108179
             },
-            font_color: {
-              hexa: '#34495e'
-            },
-            color: {
-              hexa: '#ecf0f1'
-            }
+            font_color: default_font_color,
+            color: default_item_color
           });
           break;
 
@@ -3813,18 +3846,22 @@ var SettingsModal_component = normalizeComponent(
       this.isModalActive = false;
     },
     openNodeEdit: function openNodeEdit(item) {
-      this.tmpNode.id = item.id;
-      this.tmpNode.text = item.text;
-      this.tmpNode.url = item.url;
-      this.tmpNode.color = item.color;
+      this.tmpNode = JSON.parse(JSON.stringify(item));
+      /*
+          this.tmpNode.id = item.id;
+          this.tmpNode.text = item.text;
+          this.tmpNode.url = item.url;
+          this.tmpNode.color = item.color;
       this.tmpNode.font_color = item.font_color;
       this.tmpNode.font_size = item.font_size;
-      this.tmpNode.shape = item.shape;
-      this.tmpNode.stroke = item.stroke;
-      this.tmpNode.strokeWeight = item.strokeWeight;
-      this.tmpNode.width = item.width;
-      this.tmpNode.height = item.height;
-      this.isModalActive = false; //this.isEditModalActive = true;
+          this.tmpNode.shape = item.shape;
+          this.tmpNode.stroke = item.stroke;
+          this.tmpNode.strokeWeight = item.strokeWeight;
+          this.tmpNode.width = item.width;
+          this.tmpNode.height = item.height;
+          this.isModalActive = false;
+       */
+      //this.isEditModalActive = true;
 
       if (!this.panel.includes(1)) {
         this.panel.push(1);
@@ -3834,17 +3871,20 @@ var SettingsModal_component = normalizeComponent(
       var tmp = this.graphData.nodes.find(function (x) {
         return x.id === item.id;
       });
-      tmp.text = item.text;
-      tmp.url = item.url;
-      tmp.color = item.color;
+      tmp = JSON.parse(JSON.stringify(item));
+      /*
+          tmp.text = item.text;
+          tmp.url = item.url;
+          tmp.color = item.color;
       tmp.font_color = item.font_color;
       tmp.font_size = item.font_size;
-      tmp.shape = item.shape;
-      tmp.stroke = item.stroke;
-      tmp.strokeWeight = item.strokeWeight;
-      tmp.width = parseInt(item.width);
-      tmp.height = parseInt(item.height);
-      this.isEditModalActive = false;
+          tmp.shape = item.shape;
+          tmp.stroke = item.stroke;
+          tmp.strokeWeight = item.strokeWeight;
+          tmp.width = parseInt(item.width);
+          tmp.height = parseInt(item.height);
+          this.isEditModalActive = false;
+       */
     },
     openLinkEdit: function openLinkEdit(item) {
       this.tmpLink.id = item.id;
@@ -3935,8 +3975,8 @@ var SettingsModal_component = normalizeComponent(
 
 var DiagramEditor_component = normalizeComponent(
   src_DiagramEditorvue_type_script_lang_js_,
-  DiagramEditorvue_type_template_id_1885c45c_render,
-  DiagramEditorvue_type_template_id_1885c45c_staticRenderFns,
+  DiagramEditorvue_type_template_id_5c511800_render,
+  DiagramEditorvue_type_template_id_5c511800_staticRenderFns,
   false,
   null,
   null,
