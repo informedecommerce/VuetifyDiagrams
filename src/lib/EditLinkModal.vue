@@ -1,6 +1,6 @@
 <template>
   
-    <transition name="item">
+   
       <div class="form" v-if="isActive">
         <h2>Edit link</h2>
         <label>Color:</label>
@@ -26,7 +26,7 @@
         <v-btn @click="ok">OK</v-btn>
         <v-btn class="danger" @click="cancel">Cancel</v-btn>
       </div>
-    </transition>
+
   
 </template>
 <script>

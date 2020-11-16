@@ -139,6 +139,7 @@
         <v-text-field
             label="Text"
 					  hide-details
+					  v-if="tmpNode.text"
 					  v-model="tmpNode.text"
 					  @change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"
@@ -147,6 +148,7 @@
             label="Text Size"
 						type="number"
 					  hide-details
+						v-if="tmpNode.font_size"
 					  v-model="tmpNode.font_size"
 						@change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"
@@ -159,7 +161,7 @@
 -->
 						   <v-btn x-small v-on="on">Text Color</v-btn>
                       </template>
-                      <v-color-picker  mode="hexa" v-model="tmpNode.font_color"  hide-mode-switch ></v-color-picker>
+                      <v-color-picker v-if="tmpNode.font_color"  mode="hexa" v-model="tmpNode.font_color"  hide-mode-switch ></v-color-picker>
                     </v-menu>
 		  <v-text-field
             label="URL"
@@ -168,6 +170,12 @@
 						@change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"
           ></v-text-field>
+		  
+		  <v-select v-if="tmpNode.shape" label="Line Shape" :items="[{text: 'Bezier Curve', val: 'bezier'},{text: 'Straight Line', val: 'straight'}]" item-text="text" item-value="val"  v-model="tmpNode.shape" placeholder="Select line shape" @change="updateLink"></v-select>
+        <v-select label="Pattern" v-if="tmpNode.pattern" v-model="tmpNode.pattern" @change="updateLink" :items="[{text: 'Solid', val: 'solid'},{text: 'Dash', val: 'dash'},{text: 'Dot', val: 'dot'}]" item-text="text" item-value="val" placeholder="Select line pattern" @change="updateLink"></v-select>
+        <v-select label="Arrow Type" v-if="tmpNode.arrow" v-model="tmpNode.arrow" placeholder="Select arrow type" :items="[{text: 'None', val: 'none'},{text: 'One Side (Source)', val: 'src'},{text: 'One Side (Destination)', val: 'dest'},{text: 'Both', val: 'both'}]" item-text="text" item-value="val" @change="updateLink">
+          </v-select>
+		  
 		  <v-menu :close-on-content-click="false">
                       <template v-slot:activator="{ on }">
 						  <!--
@@ -176,11 +184,12 @@
 -->
 						  <v-btn x-small v-on="on">Item Color</v-btn>
                       </template>
-                      <v-color-picker  mode="hexa" v-model="tmpNode.color"  hide-mode-switch @change="editNode(tmpNode)"
+                      <v-color-picker v-if="tmpNode.color" mode="hexa" v-model="tmpNode.color"  hide-mode-switch @change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"></v-color-picker>
                     </v-menu>
 		  <v-text-field
             label="Stroke"
+						v-if="tmpNode.stroke"
 						type="number"
 					  hide-details
 					  v-model="tmpNode.stroke"
@@ -189,6 +198,7 @@
           ></v-text-field>
 		  <v-text-field
             label="Stroke Weight"
+						v-if="tmpNode.strokeWeight"
 						type="number"
 					  hide-details
 					  v-model="tmpNode.strokeWeight"
@@ -197,6 +207,7 @@
           ></v-text-field>
 		  <v-text-field
             label="Width"
+						v-if="tmpNode.width"
 						type="number"
 					  hide-details
 					  v-model="tmpNode.width"
@@ -205,6 +216,7 @@
           ></v-text-field>
 		  <v-text-field
             label="Height"
+						v-if="tmpNode.height"
 						type="number"
 					  hide-details
 					  v-model="tmpNode.height"
@@ -585,9 +597,12 @@ let default_font_color={"alpha":1,"hex":"#34495E","hexa":"#34495EFF","hsla":{"h"
 	
     },
     openLinkEdit(item) {
-      this.tmpLink.id = item.id;
-      this.tmpLink.content = Object.assign({}, item.content);
-      this.isEditLinkModalActive = true;
+      //this.tmpLink.id = item.id;
+     // this.tmpLink.content = Object.assign({}, item.content);
+     // this.isEditLinkModalActive = true;
+		this.tmpNode.id = item.id;
+		//this.tmpNode.content = Object.assign({}, item.content);
+		this.tmpNode = item
     },
     editLink(item) {
       let tmp = this.graphData.links.find(x => x.id === item.id);
