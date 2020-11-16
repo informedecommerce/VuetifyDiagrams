@@ -265,8 +265,8 @@ export default {
         id: this.generateID(),
         source: this.selectedNode,
         destination: id,
-		  color: "#ECF0F1FF",
-		  strokeWeight: 3,
+		  color: "#21DB14",
+		  stroke_weight: 3,
         point: {
           x: (src.point.x + dest.point.x) * 0.5,
           y: (src.point.y + dest.point.y) * 0.5
