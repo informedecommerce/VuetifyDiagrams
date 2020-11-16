@@ -24,7 +24,7 @@
       :y1="calcSource().y"
       :x2="calcDestination().x"
       :y2="calcDestination().y"
-      :stroke="link.color || '#ffeaa7'"
+      :stroke="link.color && link.color.hexa ? link.color.hexa : '#ffeaa7'"
       stroke-width="3"
       fill="none"
       :stroke-dasharray="definePattern(link.pattern)"
@@ -45,7 +45,7 @@
       refX="5"
       refY="5"
     >
-      <polygon points="0,1.5 0,8.5 10,5 " :fill="link.color || '#ffeaa7'" />
+      <polygon points="0,1.5 0,8.5 10,5 " :fill="link.color && link.color.hexa ? link.color.hexa : '#ffeaa7'" />
     </marker>
     <g v-if="editable">
       <line

@@ -153,7 +153,7 @@
 						@change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"
           ></v-text-field>
-		  <v-menu :close-on-content-click="false">
+		  <v-menu :close-on-content-click="false" v-if="tmpNode.font_color">
                       <template v-slot:activator="{ on }">
 						  <!--
                         <v-text-field  v-model="tmpNode.font_color.hexa" v-on="on" label="Text Color" @change="editNode(tmpNode)"
@@ -161,7 +161,7 @@
 -->
 						   <v-btn x-small v-on="on">Text Color</v-btn>
                       </template>
-                      <v-color-picker v-if="tmpNode.font_color"  mode="hexa" v-model="tmpNode.font_color"  hide-mode-switch ></v-color-picker>
+                      <v-color-picker   mode="hexa" v-model="tmpNode.font_color"  hide-mode-switch ></v-color-picker>
                     </v-menu>
 		  <v-text-field
             label="URL"
@@ -176,7 +176,7 @@
         <v-select label="Arrow Type" v-if="tmpNode.arrow" v-model="tmpNode.arrow" placeholder="Select arrow type" :items="[{text: 'None', val: 'none'},{text: 'One Side (Source)', val: 'src'},{text: 'One Side (Destination)', val: 'dest'},{text: 'Both', val: 'both'}]" item-text="text" item-value="val" @change="editLink(tmpNode)">
           </v-select>
 		  
-		  <v-menu :close-on-content-click="false">
+		  <v-menu :close-on-content-click="false" v-if="tmpNode.color">
                       <template v-slot:activator="{ on }">
 						  <!--
                         <v-text-field v-model="tmpNode.color.hexa" v-on="on" label="Color" @change="editNode(tmpNode)"
@@ -184,7 +184,7 @@
 -->
 						  <v-btn x-small v-on="on">Item Color</v-btn>
                       </template>
-                      <v-color-picker v-if="tmpNode.color" mode="hexa" v-model="tmpNode.color"  hide-mode-switch @change="editNode(tmpNode)"
+                      <v-color-picker  mode="hexa" v-model="tmpNode.color"  hide-mode-switch @change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"></v-color-picker>
                     </v-menu>
 		  <v-text-field
