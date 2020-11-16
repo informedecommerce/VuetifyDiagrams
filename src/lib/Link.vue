@@ -8,7 +8,7 @@
         Q ${point.x} ${point.y}
         ${calcDestination().x} ${calcDestination().y}`
       "
-      :stroke="link.color ? link.color.hexa ? link.color.hexa : '#ffeaa7' : link.color"
+      :stroke="link.color ? link.color : '#ffeaa7'"
       :stroke-width="link.strokeWeight ? link.strokeWeight : 3"
       fill="none"
       :stroke-dasharray="definePattern(link.pattern)"
@@ -26,7 +26,7 @@
       :y1="calcSource().y"
       :x2="calcDestination().x"
       :y2="calcDestination().y"
-      :stroke="link.color ? link.color.hexa ? link.color.hexa : '#ffeaa7' : link.color"
+      :stroke="link.color ? link.color : '#ffeaa7'"
       :stroke-width="link.strokeWeight ? link.strokeWeight : 3"
       fill="none"
       :stroke-dasharray="definePattern(link.pattern)"
@@ -43,13 +43,13 @@
       orient="auto-start-reverse"
       markerWidth="15"
       markerHeight="15"
-	  :stroke="link.color ? link.color.hexa ? link.color.hexa : '#ffeaa7' : link.color"		
-			:fill="link.color && link.color.hexa ? link.color.hexa : '#ffeaa7'"
+	  :stroke="link.color ? link.color : '#ffeaa7'"		
+			:fill="link.color ? link.color : '#ffeaa7'"
       viewBox="0 0 10 10"
       refX="5"
       refY="5"
     >
-      <polygon points="0,1.5 0,8.5 10,5 " :fill="link.color && link.color.hexa ? link.color.hexa : '#ffeaa7'" :stroke="link.color ? link.color.hexa ? link.color.hexa : '#ffeaa7' : link.color"/>
+      <polygon points="0,1.5 0,8.5 10,5 " :fill="link.color ? link.color : '#ffeaa7'" :stroke="link.color ? link.color : '#ffeaa7'"/>
     </marker>
     <g v-if="editable">
       <line
@@ -236,7 +236,7 @@ export default {
     edit() {
       this.$emit("editLink", {
         id: this.link.id,
-          color: this.link.color || "#ffeaa7",
+          color: this.link.color && this.link.color.hexa ? this.link.color :  "#ffeaa7",
           shape: this.link.shape || "straight",
           pattern: this.link.pattern || "solid",
           arrow: this.link.arrow || "none"
