@@ -485,7 +485,7 @@ export default {
 					 {  "text": "New Circle" , "width": 60, "height": 60, "shape": "ellipse", "point": { "x": 9.999999999999993, "y": 34.31059443007615 }, font_color: {hexa: '#34495e'}, color: {hexa: '#ecf0f1'} } 
 					) 
 				  break;
-				  case 'oval':
+				  case 'elipse':
 					  this.addNode(
 					 {   "text": "New Elipse" , "width": 100, "height": 60, "shape": "ellipse", "point": { "x": 9.999999999999993, "y": 34.31059443007615 }, font_color: {hexa: '#34495e'}, color: {hexa: '#ecf0f1'} } 
 					) 
