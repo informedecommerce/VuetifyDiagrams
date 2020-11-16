@@ -2043,12 +2043,12 @@ var component = normalizeComponent(
 )
 
 /* harmony default export */ var Node = (component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"933817ec-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib/Link.vue?vue&type=template&id=66607cf9&scoped=true&
-var Linkvue_type_template_id_66607cf9_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('g',[(_vm.link.shape === 'bezier')?_c('path',{attrs:{"d":("M" + (_vm.calcSource().x) + " " + (_vm.calcSource().y) + "\n        Q " + (_vm.point.x) + " " + (_vm.point.y) + "\n        " + (_vm.calcDestination().x) + " " + (_vm.calcDestination().y)),"stroke":_vm.link.color && _vm.link.color.hexa ? _vm.link.color.hexa : '#ffeaa7',"stroke-width":_vm.link.strokeWeight ? _vm.link.strokeWeight : 3,"fill":"none","stroke-dasharray":_vm.definePattern(_vm.link.pattern),"marker-start":_vm.link.arrow === 'src' || _vm.link.arrow === 'both' ? ("url(#" + (_vm.link.id) + ")") : '',"marker-end":_vm.link.arrow === 'dest' || _vm.link.arrow === 'both' ? ("url(#" + (_vm.link.id) + ")") : ''}}):_c('line',{attrs:{"x1":_vm.calcSource().x,"y1":_vm.calcSource().y,"x2":_vm.calcDestination().x,"y2":_vm.calcDestination().y,"stroke":_vm.link.color && _vm.link.color.hexa ? _vm.link.color.hexa : '#ffeaa7',"stroke-width":_vm.link.strokeWeight ? _vm.link.strokeWeight : 3,"fill":"none","stroke-dasharray":_vm.definePattern(_vm.link.pattern),"marker-start":_vm.link.arrow === 'src' || _vm.link.arrow === 'both' ? ("url(#" + (_vm.link.id) + ")") : '',"marker-end":_vm.link.arrow === 'dest' || _vm.link.arrow === 'both' ? ("url(#" + (_vm.link.id) + ")") : ''}}),_c('marker',{attrs:{"id":_vm.link.id,"markerUnits":"userSpaceOnUse","orient":"auto-start-reverse","markerWidth":"15","markerHeight":"15","stroke":_vm.link.color && _vm.link.color.hexa ? _vm.link.color.hexa : '#ffeaa7',"fill":_vm.link.color && _vm.link.color.hexa ? _vm.link.color.hexa : '#ffeaa7',"viewBox":"0 0 10 10","refX":"5","refY":"5"}},[_c('polygon',{attrs:{"points":"0,1.5 0,8.5 10,5 ","fill":_vm.link.color && _vm.link.color.hexa ? _vm.link.color.hexa : '#ffeaa7',"stroke":_vm.link.color && _vm.link.color.hexa ? _vm.link.color.hexa : '#ffeaa7'}})]),(_vm.editable)?_c('g',[_c('line',{attrs:{"x1":_vm.calcSource().x,"y1":_vm.calcSource().y,"x2":_vm.point.x,"y2":_vm.point.y,"stroke":"lightgray"}}),_c('line',{attrs:{"x1":_vm.point.x,"y1":_vm.point.y,"x2":_vm.calcDestination().x,"y2":_vm.calcDestination().y,"stroke":"lightgray"}}),_c('ellipse',{staticClass:"grab",attrs:{"id":_vm.id,"cx":_vm.point.x,"cy":_vm.point.y,"rx":"10","ry":"10","fill":"#ff7675","stroke-width":"2"},on:{"click":_vm.select,"mousedown":_vm.mousedown,"touchstart":_vm.mousedown,"mousemove":_vm.mousemove,"touchmove":_vm.mousemove,"mouseup":_vm.mouseup,"touchend":_vm.mouseup}})]):_vm._e(),_c('g',[(_vm.selected)?_c('text',{staticClass:"button",attrs:{"x":_vm.point.x - 15,"y":_vm.point.y - 20,"fill":"#00b894"},on:{"click":_vm.edit}},[_vm._v("\n        "+_vm._s(_vm.labels.edit || "Edit")+"\n      ")]):_vm._e(),(_vm.selected)?_c('text',{staticClass:"button",attrs:{"x":_vm.point.x - 15,"y":_vm.point.y + 30,"fill":"#ff7675"},on:{"click":_vm.remove}},[_vm._v("\n        "+_vm._s(_vm.labels.remove || "Remove")+"\n      ")]):_vm._e()])])}
-var Linkvue_type_template_id_66607cf9_scoped_true_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"933817ec-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/lib/Link.vue?vue&type=template&id=400b8b65&scoped=true&
+var Linkvue_type_template_id_400b8b65_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('g',[(_vm.link.shape === 'bezier')?_c('path',{attrs:{"d":("M" + (_vm.calcSource().x) + " " + (_vm.calcSource().y) + "\n        Q " + (_vm.point.x) + " " + (_vm.point.y) + "\n        " + (_vm.calcDestination().x) + " " + (_vm.calcDestination().y)),"stroke":_vm.link.color && _vm.link.color.hexa ? _vm.link.color.hexa : '#ffeaa7',"stroke-width":_vm.link.strokeWeight ? _vm.link.strokeWeight : 3,"fill":"none","stroke-dasharray":_vm.definePattern(_vm.link.pattern),"marker-start":_vm.link.arrow === 'src' || _vm.link.arrow === 'both' ? ("url(#" + (_vm.link.id) + ")") : '',"marker-end":_vm.link.arrow === 'dest' || _vm.link.arrow === 'both' ? ("url(#" + (_vm.link.id) + ")") : ''}}):_c('line',{attrs:{"x1":_vm.calcSource().x,"y1":_vm.calcSource().y,"x2":_vm.calcDestination().x,"y2":_vm.calcDestination().y,"stroke":_vm.link.color && _vm.link.color.hexa ? _vm.link.color.hexa : '#ffeaa7',"stroke-width":_vm.link.strokeWeight ? _vm.link.strokeWeight : 3,"fill":"none","stroke-dasharray":_vm.definePattern(_vm.link.pattern),"marker-start":_vm.link.arrow === 'src' || _vm.link.arrow === 'both' ? ("url(#" + (_vm.link.id) + ")") : '',"marker-end":_vm.link.arrow === 'dest' || _vm.link.arrow === 'both' ? ("url(#" + (_vm.link.id) + ")") : ''}}),_c('marker',{attrs:{"id":_vm.link.id,"markerUnits":"userSpaceOnUse","orient":"auto-start-reverse","markerWidth":"15","markerHeight":"15","stroke":_vm.link.color && _vm.link.color.hexa ? _vm.link.color.hexa : '#ffeaa7',"fill":_vm.link.color && _vm.link.color.hexa ? _vm.link.color.hexa : '#ffeaa7',"viewBox":"0 0 10 10","refX":"5","refY":"5"}},[_c('polygon',{attrs:{"points":"0,1.5 0,8.5 10,5 ","fill":_vm.link.color && _vm.link.color.hexa ? _vm.link.color.hexa : '#ffeaa7',"stroke":_vm.link.color && _vm.link.color.hexa ? _vm.link.color.hexa : '#ffeaa7'}})]),(_vm.editable)?_c('g',[_c('line',{attrs:{"x1":_vm.calcSource().x,"y1":_vm.calcSource().y,"x2":_vm.point.x,"y2":_vm.point.y,"stroke":"lightgray"}}),_c('line',{attrs:{"x1":_vm.point.x,"y1":_vm.point.y,"x2":_vm.calcDestination().x,"y2":_vm.calcDestination().y,"stroke":"lightgray"}}),_c('ellipse',{staticClass:"grab",attrs:{"id":_vm.id,"cx":_vm.point.x,"cy":_vm.point.y,"rx":"10","ry":"10","fill":"#ff7675","stroke-width":"2"},on:{"click":_vm.select,"mousedown":_vm.mousedown,"touchstart":_vm.mousedown,"mousemove":_vm.mousemove,"touchmove":_vm.mousemove,"mouseup":_vm.mouseup,"touchend":_vm.mouseup}})]):_vm._e(),_c('g',[(_vm.selected)?_c('text',{staticClass:"button",attrs:{"x":_vm.point.x - 15,"y":_vm.point.y - 20,"fill":"#00b894"},on:{"click":_vm.edit}},[_vm._v("\n        "+_vm._s(_vm.labels.edit || "Edit")+"\n      ")]):_vm._e(),(_vm.selected)?_c('text',{staticClass:"button",attrs:{"x":_vm.point.x - 15,"y":_vm.point.y + 30,"fill":"#ff7675"},on:{"click":_vm.remove}},[_vm._v("\n        "+_vm._s(_vm.labels.remove || "Remove")+"\n      ")]):_vm._e()])])}
+var Linkvue_type_template_id_400b8b65_scoped_true_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/lib/Link.vue?vue&type=template&id=66607cf9&scoped=true&
+// CONCATENATED MODULE: ./src/lib/Link.vue?vue&type=template&id=400b8b65&scoped=true&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.string.link.js
 var es6_string_link = __webpack_require__("b54a");
@@ -2254,7 +2254,8 @@ var generateID = function generateID() {
         y: 0
       },
       id: this.link.id,
-      point: this.link.point
+      point: this.link.point,
+      color: this.link.color
     };
   },
   methods: {
@@ -2406,11 +2407,11 @@ var generateID = function generateID() {
 
 var Link_component = normalizeComponent(
   lib_Linkvue_type_script_lang_js_,
-  Linkvue_type_template_id_66607cf9_scoped_true_render,
-  Linkvue_type_template_id_66607cf9_scoped_true_staticRenderFns,
+  Linkvue_type_template_id_400b8b65_scoped_true_render,
+  Linkvue_type_template_id_400b8b65_scoped_true_staticRenderFns,
   false,
   null,
-  "66607cf9",
+  "400b8b65",
   null
   
 )

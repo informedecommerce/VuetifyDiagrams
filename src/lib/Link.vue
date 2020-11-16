@@ -175,7 +175,8 @@ export default {
         y: 0
       },
       id: this.link.id,
-      point: this.link.point
+      point: this.link.point,
+		color: this.link.color
     };
   },
   methods: {
