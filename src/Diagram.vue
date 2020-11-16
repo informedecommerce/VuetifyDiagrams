@@ -70,7 +70,7 @@
           v-for="item in linkList"
           :selected="item.id === selectedLink"
           :key="item.id"
-			:color="item.color"
+		  :color="item.color"
           :source="findNode(item.source)"
           :destination="findNode(item.destination)"
           :editable="editable"

@@ -632,6 +632,9 @@ let default_font_color={"alpha":1,"hex":"#34495E","hexa":"#34495EFF","hsla":{"h"
 		item.arrow ? this.tmpNode.arrow = item.arrow : this.tmpNode.arrow = 'none'
 		item.pattern ? this.tmpNode.pattern = item.pattern : this.tmpNode.pattern = 'solid'
 		item.shape ? this.tmpNode.shape = item.shape : this.tmpNode.shape = 'straight'
+		if(!this.panel.includes(1)){
+			this.panel.push(1)
+		}
     },
     editLink(item) {
       let tmp = this.graphData.links.find(x => x.id === item.id);
