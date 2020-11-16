@@ -8,7 +8,7 @@
         Q ${point.x} ${point.y}
         ${calcDestination().x} ${calcDestination().y}`
       "
-      :stroke="link.color && link.color.hexa ? link.color.hexa : '#ffeaa7'"
+      :stroke="link.color ? link.color.hexa ? link.color.hexa : '#ffeaa7' : link.color"
       :stroke-width="link.strokeWeight ? link.strokeWeight : 3"
       fill="none"
       :stroke-dasharray="definePattern(link.pattern)"
@@ -26,7 +26,7 @@
       :y1="calcSource().y"
       :x2="calcDestination().x"
       :y2="calcDestination().y"
-      :stroke="link.color && link.color.hexa ? link.color.hexa : '#ffeaa7'"
+      :stroke="link.color ? link.color.hexa ? link.color.hexa : '#ffeaa7' : link.color"
       :stroke-width="link.strokeWeight ? link.strokeWeight : 3"
       fill="none"
       :stroke-dasharray="definePattern(link.pattern)"
@@ -43,13 +43,13 @@
       orient="auto-start-reverse"
       markerWidth="15"
       markerHeight="15"
-	  :stroke="link.color && link.color.hexa ? link.color.hexa : '#ffeaa7'"		
+	  :stroke="link.color ? link.color.hexa ? link.color.hexa : '#ffeaa7' : link.color"		
 			:fill="link.color && link.color.hexa ? link.color.hexa : '#ffeaa7'"
       viewBox="0 0 10 10"
       refX="5"
       refY="5"
     >
-      <polygon points="0,1.5 0,8.5 10,5 " :fill="link.color && link.color.hexa ? link.color.hexa : '#ffeaa7'" :stroke="link.color && link.color.hexa ? link.color.hexa : '#ffeaa7'"/>
+      <polygon points="0,1.5 0,8.5 10,5 " :fill="link.color && link.color.hexa ? link.color.hexa : '#ffeaa7'" :stroke="link.color ? link.color.hexa ? link.color.hexa : '#ffeaa7' : link.color"/>
     </marker>
     <g v-if="editable">
       <line
@@ -139,7 +139,7 @@ export default {
 		  default: generateID()
 	  },
       color: {
-        type: String,
+        type: Object,
         default: {"alpha":1,"hex":"#ECF0F1","hexa":"#ECF0F1FF","hsla":{"h":192,"s":0.151515151515151,"l":0.9352941176470588,"a":1},"hsva":{"h":192,"s":0.020746887966804906,"v":0.9450980392156862,"a":1},"hue":192,"rgba":{"r":236,"g":240,"b":241,"a":1}}
       },
       shape: {

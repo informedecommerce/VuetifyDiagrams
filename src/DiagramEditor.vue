@@ -393,7 +393,8 @@ export default {
 			this.init()
 		},
 		'tmpNode.color'(val){
-			console.log('color changed')
+			console.log('color changed',val)
+			
 			if(val){
 				if(!this.tmpNode.arrow){
 					this.editNode(this.tmpNode)
