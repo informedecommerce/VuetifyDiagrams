@@ -1,3 +1,10 @@
+<style>
+	.scrollXY{
+		max-height: calc(100vh - 200px);
+		max-width: calc(100vh - 500px);
+		overflow: auto;
+	}
+</style>
 <template>
   <div id="svg-diagram-show-area" class="scrollXY" ref="field">
     <svg
