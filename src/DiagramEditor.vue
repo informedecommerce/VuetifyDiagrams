@@ -102,7 +102,18 @@
 	  
 	  <v-layout wrap>
 	<v-flex xs2 style="height: calc(100vh - 200px); overflow: auto">	
-		{{panel}}
+	<v-list-item v-if="can_edit" @click="editable = !editable">
+		  <v-list-item-icon>
+            <v-icon>mdi-pencil</v-icon>
+          </v-list-item-icon>
+        <v-list-item-content>
+          <v-list-item-subtitle>
+            {{editable ? 'End Edit' : 'Edit'}}
+          </v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+				<v-divider />
+		
 		<v-expansion-panels multiple v-model="panel">
 			<v-expansion-panel v-if="editable">
 				
@@ -277,18 +288,7 @@
   </v-expansion-panels>
 		
 			
-      <v-list-item v-if="can_edit" @click="editable = !editable">
-		  <v-list-item-icon>
-            <v-icon>mdi-pencil</v-icon>
-          </v-list-item-icon>
-        <v-list-item-content>
-          <v-list-item-subtitle>
-            {{editable ? 'End Edit' : 'Edit'}}
-          </v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
-				<v-divider />
-			{{tmpNode}}
+   
 			
 	</v-flex>
 		 <v-flex xs10 style="max-height: calc(100vh - 200px);max-width: calc(100vw - 500);overflow: auto">
@@ -548,8 +548,7 @@ let default_font_color={"alpha":1,"hex":"#34495E","hexa":"#34495EFF","hsla":{"h"
       this.isModalActive = false;
     },
     openNodeEdit(item) {
-		this.tmpNode = JSON.parse(JSON.stringify(item))
-		/*
+	
       this.tmpNode.id = item.id;
       this.tmpNode.text = item.text;
       this.tmpNode.url = item.url;
@@ -561,8 +560,8 @@ let default_font_color={"alpha":1,"hex":"#34495E","hexa":"#34495EFF","hsla":{"h"
       this.tmpNode.strokeWeight = item.strokeWeight;
       this.tmpNode.width = item.width;
       this.tmpNode.height = item.height;
-      this.isModalActive = false;
-	  */
+      //this.isModalActive = false;
+
       //this.isEditModalActive = true;
 		if(!this.panel.includes(1)){
 			this.panel.push(1)
@@ -571,8 +570,7 @@ let default_font_color={"alpha":1,"hex":"#34495E","hexa":"#34495EFF","hsla":{"h"
     },
     editNode(item) {
       let tmp = this.graphData.nodes.find(x => x.id === item.id);
-		tmp = JSON.parse(JSON.stringify(item))
-		/*
+	tmp.id = item.id;
       tmp.text = item.text;
       tmp.url = item.url;
       tmp.color = item.color;
@@ -583,8 +581,8 @@ let default_font_color={"alpha":1,"hex":"#34495E","hexa":"#34495EFF","hsla":{"h"
       tmp.strokeWeight = item.strokeWeight;
       tmp.width = parseInt(item.width);
       tmp.height = parseInt(item.height);
-      this.isEditModalActive = false;
-	  */
+     // this.isEditModalActive = false;
+	
     },
     openLinkEdit(item) {
       this.tmpLink.id = item.id;

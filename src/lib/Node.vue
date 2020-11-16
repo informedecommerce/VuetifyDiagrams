@@ -232,7 +232,18 @@ export default {
       document.removeEventListener("mouseup", this.mouseup);
     },
     editCandidate() {
-      this.$emit("editNode", this.node);
+      this.$emit("editNode", {
+        id: this.id,
+		  text: this.node.text,
+		  color: this.node.color,
+		  font_color: this.node.font_color,
+		  font_size: this.node.font_size,
+        shape: this.node.shape,
+        width: this.node.width,
+        height: this.node.height,
+        stroke: this.node.stroke,
+        strokeWeight: this.node.strokeWeight
+      });
     }
   }
 };
