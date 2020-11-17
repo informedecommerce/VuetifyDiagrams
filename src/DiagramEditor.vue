@@ -131,7 +131,7 @@
         <v-text-field
             label="Text"
 					  hide-details
-					  v-if="tmpNode && !tmpNode.arrow && !tmpNode.shape == 'text'"
+					  v-if="tmpNode && !tmpNode.arrow && !tmpNode.shape == 'title'"
 					  v-model="tmpNode.text"
 					  @change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"
@@ -149,7 +149,7 @@
             label="Text Size"
 						type="number"
 					  hide-details
-						v-if="tmpNode"
+						v-if="!tmpNode.arrow"
 					  v-model="tmpNode.font_size"
 						@change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"
@@ -167,18 +167,18 @@
 		  <v-text-field
             label="URL"
 					  hide-details
-						v-if="tmpNode.url"
+						v-if="!tmpNode.arrow"
 					  v-model="tmpNode.url"
 						@change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"
           ></v-text-field>
 		  
-		  <v-select v-if="tmpNode && tmpNode.shape && tmpNode.arrow" label="Line Shape" :items="[{text: 'Bezier Curve', val: 'bezier'},{text: 'Straight Line', val: 'straight'}]" item-text="text" item-value="val"  v-model="tmpNode.shape" placeholder="Select line shape" @change="editLink(tmpNode)"></v-select>
-        <v-select label="Pattern" v-if="tmpNode && tmpNode.pattern" v-model="tmpNode.pattern" @change="editLink(tmpNode)" :items="[{text: 'Solid', val: 'solid'},{text: 'Dash', val: 'dash'},{text: 'Dot', val: 'dot'}]" item-text="text" item-value="val" placeholder="Select line pattern" ></v-select>
-        <v-select label="Arrow Type" v-if="tmpNode && tmpNode.arrow" v-model="tmpNode.arrow" placeholder="Select arrow type" :items="[{text: 'None', val: 'none'},{text: 'One Side (Source)', val: 'src'},{text: 'One Side (Destination)', val: 'dest'},{text: 'Both', val: 'both'}]" item-text="text" item-value="val" @change="editLink(tmpNode)">
+		  <v-select v-if="tmpNode.shape == 'straight' || tmpNode.shape == 'bezier'" label="Line Shape" :items="[{text: 'Bezier Curve', val: 'bezier'},{text: 'Straight Line', val: 'straight'}]" item-text="text" item-value="val"  v-model="tmpNode.shape" placeholder="Select line shape" @change="editLink(tmpNode)"></v-select>
+        <v-select label="Pattern" v-if="tmpNode.shape == 'straight' || tmpNode.shape == 'bezier'" v-model="tmpNode.pattern" @change="editLink(tmpNode)" :items="[{text: 'Solid', val: 'solid'},{text: 'Dash', val: 'dash'},{text: 'Dot', val: 'dot'}]" item-text="text" item-value="val" placeholder="Select line pattern" ></v-select>
+        <v-select label="Arrow Type" v-if="tmpNode.shape == 'straight' || tmpNode.shape == 'bezier'" v-model="tmpNode.arrow" placeholder="Select arrow type" :items="[{text: 'None', val: 'none'},{text: 'One Side (Source)', val: 'src'},{text: 'One Side (Destination)', val: 'dest'},{text: 'Both', val: 'both'}]" item-text="text" item-value="val" @change="editLink(tmpNode)">
           </v-select>
 		  
-		  <v-menu :close-on-content-click="false" v-if="tmpNode && tmpNode.color">
+		  <v-menu :close-on-content-click="false" v-if="tmpNode && tmpNode.shape != 'text' && tmpNode.shape != 'title'">
                       <template v-slot:activator="{ on }">
 						  <!--
                         <v-text-field v-model="tmpNode.color.hexa" v-on="on" label="Color" @change="editNode(tmpNode)"
