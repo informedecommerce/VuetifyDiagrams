@@ -94,7 +94,7 @@
       @touchend="mouseup"
     />
 	  <rect
-      v-else-if="node.shape === 'text'"
+      v-else-if="node.shape === 'text' || node.shape === 'title'"
       class="grab"
       :x="x"
       :y="y"

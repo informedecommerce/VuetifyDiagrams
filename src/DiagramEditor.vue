@@ -131,11 +131,20 @@
         <v-text-field
             label="Text"
 					  hide-details
-					  v-if="tmpNode && tmpNode.text"
+					  v-if="tmpNode && !tmpNode.arrow && !tmpNode.shape == 'text'"
 					  v-model="tmpNode.text"
 					  @change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"
           ></v-text-field>
+		  <v-textarea
+					  v-if="tmpNode.shape == 'text'"
+          solo
+		  v-model="tmpNode.text"
+			@change="editNode(tmpNode)"
+			v-on:keyup="editNode(tmpNode)"
+          name="input-7-4"
+          label="Text"
+        ></v-textarea>
 		  <v-text-field
             label="Text Size"
 						type="number"
@@ -226,7 +235,12 @@
           </template>
 		</v-expansion-panel-header>
       <v-expansion-panel-content>
-        <v-btn icon v-for="(item,index) in diagram_items" @click="diagramAdd(item.key)" :key="'shape-'+index"><v-icon>{{item.icon}}</v-icon></v-btn>
+		  <v-tooltip top v-for="(item,index) in diagram_items">
+      <template v-slot:activator="{ on, attrs }">
+        <v-btn icon v-on="on" @click="diagramAdd(item.key)" :key="'shape-'+index"><v-icon>{{item.icon}}</v-icon></v-btn>
+		  </template>
+      <span>{{item.title}}</span>
+    </v-tooltip>
       </v-expansion-panel-content>
     </v-expansion-panel>
 			
@@ -428,6 +442,7 @@ export default {
 				{title: 'Rectangle',icon: 'mdi-shape-rectangle-plus',key: 'rectangle'},
 				{title: 'Circle',icon: 'mdi-shape-circle-plus',key: 'circle'},
 				{title: 'Elipse',icon: 'mdi-shape-oval-plus',key: 'elipse'},
+				{title: 'Title',icon: 'mdi-text-shadow',key: 'title'},
 				{title: 'Text',icon: 'mdi-text',key: 'text'},
 			],
       name: "",
@@ -522,9 +537,14 @@ let default_font_color={"alpha":1,"hex":"#34495E","hexa":"#34495EFF","hsla":{"h"
 			"y": 66.4611318108179 }, font_color: default_font_color, font_size: 14, color: default_item_color } 
 					) 
 				  break;
-				  case 'text':
+				  case 'title':
 					  this.addNode(
-					 { font_color: {hexa: '#34495e'}, color: {hexa: '#ecf0f1'},  "text": "New Text", "width": 100, "height": 35, "shape": "text", "stroke": 0, strokeWeight: 0, "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
+					 { font_size: 14, font_color: {hexa: '#34495e'}, color: {hexa: '#ecf0f1'},  "text": "New Title", "width": 100, "height": 35, "shape": "text", "stroke": 0, strokeWeight: 0, "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
+					) 
+				  break;
+			  case 'text':
+					  this.addNode(
+					 { font_size: 11, font_color: {hexa: '#34495e'}, color: {hexa: '#ecf0f1'},  "text": "New Text", "width": 100, "height": 35, "shape": "text", "stroke": 0, strokeWeight: 0, "point": { "x": 9.999999999999993, "y": 34.31059443007615 } } 
 					) 
 				  break;
 		  }
