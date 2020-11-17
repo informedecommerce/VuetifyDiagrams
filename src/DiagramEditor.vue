@@ -149,12 +149,12 @@
             label="Text Size"
 						type="number"
 					  hide-details
-						v-if="tmpNode && tmpNode.font_size"
+						v-if="tmpNode"
 					  v-model="tmpNode.font_size"
 						@change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"
           ></v-text-field>
-		  <v-menu :close-on-content-click="false" v-if="tmpNode && tmpNode.font_color">
+		  <v-menu :close-on-content-click="false" v-if="tmpNode">
                       <template v-slot:activator="{ on }">
 						  <!--
                         <v-text-field  v-model="tmpNode.font_color.hexa" v-on="on" label="Text Color" @change="editNode(tmpNode)"
@@ -191,7 +191,7 @@
                     </v-menu>
 		  <v-text-field
             label="Stroke"
-						v-if="tmpNode && tmpNode.stroke"
+						v-if="tmpNode && tmpNode.shape != 'text' && tmpNode.shape != 'title'"
 						type="number"
 					  hide-details
 					  v-model="tmpNode.stroke"
@@ -200,7 +200,7 @@
           ></v-text-field>
 		  <v-text-field
             label="Stroke Weight"
-						v-if="tmpNode && tmpNode.strokeWeight"
+						v-if="tmpNode && tmpNode.shape != 'text' && tmpNode.shape != 'title'"
 						type="number"
 					  hide-details
 					  v-model="tmpNode.strokeWeight"
@@ -209,7 +209,7 @@
           ></v-text-field>
 		  <v-text-field
             label="Width"
-						v-if="tmpNode && tmpNode.width"
+						v-if="tmpNode && tmpNode.shape != 'text' && tmpNode.shape != 'title'"
 						type="number"
 					  hide-details
 					  v-model="tmpNode.width"
@@ -218,7 +218,7 @@
           ></v-text-field>
 		  <v-text-field
             label="Height"
-						v-if="tmpNode && tmpNode.height"
+						v-if="tmpNode && tmpNode.shape != 'text' && tmpNode.shape != 'title'"
 						type="number"
 					  hide-details
 					  v-model="tmpNode.height"
