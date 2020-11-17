@@ -266,7 +266,7 @@ export default {
         source: this.selectedNode,
         destination: id,
 		  color: "#21DB14",
-		  stroke_weight: 3,
+		  stroke_weight: 3, 
         point: {
           x: (src.point.x + dest.point.x) * 0.5,
           y: (src.point.y + dest.point.y) * 0.5
