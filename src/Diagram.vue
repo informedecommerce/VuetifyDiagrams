@@ -286,25 +286,11 @@ export default {
     },
     copyNode(node) {
       if (!this.editable) return;
-      this.nodeList.push({
-        id: this.generateID(),
-        content: {
-          text: node.text,
-          color: node.color,
-			font_color: node.font_color,
-			font_size: node.font_size,
-          url: node.url
-        },
-        width: node.width,
-        height: node.height,
-        point: {
-          x: node.point.x + 30,
-          y: node.point.y + 30
-        },
-        shape: node.shape,
-        stroke: node.stroke,
-        strokeWeight: node.strokeWeight
-      });
+		let new_list = JSON.parse(JSON.stringify(this.nodeList))
+		let new_node = JSON.parse(JSON.stringify(node))
+		new_node.id = this.generateID()
+		new_list.push(new_node);
+      this.nodeList = new_list;
     }
   }
 };
