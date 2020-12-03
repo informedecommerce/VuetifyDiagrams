@@ -131,7 +131,7 @@
         <v-text-field
             label="Text"
 					  hide-details
-					  
+					  v-if="tmpNode && !tmpNode.arrow && !tmpNode.shape == 'title' && tmpNode.shape != 'straight' || tmpNode.shape != 'bezier'"
 					  v-model="tmpNode.text"
 					  @change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"
