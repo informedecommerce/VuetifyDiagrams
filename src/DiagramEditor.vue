@@ -131,7 +131,7 @@
         <v-text-field
             label="Text"
 					  hide-details
-					  v-if="tmpNode && !tmpNode.arrow && !tmpNode.shape == 'title'"
+					  
 					  v-model="tmpNode.text"
 					  @change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"
@@ -154,7 +154,7 @@
 						@change="editNode(tmpNode)"
 						v-on:keyup="editNode(tmpNode)"
           ></v-text-field>
-		  <v-menu :close-on-content-click="false" v-if="tmpNode">
+		  <v-menu :close-on-content-click="false" v-if="tmpNode && tmpNode.shape != 'straight' || tmpNode.shape != 'bezier'">
                       <template v-slot:activator="{ on }">
 						  <!--
                         <v-text-field  v-model="tmpNode.font_color.hexa" v-on="on" label="Text Color" @change="editNode(tmpNode)"

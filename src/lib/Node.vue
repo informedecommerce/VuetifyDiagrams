@@ -204,7 +204,7 @@ export default {
       this.cursorOffset.x = x;
       this.cursorOffset.y = y;
       this.startPosition = { x: this.x, y: this.y };
-
+this.editCandidate()
       document.addEventListener("mousemove", this.mousemove);
       document.addEventListener("mouseup", this.mouseup);
     },
